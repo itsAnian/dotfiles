@@ -1,6 +1,9 @@
 { config, pkgs, ... }: {
     home.packages = with pkgs; [ 
       brave
+      vesktop
+      whatsapp-for-linux
+      p3x-onenote
       spotify
       vscode
       kitty
