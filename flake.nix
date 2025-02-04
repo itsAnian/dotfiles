@@ -22,12 +22,12 @@
         modules = [
           ./configuration.nix
 	  ./hardware-configuration.nix
-	  /*home-manager.nixosModules.home-manager
+	  home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.marc = import ./home.nix;
-          }*/
+            home-manager.users.anian = import ./home.nix;
+          }
         ];
       };
     };
