@@ -8,6 +8,7 @@
       vscode
       kitty
       starship
+      bitwarden
     ];
     home.username = "anian";
     home.homeDirectory = "/home/anian";
