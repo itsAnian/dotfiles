@@ -18,6 +18,13 @@
     ];
   };
 
+  home.shellAliases = {
+        nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#";
+        gs = "git status";
+        ll = "ls -la";
+        ".." = "cd ../";
+    };
+
   home.username = "anian";
   home.homeDirectory = "/home/anian";
 
