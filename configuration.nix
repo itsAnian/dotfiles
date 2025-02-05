@@ -85,10 +85,13 @@
   users.users.anian = {
     isNormalUser = true;
     description = "anian";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
     ];
   };
+
+  #docker
+  virtualisation.docker.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
