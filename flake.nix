@@ -7,10 +7,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+    url = "github:nix-community/nixvim";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixpkgs.url = "nixpkgs/nixos-24.05";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nixvim, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -30,6 +35,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.anian = import ./home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit nixvim;
+            };
           }
         ];
       };

@@ -30,6 +30,7 @@
 
   imports = [
       ./kitty/kitty.nix
+      ./nixvim.nix
   ];
 
   services.sxhkd = {
