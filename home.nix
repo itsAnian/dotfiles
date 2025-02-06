@@ -9,6 +9,7 @@
     starship
     bitwarden
     brave
+    sxhkd
   ];
 
   programs.brave = {
@@ -17,6 +18,26 @@
       "nngceckbapebfimnlniiiahkandclblb" # bitwarden
     ];
   };
+
+  services.sxhkd = {
+    enable = true;
+    keybindings = {
+      "control + alt + t" = "kitty";  # Kitty
+      "super + b" = "brave";       # Brave
+    };
+  };
+  /*
+  Not native autostart: type this command to add it
+
+  echo '[Desktop Entry]
+  Type=Application
+  Exec=sxhkd
+  Hidden=false
+  NoDisplay=false
+  X-GNOME-Autostart-enabled=true
+  Name=sxhkd
+  Comment=Hotkey Daemon' > ~/.config/autostart/sxhkd.desktop
+  */
 
   home.shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#";
