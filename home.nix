@@ -5,7 +5,6 @@
     p3x-onenote
     spotify
     vscode
-    kitty
     starship
     bitwarden
     brave
@@ -18,6 +17,10 @@
       "nngceckbapebfimnlniiiahkandclblb" # bitwarden
     ];
   };
+
+  imports = [
+      ./kitty/kitty.nix
+  ];
 
   services.sxhkd = {
     enable = true;
