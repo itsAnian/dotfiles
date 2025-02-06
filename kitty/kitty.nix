@@ -14,8 +14,8 @@
             cursor_trail = 1;
 
             
-            #background_opacity = "0.7";
-            #background_blur = 10;
+            background_opacity = "0.5";
+            background_blur = 10;
         };
         
         #extraConfig = ''include themes/Catppuccin.conf'';
