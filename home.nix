@@ -8,7 +8,6 @@
     starship
     bitwarden
     brave
-    sxhkd
   ];
 
   programs.brave = {
@@ -45,6 +44,10 @@
   home.shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#";
         gs = "git status";
+        ga = "git add";
+        gc = "git commit";
+        gl = "git log --oneline";
+        gd = "git diff";
         ll = "ls -la";
         ".." = "cd ../";
     };
