@@ -17,6 +17,17 @@
     ];
   };
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    settings = pkgs.lib.importTOML ./starship/starship.toml;
+    enableZshIntegration = true;
+  };
+
   imports = [
       ./kitty/kitty.nix
   ];
