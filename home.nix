@@ -1,39 +1,46 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
-    vesktop
-    whatsapp-for-linux
-    p3x-onenote
-    spotify
-    vscode
-    starship
-    bitwarden
-    brave
+    vesktop #discord
+    whatsapp-for-linux #whatsapp
+    p3x-onenote #onenote
+    spotify #spotify
+    vscode #visual studio code
+    bitwarden #bitwarden
   ];
 
-  programs.brave = {
+  programs.brave = { #brave browser
     enable = true;
     extensions = [
       "nngceckbapebfimnlniiiahkandclblb" # bitwarden
     ];
   };
 
-  programs.zsh = {
+  programs.zsh = { #better terminal commands
     enable = true;
     enableCompletion = true;
   };
 
-  programs.starship = {
+  programs.starship = { #terminal addon for git
     enable = true;
     settings = pkgs.lib.importTOML ./starship/starship.toml;
     enableZshIntegration = true;
   };
 
+  programs.git = { #git
+    enable = true;
+    userEmail = "anian.seidl@gmail.com";
+    userName = "itsAnian";
+    extraConfig = {
+      push.autoSetupRemote = true;
+    };
+  };
+
   imports = [
-      ./kitty/kitty.nix
-      ./nixvim.nix
+      ./kitty/kitty.nix #installs and configures kitty
+      ./nixvim.nix #installs and configures nixvim/nvim
   ];
 
-  services.sxhkd = {
+  services.sxhkd = { #adds hotkeys
     enable = true;
     keybindings = {
       "control + alt + t" = "kitty";  # Kitty
@@ -53,7 +60,7 @@
   Comment=Hotkey Daemon' > ~/.config/autostart/sxhkd.desktop
   */
 
-  home.shellAliases = {
+  home.shellAliases = { #sets shortcuts
         nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#";
         gs = "git status";
         ga = "git add";
@@ -72,14 +79,5 @@
   programs.bash.enable = true;
 
   home.stateVersion = "24.05";
-
-  programs.git = {
-    enable = true;
-    userEmail = "anian.seidl@gmail.com";
-    userName = "itsAnian";
-    extraConfig = {
-      push.autoSetupRemote = true;
-    };
-  };
 }
 
