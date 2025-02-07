@@ -38,6 +38,7 @@
   imports = [
       ./kitty/kitty.nix #installs and configures kitty
       ./nixvim.nix #installs and configures nixvim/nvim
+      ./rofi.nix #installs and configures "launcher"
   ];
 
   services.sxhkd = { #adds hotkeys
@@ -45,6 +46,7 @@
     keybindings = {
       "control + alt + t" = "kitty";  # Kitty
       "super + b" = "brave";       # Brave
+      "super + r" = "rofi -show drun"; #starts "applauncher"
     };
   };
   /*
