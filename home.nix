@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     vesktop #discord
     whatsapp-for-linux #whatsapp
@@ -36,31 +36,12 @@
   };
 
   imports = [
-      ./kitty/kitty.nix #installs and configures kitty
-      ./nixvim.nix #installs and configures nixvim/nvim
-      ./rofi.nix #installs and configures "launcher"
+    ./kitty/kitty.nix #installs and configures kitty
+    ./nixvim.nix #installs and configures nixvim/nvim
+    ./rofi.nix #installs and configures "launcher"
+    ./hyprland/hyprland.nix #installs and configures wayland
+    ./hyprland/hyprpanel.nix 
   ];
-
-  services.sxhkd = { #adds hotkeys
-    enable = true;
-    keybindings = {
-      "control + alt + t" = "kitty";  # Kitty
-      "super + b" = "brave";       # Brave
-      "super + r" = "rofi -show drun"; #starts "applauncher"
-    };
-  };
-  /*
-  Not native autostart: type this command to add it
-
-  echo '[Desktop Entry]
-  Type=Application
-  Exec=sxhkd
-  Hidden=false
-  NoDisplay=false
-  X-GNOME-Autostart-enabled=true
-  Name=sxhkd
-  Comment=Hotkey Daemon' > ~/.config/autostart/sxhkd.desktop
-  */
 
   home.shellAliases = { #sets shortcuts
         nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#";
@@ -82,4 +63,3 @@
 
   home.stateVersion = "24.05";
 }
-
