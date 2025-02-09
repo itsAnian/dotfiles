@@ -1,8 +1,8 @@
-{ config, pkgs, nixvim, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
-    nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeManagerModules.nixvim
   ];
 
   programs.neovim.enable = true;
@@ -24,6 +24,6 @@
       enable = true;
       settings.flavour = "mocha";
     };
-    #plugins.lualine.enable = true;
+#plugins.lualine.enable = true;
   };
 }
