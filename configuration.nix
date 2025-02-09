@@ -52,6 +52,10 @@
   services.displayManager.sddm.enable = false;
   services.xserver.desktopManager.plasma5.enable = false;
 
+# Battery information
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
+
 # Enable hyprland
   programs.hyprland.enable = true;
 
