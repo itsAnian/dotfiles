@@ -18,18 +18,22 @@
     };
 
     nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixvim, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, hyprpanel, ... }:
     let
     system = "x86_64-linux";
   pkgs = import nixpkgs {
     inherit system;
     config = { allowUnfree = true; };
-    overlays = [
-      inputs.hyprpanel.overlay.${system}
-    ];
   };
+
+  pkgs-unstable = import nixpkgs-unstable {
+    inherit system;
+    config = { allowUnfree = true;};
+  };
+
   lib = nixpkgs.lib;
   in {
     nixosConfigurations = {
@@ -39,6 +43,9 @@
 	    ./hardware-configuration.nix
 	    home-manager.nixosModules.home-manager
 	    {
+	      nixpkgs.overlays = [
+		inputs.hyprpanel.overlay
+	      ];
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
 	      home-manager.users.anian = import ./home.nix;

@@ -22,7 +22,7 @@
       "$menu" = "rofi -show drun";
 
       exec-once = [
-	"hyprpanel &"
+#	"hyprpanel &"
 	"hyprpaper &"
 	"dunst"
       ];
