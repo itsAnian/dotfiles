@@ -11,7 +11,7 @@
       bold_italic_font = "auto";
 
       font_size = 14;
-      cursor_trail = 1;
+      cursor_trail = 0;
 
 
       background_opacity = "0.5";
