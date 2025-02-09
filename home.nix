@@ -61,5 +61,5 @@
   #manual.manpages.enable = false;
   programs.bash.enable = true;
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 }
