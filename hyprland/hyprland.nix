@@ -7,9 +7,9 @@
       hyprpaper #wallpaper
       waypaper #gui for hyprpaper
   ];
-  
+
   imports = [
-    #./hyprpanel.nix
+    ./hyprpanel.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -23,13 +23,13 @@
 
       exec-once = [
 	"hyprpanel &"
-	"hyprpaper &"
+	  "hyprpaper &"
       ];
 
       /*env = {
 	"XCURSOR_SIZE" = "24";
 	"HYPRCURSOR_SIZE" = "24";
-      };*/
+	};*/
 
       general = {
 	gaps_in = 5;
@@ -46,10 +46,10 @@
 	rounding = 10;
 	active_opacity = 1.0;
 	inactive_opacity = 1.0;
-	#drop_shadow = true;
-	#shadow_range = 4;
-	#shadow_render_power = 3;
-	#"col.shadow" = "rgba(1a1a1aee)";
+#drop_shadow = true;
+#shadow_range = 4;
+#shadow_render_power = 3;
+#"col.shadow" = "rgba(1a1a1aee)";
 	blur = {
 	  enabled = true;
 	  size = 3;
