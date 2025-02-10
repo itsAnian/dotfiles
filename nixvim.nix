@@ -14,6 +14,7 @@
     opts = {
       number = true;
       shiftwidth = 2;
+      clipboard = "unnamedplus";
     };
 
     plugins = {
