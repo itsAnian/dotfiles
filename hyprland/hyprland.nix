@@ -10,6 +10,7 @@
 
   imports = [
     ./hyprpanel.nix
+    ./hyprlock.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -104,6 +105,7 @@
 	  "$mainMod, right, movefocus, r"
 	  "$mainMod, up, movefocus, u"
 	  "$mainMod, down, movefocus, d"
+	  "$mainMod, L, exec, hyprlock --immediate"
       ];
 
       bindm = [
