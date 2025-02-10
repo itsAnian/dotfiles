@@ -4,8 +4,6 @@
     dunst #notification manager
       libnotify #dunst relies on it
       networkmanagerapplet #networkmanager
-      hyprpaper #wallpaper
-      waypaper #gui for hyprpaper
       hyprshot #screenshot tool
   ];
 
@@ -13,6 +11,7 @@
     ./hyprpanel.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./hyprpaper.nix
   ];
 
   wayland.windowManager.hyprland = {
