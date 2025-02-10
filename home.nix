@@ -33,6 +33,7 @@
     userName = "itsAnian";
     extraConfig = {
       push.autoSetupRemote = true;
+      core.editor = "vim";
     };
   };
 
