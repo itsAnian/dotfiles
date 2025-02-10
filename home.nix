@@ -6,6 +6,7 @@
       spotify #spotify
       vscode #visual studio code
       bitwarden #bitwarden
+      gimp #gimp
   ];
 
   programs.brave = { #brave browser
