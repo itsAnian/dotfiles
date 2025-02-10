@@ -12,6 +12,7 @@
   imports = [
     ./hyprpanel.nix
     ./hyprlock.nix
+    ./hypridle.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -24,8 +25,9 @@
       "$menu" = "rofi -show drun";
 
       exec-once = [
+	"hypridle &"
 	"hyprpanel &"
-	  "hyprpaper &"
+        "hyprpaper"
       ];
 
       /*env = {
