@@ -7,6 +7,7 @@
       vscode #visual studio code
       bitwarden #bitwarden
       gimp #gimp
+      superfile #filemanager
   ];
 
   programs.brave = { #brave browser
