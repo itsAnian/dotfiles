@@ -6,6 +6,7 @@
       networkmanagerapplet #networkmanager
       hyprshot #screenshot tool
       brightnessctl #brightness control
+      xorg.libXcursor #sets XCURSOR
   ];
 
   imports = [
@@ -31,10 +32,6 @@
 	"bash ~/dotfiles/hyprland/wallpapercycle.sh"
       ];
 
-      /*env = {
-	"XCURSOR_SIZE" = "24";
-	"HYPRCURSOR_SIZE" = "24";
-	};*/
 
       general = {
 	gaps_in = 5;
@@ -46,6 +43,11 @@
 	allow_tearing = false;
 	layout = "dwindle";
       };
+
+      env = [
+	"XCURSOR_THEME, Layan-border-cursors"
+	"XCURSOR_SIZE, 32"
+      ];
 
       decoration = {
 	rounding = 10;
