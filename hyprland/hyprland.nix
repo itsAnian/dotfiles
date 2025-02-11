@@ -5,6 +5,7 @@
       libnotify #dunst relies on it
       networkmanagerapplet #networkmanager
       hyprshot #screenshot tool
+      brightnessctl #brightness control
   ];
 
   imports = [
@@ -117,14 +118,14 @@
 	  "$mainMod ALT, mouse:272, resizewindow"
       ];
 
-      /*bindel = [
-	"XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-	"XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-	"XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-	"XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-	"XF86MonBrightnessUp, exec, brightnessctl s 10%+"
-	"XF86MonBrightnessDown, exec, brightnessctl s 10%-"
-      ];*/
+      bindel = [
+	",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+	",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+	",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+	",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+	",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ];
 
       windowrulev2 = "suppressevent maximize, class:.*";
     };
