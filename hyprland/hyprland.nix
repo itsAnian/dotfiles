@@ -26,7 +26,8 @@
       exec-once = [
 	"hypridle &"
 	"hyprpanel &"
-        "hyprpaper"
+        "hyprpaper &"
+	"bash ~/dotfiles/hyprland/wallpapercycle.sh"
       ];
 
       /*env = {

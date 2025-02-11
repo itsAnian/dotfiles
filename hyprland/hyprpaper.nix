@@ -12,7 +12,6 @@
 
       preload = [
 	"~/dotfiles/hyprland/wallpaper/hyprland_contest2.png"
-	"~/dotfiles/hyprland/wallpaper/hyprland_contest3.png"
       ];
 
       wallpaper = [
