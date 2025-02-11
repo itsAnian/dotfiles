@@ -58,6 +58,15 @@
 
 # Enable hyprland
   programs.hyprland.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+	command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
+      };
+    };
+
+  };
 
 # Configure keymap in X11
   services.xserver.xkb = {
