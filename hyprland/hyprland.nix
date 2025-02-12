@@ -21,7 +21,7 @@
       monitor = ",highres,auto,1";
 
       "$terminal" = "kitty";
-      "$fileManager" = "dolphin";
+      "$fileManager" = "superfile";
       "$menu" = "rofi -show drun";
 
       exec-once = [
