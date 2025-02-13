@@ -23,26 +23,26 @@
 	text = "Welcome!";
 	color = "rgba(0, 221, 254, 1.0)";
 	font_size = 55;
-	font_family = "SF Pro Display Bold";
-	position = "140, 320";
+	font_family = "JetBrainsMono Bold";
+	position = "145, 320";
 	halign = "left";
 	valign = "center";
       }
       {
-	text = "cmd[update:1000] echo \"<span>$(date +\"%I:%M\")</span>\"";
+	text = "cmd[update:1000] echo \"<span>$(date +\"%H:%M\")</span>\"";
 	color = "rgba(0, 221, 254, 1.0)";
 	font_size = 40;
-	font_family = "SF Pro Display Bold";
+	font_family = "JetBrainsMono Bold";
 	position = "240, 240";
 	halign = "left";
 	valign = "center";
       }
       {
-	text = "cmd[update:1000] echo -e \"$(date +\"%A, %B %d\")\"";
+	text = "cmd[update:1000] echo -e \"$(date +\"%a, %b %d\")\"";
 	color = "rgba(0, 221, 254, 1.0)";
 	font_size = 19;
-	font_family = "SF Pro Display Bold";
-	position = "200, 175";
+	font_family = "JetBrainsMono Bold";
+	position = "245, 175";
 	halign = "left";
 	valign = "center";
       }
@@ -51,7 +51,7 @@
 	color = "rgba(0, 0, 0, 1)";
 	outline_thickness = 0;
 	font_size = 16;
-	font_family = "SF Pro Display Bold";
+	font_family = "JetBrainsMono Bold";
 	position = "275, -140";
 	halign = "left";
 	valign = "center";
@@ -94,7 +94,7 @@
 	inner_color = "rgba(255, 255, 255, 0.1)";
 	font_color = "rgb(200, 200, 200)";
 	fade_on_empty = false;
-	font_family = "SF Pro Display Bold";
+	font_family = "JetBrainsMono Bold";
 	placeholder_text = "<i><span foreground=\"##ffffff99\">🔒Enter Pass</span></i>";
 	check_color = "rgba(0, 221, 254, 1.0)";
 	fail_color = "rgba(204, 34, 34, 0.5)";
