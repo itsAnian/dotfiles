@@ -15,11 +15,6 @@
 
       listener = [
       {
-	timeout = 150;
-	on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0"; # Tastaturbeleuchtung aus
-	  on-resume = "brightnessctl -rd rgb:kbd_backlight";        # Tastaturbeleuchtung an
-      }
-      {
 	timeout = 280;
 	on-timeout = "brightnessctl -s set 10";  # Bildschirmhelligkeit minimieren (nicht 0 bei OLED)
 	  on-resume = "brightnessctl -r";          # Bildschirmhelligkeit wiederherstellen
