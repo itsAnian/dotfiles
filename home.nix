@@ -1,34 +1,34 @@
 { config, pkgs, inputs, ... }: {
   home.packages = with pkgs; [
-    vesktop #discord
-      whatsapp-for-linux #whatsapp
-      p3x-onenote #onenote
-      spotify #spotify
-      vscode #visual studio code
-      bitwarden #bitwarden
-      gimp #gimp
-      superfile #filemanager
+    vesktop
+      whatsapp-for-linux
+      p3x-onenote
+      spotify
+      vscode
+      bitwarden
+      gimp
+      superfile
   ];
 
-  programs.brave = { #brave browser
+  programs.brave = {
     enable = true;
     extensions = [
-      "nngceckbapebfimnlniiiahkandclblb" # bitwarden
+      "nngceckbapebfimnlniiiahkandclblb"
     ];
   };
 
-  programs.zsh = { #better terminal commands
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
   };
 
-  programs.starship = { #terminal addon for git
+  programs.starship = {
     enable = true;
     settings = pkgs.lib.importTOML ./starship/starship.toml;
     enableZshIntegration = true;
   };
 
-  programs.git = { #git
+  programs.git = {
     enable = true;
     userEmail = "anian.seidl@gmail.com";
     userName = "itsAnian";
@@ -39,13 +39,13 @@
   };
 
   imports = [
-    ./kitty/kitty.nix #installs and configures kitty
-      ./nixvim.nix #installs and configures nixvim/nvim
-      ./rofi.nix #installs and configures "launcher"
-      ./hyprland/hyprland.nix #installs and configures wayland
+    ./kitty/kitty.nix
+      ./nixvim.nix
+      ./rofi.nix
+      ./hyprland/hyprland.nix
   ];
 
-  home.shellAliases = { #sets shortcuts
+  home.shellAliases = {
     nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#";
     gs = "git status";
     ga = "git add";

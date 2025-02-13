@@ -1,11 +1,11 @@
 { config, pkgs, inputs, ... }:
 {
   home.packages = with pkgs;[
-    dunst #notification manager
-      libnotify #dunst relies on it
-      networkmanagerapplet #networkmanager
-      hyprshot #screenshot tool
-      brightnessctl #brightness control
+    dunst
+      libnotify
+      networkmanagerapplet
+      hyprshot
+      brightnessctl
   ];
 
   imports = [
