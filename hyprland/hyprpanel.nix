@@ -13,20 +13,29 @@
       gvfs
   ];
 
-  imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
+  imports = [
+    ./custom_theme.nix
+      inputs.hyprpanel.homeManagerModules.hyprpanel
+  ];
 
   programs.hyprpanel = {
     enable = true;
     overlay.enable = true;
     systemd.enable = true;
     overwrite.enable = true;
-    theme = "catppuccin_mocha";
+    theme = "dracula";
 
     layout = {
       "bar.layouts" = {
 	"*" = {
-	  left = ["dashboard" "workspaces" "windowtitle"];
-	  middle = ["media"];
+	  left = [
+	    "dashboard"
+	      "workspaces"
+	      "windowtitle"
+	  ];
+	  middle = [
+	    "media"
+	  ];
 	  right = [
 	    "volume"
 	      "bluetooth"
@@ -36,11 +45,7 @@
 	      "notifications"
 	  ];
 	};
-
       };
-    };
-    override = {
-      "theme.bar.buttons.dashboard.icon" = "#2d81bf";
     };
     settings = {
       bar = {
@@ -54,7 +59,7 @@
       menus = {
 	dashboard = {
 	  powermenu = {
-	    avatar.image = "~/dotfiles/hyprland/nix_icon.png";
+	    avatar.image = "~/dotfiles/hyprland/nix_icon_neonblue_transparent.png";
 	    avatar.name = "itsAnian";
 	  };
 	  shortcuts.enabled = false;
