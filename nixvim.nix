@@ -10,6 +10,7 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
+    globals.mapleader = " ";
 
     opts = {
       number = true;
@@ -25,6 +26,21 @@
       enable = true;
       settings.flavour = "mocha";
     };
+
+    keymaps = [
+    {
+      mode = "n";
+      key = "<leader>w";
+      options.silent = true;
+      action = "<cmd>normal! ggVG= <CR> :w<CR>";
+    }
+    {
+      mode = "n";
+      key = "<leader>e";
+      options.silent = true;
+      action = "<cmd>w | Ex<CR>";
+    }
+    ];
 #plugins.lualine.enable = true;
   };
 }
