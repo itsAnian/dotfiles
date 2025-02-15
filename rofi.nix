@@ -17,14 +17,14 @@ in {
     theme = {
       "*" = {
 # Define color variables for easy customization
-	bg-col = mkLiteral "#303446";
-	bg-col-light = mkLiteral "#303446";
-	border-col = mkLiteral "#303446";
-	selected-col = mkLiteral "#303446";
-	blue = mkLiteral "#8caaee";
-	fg-col = mkLiteral "#c6d0f5";
-	fg-col2 = mkLiteral "#e78284";
-	grey = mkLiteral "#737994";
+	bg-col = mkLiteral "#080808";
+	bg-col-light = mkLiteral "#1a1a1a";
+	border-col = mkLiteral "#33ccff";
+	selected-col = mkLiteral "#181818";
+	blue = mkLiteral "#ffffff";
+	fg-col = mkLiteral "#ffffff";
+	fg-col2 = mkLiteral "#ffffff";
+	grey = mkLiteral "#ffffff";
 
 	width = mkLiteral "600";
 	font = "JetBrainsMono Nerd Font 14"; # Custom font
@@ -106,7 +106,7 @@ in {
 	padding = mkLiteral "10px";
 	background-color = mkLiteral "@bg-col-light";
 	text-color = mkLiteral "@grey";
-	vertical-align = mkLiteral "0.5"; 
+	vertical-align = mkLiteral "0.5";
 	horizontal-align = mkLiteral "0.5";
       };
 
