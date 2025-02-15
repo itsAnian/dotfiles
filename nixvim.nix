@@ -20,6 +20,60 @@
 
     plugins = {
       transparent.enable = true;
+
+      telescope = {
+	enable = true;
+	settings = {
+	  defaults = {
+	    file_ignore_patterns = [
+	      "^.git/"
+		"^.mypy_cache/"
+		"^__pycache__/"
+		"^output/"
+		"^data/"
+		"%.ipynb"
+	    ];
+	    layout_config = {
+	      prompt_position = "top";
+	    };
+	    mappings = {
+	      i = {
+		"<A-j>" = {
+		  __raw = "require('telescope.actions').move_selection_next";
+		};
+		"<A-k>" = {
+		  __raw = "require('telescope.actions').move_selection_previous";
+		};
+	      };
+	    };
+	    selection_caret = "> ";
+	    set_env = {
+	      COLORTERM = "truecolor";
+	    };
+	    sorting_strategy = "ascending";
+	  };
+	};
+      };
+
+      trim = {
+	enable = true;
+	settings = {
+	  ft_blocklist = [
+	    "markdown"
+	  ];
+	  highlight = true;
+	  patterns = [
+	    ''
+	      [[%s/(
+
+		  )
+	      +/1/]]''
+	  ];
+	  trim_on_write = true;
+	  trim_first_line = true;
+	  trim_last_line = true;
+	};
+      };
     };
 
     colorschemes.catppuccin = {
