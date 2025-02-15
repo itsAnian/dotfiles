@@ -64,14 +64,12 @@
 	  highlight = true;
 	  patterns = [
 	    ''
-	      [[%s/(
+	      [[%s/
 
-		  )
-	      +/1/]]''
+	      )
+		+/1/]]''
 	  ];
-	  trim_on_write = true;
-	  trim_first_line = true;
-	  trim_last_line = true;
+	  trim_on_write = false; #Throws error if enabled
 	};
       };
     };
