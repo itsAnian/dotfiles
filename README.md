@@ -51,6 +51,8 @@
 ### Programs:
 - nixvim (neovim for nix) 
     - transparent (transparency plugin)
+    - telescope (to see files in buffer)
+    - trim (highlights trailing whitespaces)
 
 ## rofi
 ### Programs:
