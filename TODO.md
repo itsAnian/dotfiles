@@ -2,9 +2,6 @@
   - Map Icons to workspaces (kitty, brave for the first 2)
   - fix emojis not loading (Network, Power, Sound)
 
-## wallpaper
-- change hyprpaper to wpapered
-
 ## greetd
 - customize login
 

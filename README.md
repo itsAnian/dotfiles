@@ -91,9 +91,9 @@
 ### Programs:
 - hyprlock (locks the session)
 
-## hyprland/hyprpaper
+## hyprland/wpaperd
 ### Packages:
-- hyprpaper (lets you set wallpaper)
+- wpaperd (lets you set wallpaper)
 
 ## hyprland/hyprpanel
 ### Packages (hyprpanel relies on these):

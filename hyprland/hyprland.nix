@@ -12,7 +12,7 @@
     ./hyprpanel.nix
     ./hyprlock.nix
     ./hypridle.nix
-    ./hyprpaper.nix
+    ./wpaperd.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -30,8 +30,7 @@
       exec-once = [
 	"hypridle &"
 	"hyprpanel &"
-        "hyprpaper &"
-	"bash ~/dotfiles/hyprland/wallpapercycle.sh &"
+        "wpaperd &"
 	"sleep 2 && hyprctl dispatch workspace 2 && brave &"
 	"sleep 4 && hyprctl dispatch workspace 1 && kitty &"
       ];
