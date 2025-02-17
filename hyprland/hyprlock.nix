@@ -100,6 +100,7 @@
 	fail_color = "rgba(204, 34, 34, 0.5)";
 	fail_text = "<i>FAILED: <b>($ATTEMPTS)</b></i>";
 	capslock_color = "rgba(255, 0, 0, 1.0)";
+	numlock_color = "rgba(255, 255, 255, 0.1)";
 	hide_input = false;
 	position = "160, -220";
 	halign = "left";
