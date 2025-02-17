@@ -20,7 +20,7 @@
 
     plugins = {
       transparent.enable = true;
-
+      web-devicons.enable = true;
       telescope = {
 	enable = true;
 	settings = {

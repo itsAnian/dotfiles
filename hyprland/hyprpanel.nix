@@ -21,7 +21,6 @@
   programs.hyprpanel = {
     enable = true;
     overlay.enable = true;
-    systemd.enable = true;
     overwrite.enable = true;
     theme = "dracula";
 
