@@ -361,11 +361,11 @@ in
     "theme.bar.background" = bar_background;
     "theme.osd.label" = label;
     "theme.osd.icon" = icon;
-    "theme.osd.bar_overflow_color" = "#000000";
-    "theme.osd.bar_empty_color" = "#000000";
-    "theme.osd.bar_color" = "#000000";
-    "theme.osd.icon_container" = "#000000";
-    "theme.osd.bar_container" = "#000000";
+    "theme.osd.bar_overflow_color" = primary;
+    "theme.osd.bar_empty_color" = bar_background;
+    "theme.osd.bar_color" = primary;
+    "theme.osd.icon_container" = bar_background;
+    "theme.osd.bar_container" = background;
     "theme.notification.close_button.label" = label;
     "theme.notification.close_button.background" = background;
     "theme.notification.labelicon" = "#000000";
