@@ -1,6 +1,8 @@
 ## hyprpanel
   - Map Icons to workspaces (kitty, brave for the first 2)
-  - fix emojis not loading (Network, Power, Sound)
+
+## hyprland
+  - improve Autostart of kitty and brave
 
 ## greetd
 - customize login
@@ -15,6 +17,10 @@
 - set default desgin to dark
   - gsettings
 - Menues (for example brave or bitwarden) have a little blury border
+- check hypr eco system for more pkgs
+
+## wpaperd
+- remove redundant pkgs installation of wpaperd (enable = true is enough)
 
 ## tmux
 - configure it
@@ -26,3 +32,14 @@
 
 ## nixvim
 - nixvim settings background blur
+- plugin for markdown preview
+- snacks.nvim
+
+# 3D Printing
+
+## Orca-Slicer
+- install
+- config
+
+## 3D Modelling Software
+- similar to Fusion360
