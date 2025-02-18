@@ -53,6 +53,8 @@
     gc = "git commit";
     gl = "git log --oneline";
     gd = "git diff";
+    gp = "git push";
+    "gpfusch" = "git push -f";
     ll = "ls -la";
     ".." = "cd ../";
   };
