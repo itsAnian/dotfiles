@@ -1,9 +1,6 @@
 ## hyprpanel
   - Map Icons to workspaces (kitty, brave for the first 2)
 
-## hyprland
-  - improve Autostart of kitty and brave
-
 ## greetd
 - customize login
 
@@ -18,6 +15,7 @@
   - gsettings
 - Menues (for example brave or bitwarden) have a little blury border
 - check hypr eco system for more pkgs
+- restore last session if possible?
 
 ## wpaperd
 - remove redundant pkgs installation of wpaperd (enable = true is enough)

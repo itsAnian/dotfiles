@@ -30,9 +30,7 @@
       exec-once = [
 	"hypridle &"
 	"hyprpanel &"
-        "wpaperd &"
-	"sleep 2 && hyprctl dispatch workspace 2 && brave &"
-	"sleep 4 && hyprctl dispatch workspace 1 && kitty &"
+        "wpaperd"
       ];
 
       /*env = {
