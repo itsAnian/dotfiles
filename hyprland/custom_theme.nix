@@ -364,7 +364,7 @@ in
     "theme.osd.bar_overflow_color" = primary;
     "theme.osd.bar_empty_color" = bar_background;
     "theme.osd.bar_color" = primary;
-    "theme.osd.icon_container" = bar_background;
+    "theme.osd.icon_container" = background;
     "theme.osd.bar_container" = background;
     "theme.notification.close_button.label" = label;
     "theme.notification.close_button.background" = background;
