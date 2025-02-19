@@ -38,7 +38,7 @@
 
 ### Packages:
 - vesktop (discord client with vencord)
-- whatsapp-for-linux (whatsappweb client)
+- zapzap (whatsappweb client)
 - p3x-onenote (onenote client for nixos)
 - spotify (spotify)
 - vscode (visual studio code)

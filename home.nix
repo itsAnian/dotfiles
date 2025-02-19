@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     vesktop
-      whatsapp-for-linux
+      zapzap
       p3x-onenote
       spotify
       vscode

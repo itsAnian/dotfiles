@@ -2,7 +2,6 @@
 - customize login
 
 ## general 
-- screenshot "Ctrl + V" doesnt work in Whatsapp
 - Filemanagerhotkey not working
 - fingerprint unlock
 - clipboardhistory (hyprland clipboard-Mangers)
