@@ -1,6 +1,3 @@
-## hyprpanel
-  - Map Icons to workspaces (kitty, brave for the first 2)
-
 ## greetd
 - customize login
 
