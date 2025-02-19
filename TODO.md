@@ -9,7 +9,6 @@
   - possible with dconf write /org/gnome/desktop/interface/cursor-theme ""
 - set default desgin to dark
   - gsettings
-- Menues (for example brave or bitwarden) have a little blury border
 - check hypr eco system for more pkgs
 - restore last session if possible?
 
