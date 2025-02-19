@@ -17,11 +17,6 @@
 ## tmux
 - configure it
 
-## brave
-- brave default settings
-  - find a way to set these
-- brave bookmarks
-
 ## nixvim
 - nixvim settings background blur
 - plugin for markdown preview
@@ -32,6 +27,7 @@
 ## Orca-Slicer
 - install
 - config
+- if I want to print in the MakerSpace I need Prusa-Slicer
 
 ## 3D Modelling Software
 - similar to Fusion360
