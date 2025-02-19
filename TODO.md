@@ -14,9 +14,6 @@
 - check hypr eco system for more pkgs
 - restore last session if possible?
 
-## wpaperd
-- remove redundant pkgs installation of wpaperd (enable = true is enough)
-
 ## tmux
 - configure it
 

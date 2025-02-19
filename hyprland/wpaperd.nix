@@ -1,9 +1,5 @@
 { config, pkgs, inputs, ... }:
 {
-  home.packages = with pkgs;[
-    wpaperd
-  ];
-
   programs.wpaperd = {
     enable = true;
     settings = {
