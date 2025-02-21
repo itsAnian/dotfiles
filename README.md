@@ -109,3 +109,9 @@
 ## kitty/kitty
 ### Programs:
 - kitty (customizeable terminal)
+
+### Hotkeys:
+- ctrl + alt + n (new tab)
+- ctrl + alt + # (close tab)
+- ctrl + alt + j (next tab)
+- ctrl + alt + k (previous tab)

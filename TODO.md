@@ -12,9 +12,6 @@
 - check hypr eco system for more pkgs
 - restore last session if possible?
 
-## tmux
-- configure it
-
 ## nixvim
 - nixvim settings background blur
 - plugin for markdown preview
