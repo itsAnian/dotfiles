@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+      ./render-markdown.nix
   ];
 
   programs.neovim.enable = true;
@@ -30,30 +31,29 @@
 	enable = true;
 	grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
 	  c
-	  bash
-	  json
-	  lua
-	  make
-	  markdown
-	  nix
-	  regex
-	  toml
-	  vim
-	  vimdoc
-	  xml
-	  yaml
+	    bash
+	    json
+	    lua
+	    make
+	    markdown
+	    nix
+	    regex
+	    toml
+	    vim
+	    vimdoc
+	    xml
+	    yaml
 	];
       };
       cmp = {
 	enable = true;
 	autoEnableSources = true;
 	settings.sources = [
-	  { name = "nvim_lsp"; }
-	  { name = "path"; }
-	  { name = "buffer"; }
+	{ name = "nvim_lsp"; }
+	{ name = "path"; }
+	{ name = "buffer"; }
 	];
       };
-      render-markdown.enable = true;
       telescope = {
 	enable = true;
 	settings = {
