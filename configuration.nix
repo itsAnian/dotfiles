@@ -52,6 +52,11 @@
   services.displayManager.sddm.enable = false;
   services.xserver.desktopManager.plasma5.enable = false;
 
+# Bluetooth
+  services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
 # Battery information
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
