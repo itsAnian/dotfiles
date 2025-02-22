@@ -49,7 +49,7 @@
 
   imports = [
     ./kitty/kitty.nix
-      ./nixvim.nix
+      ./nixvim/nixvim.nix
       ./rofi.nix
       ./hyprland/hyprland.nix
   ];
