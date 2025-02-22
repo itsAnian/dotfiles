@@ -13,9 +13,7 @@
 - restore last session if possible?
 
 ## nixvim
-- nixvim settings background blur
-- plugin for markdown preview
-- snacks.nvim
+- configure added plguins
 
 # 3D Printing
 
