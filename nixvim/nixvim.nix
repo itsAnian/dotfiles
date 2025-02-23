@@ -8,6 +8,7 @@
       ./telescope.nix
       ./trim.nix
       ./treesitter.nix
+      ./cmp.nix
   ];
 
   programs.neovim.enable = true;
@@ -28,15 +29,6 @@
       web-devicons.enable = true;
       lazygit.enable = true;
       image.enable = true;
-      cmp = {
-	enable = true;
-	autoEnableSources = true;
-	settings.sources = [
-	{ name = "nvim_lsp"; }
-	{ name = "path"; }
-	{ name = "buffer"; }
-	];
-      };
     };
 
     colorschemes.catppuccin = {
