@@ -13,8 +13,7 @@
     - restore last session if possible?
 
 ## nixvim
-    - configure added plguins
-    - dashboard: fix shortcuts Apps & dotfiles not working
+    - configure recent projects
 
 # 3D Printing
 

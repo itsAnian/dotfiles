@@ -22,7 +22,9 @@
 	      limit = 20;
 	    };
 	    project = {
-	      enable = true;
+	      enable = false;
+	      action = "Telescope find_files cwd=~/projects";
+	      limit = 8;
 	    };
 	    shortcut = [
 	    {
@@ -35,14 +37,16 @@
 	      icon_hl = "@variable";
 	      key = "f";
 	    }
-	    {
-	      action = "Telescope app";
+	    /*{
+	      action = "Telescope Apps";
 	      desc = " Apps";
 	      group = "DiagnosticHint";
-	      key = "a";
-	    }
+	      key = "p";
+	      }*/
 	    {
-	      action = "Telescope dotfiles";
+	      action = {
+		__raw = "function() require('telescope.builtin').find_files({ cwd = '~/dotfiles' }) end";
+	      };
 	      desc = " dotfiles";
 	      group = "Number";
 	      key = "d";
@@ -57,4 +61,3 @@
     };
   };
 }
-
