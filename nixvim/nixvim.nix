@@ -7,6 +7,7 @@
       ./dashboard.nix
       ./telescope.nix
       ./trim.nix
+      ./treesitter.nix
   ];
 
   programs.neovim.enable = true;
@@ -27,24 +28,6 @@
       web-devicons.enable = true;
       lazygit.enable = true;
       image.enable = true;
-      treesitter = {
-	enable = true;
-	grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-	  c
-	    bash
-	    json
-	    lua
-	    make
-	    markdown
-	    nix
-	    regex
-	    toml
-	    vim
-	    vimdoc
-	    xml
-	    yaml
-	];
-      };
       cmp = {
 	enable = true;
 	autoEnableSources = true;
