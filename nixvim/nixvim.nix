@@ -4,6 +4,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
       ./render-markdown.nix
+      ./dashboard.nix
   ];
 
   programs.neovim.enable = true;
@@ -22,9 +23,6 @@
     plugins = {
       transparent.enable = true;
       web-devicons.enable = true;
-      dashboard = {
-	enable = true;
-      };
       lazygit.enable = true;
       image.enable = true;
       treesitter = {
