@@ -6,6 +6,7 @@
       ./render-markdown.nix
       ./dashboard.nix
       ./telescope.nix
+      ./trim.nix
   ];
 
   programs.neovim.enable = true;
@@ -52,24 +53,6 @@
 	{ name = "path"; }
 	{ name = "buffer"; }
 	];
-      };
-
-      trim = {
-	enable = true;
-	settings = {
-	  ft_blocklist = [
-	    "markdown"
-	  ];
-	  highlight = true;
-	  patterns = [
-	    ''
-	      [[%s/
-
-	      )
-		+/1/]]''
-	  ];
-	  trim_on_write = false; #Throws error if enabled
-	};
       };
     };
 
