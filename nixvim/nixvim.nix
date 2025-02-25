@@ -9,6 +9,8 @@
       ./trim.nix
       ./treesitter.nix
       ./cmp.nix
+      ./indent-blankline.nix
+      ./indent-o-matic.nix
   ];
 
   programs.neovim.enable = true;
