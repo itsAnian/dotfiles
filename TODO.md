@@ -12,9 +12,6 @@
     - check hypr eco system for more pkgs
     - restore last session if possible?
 
-## nixvim
-    - configure recent projects
-
 # 3D Printing
 
 ## Orca-Slicer

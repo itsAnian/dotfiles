@@ -12,16 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixpkgs.url = "nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, hyprpanel, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, hyprpanel, ... }:
     let
     system = "x86_64-linux";
   pkgs = import nixpkgs {

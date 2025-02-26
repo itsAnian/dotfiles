@@ -46,20 +46,6 @@
 - gimp (image editing software)
 - superfile (terminal filemanager)
 
-## nixvim
-
-### Programs:
-- nixvim (neovim for nix) 
-    - transparent (transparency plugin)
-    - telescope (to see files in buffer)
-    - trim (highlights trailing whitespaces)
-    - dashboard (starting dashboard)
-    - lazygit (git interface)
-    - image (render images)
-    - treesitter (parser)
-    - cmp (completion support)
-    - render-markdown (inline markdown preview)
-
 ## rofi
 ### Programs:
 - rofi (application launcher)

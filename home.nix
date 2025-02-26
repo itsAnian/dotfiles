@@ -8,6 +8,7 @@
       bitwarden
       gimp
       superfile
+      neovim
   ];
 
   programs.brave = {
@@ -34,7 +35,7 @@
     userName = "itsAnian";
     extraConfig = {
       push.autoSetupRemote = true;
-      core.editor = "vim";
+      core.editor = "nvim";
     };
   };
 
@@ -49,7 +50,6 @@
 
   imports = [
     ./kitty/kitty.nix
-      ./nixvim/nixvim.nix
       ./rofi.nix
       ./hyprland/hyprland.nix
   ];
@@ -66,6 +66,8 @@
     "gpfusch" = "git push -f";
     ll = "ls -la";
     ".." = "cd ../";
+    vi = "nvim";
+    vim = "nvim";
   };
 
   home.username = "anian";
