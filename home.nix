@@ -9,6 +9,7 @@
       gimp
       superfile
       neovim
+      lua-language-server
   ];
 
   programs.brave = {

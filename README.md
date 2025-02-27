@@ -45,6 +45,7 @@
 - bitwarden (password manager)
 - gimp (image editing software)
 - superfile (terminal filemanager)
+- lua-language-server (neovim needs it for lsp)
 
 ## rofi
 ### Programs:
