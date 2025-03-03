@@ -14,8 +14,8 @@
       cursor_trail = 0;
 
 
-      background_opacity = "0.5";
-      background_blur = 10;
+      background_opacity = "0.7";
+      background_blur = 100;
 
       tab_bar_edge = "top";
       tab_bar_style = "powerline";
