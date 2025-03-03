@@ -10,6 +10,7 @@
       superfile
       neovim
       lua-language-server
+      slides
   ];
 
   programs.brave = {
