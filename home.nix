@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, pkgs-unstable, inputs, ... }: {
   home.packages = with pkgs; [
     vesktop
       zapzap
@@ -10,7 +10,7 @@
       superfile
       neovim
       lua-language-server
-      slides
+      pkgs-unstable.presenterm
   ];
 
   programs.brave = {

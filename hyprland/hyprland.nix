@@ -113,6 +113,7 @@
 	  "$mainMod, down, movefocus, d"
 	  "$mainMod, L, exec, hyprlock --immediate"
 	  "$mainMod, S, exec, hyprshot -m region --clipboard-only"
+        "$mainMod, F, fullscreen,"
       ];
 
       bindm = [
