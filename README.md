@@ -46,6 +46,8 @@
 - gimp (image editing software)
 - superfile (terminal filemanager)
 - lua-language-server (neovim needs it for lsp)
+- unstable presenterm (presentation in terminal with markdown)
+- nwg-displays (gui for monitor settings)
 
 ## rofi
 ### Programs:

@@ -18,9 +18,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+            source = "~/.config/hypr/monitors.conf";
       monitor = [
 	"eDP-1, highres, auto, 1"
-	"HDMI-A-1, highres, auto, 1, mirror, eDP-1"
       ];
 
       "$terminal" = "kitty";

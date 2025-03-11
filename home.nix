@@ -11,6 +11,7 @@
       neovim
       lua-language-server
       pkgs-unstable.presenterm
+      nwg-displays
   ];
 
   programs.brave = {
@@ -74,6 +75,10 @@
 
   home.username = "anian";
   home.homeDirectory = "/home/anian";
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
 
   programs.home-manager.enable = true;
 #manual.manpages.enable = false;
