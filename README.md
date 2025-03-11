@@ -48,6 +48,7 @@
 - lua-language-server (neovim needs it for lsp)
 - unstable presenterm (presentation in terminal with markdown)
 - nwg-displays (gui for monitor settings)
+- remnote (note taking application)
 - todo-shell (selfwritten todo-list in shell)
 
 ## rofi
