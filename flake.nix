@@ -12,11 +12,15 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        todo-shell = {
+             url = "github:itsanian/todo-shell";
+        };
+
         nixpkgs.url = "nixpkgs/nixos-24.11";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
-    outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, hyprpanel, ... }:
+    outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, hyprpanel, todo-shell, ... }:
         let
         system = "x86_64-linux";
     pkgs = import nixpkgs {

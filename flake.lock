@@ -117,12 +117,47 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1741513245,
+        "narHash": "sha256-7rTAMNTY1xoBwz0h7ZMtEcd8LELk9R5TzBPoHuhNSCk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e3e32b642a31e6714ec1b712de8c91a3352ce7e1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "hyprpanel": "hyprpanel",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "todo-shell": "todo-shell"
+      }
+    },
+    "todo-shell": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1741701121,
+        "narHash": "sha256-8Wn/MW/SOdLwaZPFr+OO2fTgcyy+kCAHXcKT687+gX4=",
+        "owner": "itsanian",
+        "repo": "todo-shell",
+        "rev": "9ce34510df0d849518a1161596cb8d0292d36dd8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "itsanian",
+        "repo": "todo-shell",
+        "type": "github"
       }
     }
   },
