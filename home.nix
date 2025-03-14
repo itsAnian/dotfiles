@@ -57,6 +57,7 @@
     ./kitty/kitty.nix
       ./rofi.nix
       ./hyprland/hyprland.nix
+      ./tmp.nix
   ];
 
   home.shellAliases = {
