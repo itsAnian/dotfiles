@@ -13,7 +13,9 @@
       pkgs-unstable.presenterm
       nwg-displays
       remnote
+      vlc
       inputs.todo-shell.defaultPackage.x86_64-linux
+      pkgs-unstable.obsidian
   ];
 
   programs.brave = {
