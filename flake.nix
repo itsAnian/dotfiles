@@ -13,7 +13,7 @@
         };
 
         todo-shell = {
-             url = "github:itsanian/todo-shell";
+            url = "github:itsanian/todo-shell";
         };
 
         nixpkgs.url = "nixpkgs/nixos-24.11";
@@ -38,19 +38,19 @@
         nixosConfigurations = {
             nixos = lib.nixosSystem {
                 modules = [
-                ./configuration.nix
-                ./hardware-configuration.nix
-                    home-manager.nixosModules.home-manager
-                    {
-                        nixpkgs.overlays = [
-                            inputs.hyprpanel.overlay
-                        ];
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.anian = import ./home.nix;             home-manager.extraSpecialArgs = {
-                            inherit inputs pkgs-unstable;
-                        };
-                    }
+                    ./configuration.nix
+                        ./hardware-configuration.nix
+                        home-manager.nixosModules.home-manager
+                        {
+                            nixpkgs.overlays = [
+                                inputs.hyprpanel.overlay
+                            ];
+                            home-manager.useGlobalPkgs = true;
+                            home-manager.useUserPackages = true;
+                            home-manager.users.anian = import ./home.nix;             home-manager.extraSpecialArgs = {
+                                inherit inputs pkgs-unstable;
+                            };
+                        }
                 ];
             };
         };

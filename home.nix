@@ -1,93 +1,93 @@
 { config, pkgs, pkgs-unstable, inputs, ... }: {
-  home.packages = with pkgs; [
-    vesktop
-      zapzap
-      p3x-onenote
-      spotify
-      vscode
-      bitwarden
-      gimp
-      superfile
-      neovim
-      lua-language-server
-      pkgs-unstable.presenterm
-      nwg-displays
-      remnote
-      vlc
-      inputs.todo-shell.defaultPackage.x86_64-linux
-      pkgs-unstable.obsidian
-  ];
-
-  programs.brave = {
-    enable = true;
-    extensions = [
-      "nngceckbapebfimnlniiiahkandclblb"
+    home.packages = with pkgs; [
+        vesktop
+            zapzap
+            p3x-onenote
+            spotify
+            vscode
+            bitwarden
+            gimp
+            superfile
+            neovim
+            lua-language-server
+            pkgs-unstable.presenterm
+            nwg-displays
+            remnote
+            vlc
+            inputs.todo-shell.defaultPackage.x86_64-linux
+            pkgs-unstable.obsidian
     ];
-  };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    settings = pkgs.lib.importTOML ./starship/starship.toml;
-    enableZshIntegration = true;
-  };
-
-  programs.git = {
-    enable = true;
-    userEmail = "anian.seidl@gmail.com";
-    userName = "itsAnian";
-    extraConfig = {
-      push.autoSetupRemote = true;
-      core.editor = "nvim";
+    programs.brave = {
+        enable = true;
+        extensions = [
+            "nngceckbapebfimnlniiiahkandclblb"
+        ];
     };
-  };
 
-  gtk = {
-    enable = true;
-    iconTheme = {
-	package = pkgs.adwaita-icon-theme;
-	name = "Adwaita";
+    programs.zsh = {
+        enable = true;
+        enableCompletion = true;
     };
-  };
+
+    programs.starship = {
+        enable = true;
+        settings = pkgs.lib.importTOML ./starship/starship.toml;
+        enableZshIntegration = true;
+    };
+
+    programs.git = {
+        enable = true;
+        userEmail = "anian.seidl@gmail.com";
+        userName = "itsAnian";
+        extraConfig = {
+            push.autoSetupRemote = true;
+            core.editor = "nvim";
+        };
+    };
+
+    gtk = {
+        enable = true;
+        iconTheme = {
+            package = pkgs.adwaita-icon-theme;
+            name = "Adwaita";
+        };
+    };
 
 
-  imports = [
-    ./kitty/kitty.nix
-      ./rofi.nix
-      ./hyprland/hyprland.nix
-      ./tmp.nix
-  ];
+    imports = [
+        ./kitty/kitty.nix
+            ./rofi.nix
+            ./hyprland/hyprland.nix
+            ./tmp.nix
+    ];
 
-  home.shellAliases = {
-    nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#";
-    nsp = "nix-shell -p";
-    gs = "git status";
-    ga = "git add";
-    gc = "git commit";
-    gl = "git log --oneline";
-    gd = "git diff";
-    gp = "git push";
-    "gpfusch" = "git push -f";
-    ll = "ls -la";
-    ".." = "cd ../";
-    vi = "nvim";
-    vim = "nvim";
-  };
+    home.shellAliases = {
+        nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#";
+        nsp = "nix-shell -p";
+        gs = "git status";
+        ga = "git add";
+        gc = "git commit";
+        gl = "git log --oneline";
+        gd = "git diff";
+        gp = "git push";
+        "gpfusch" = "git push -f";
+        ll = "ls -la";
+        ".." = "cd ../";
+        vi = "nvim";
+        vim = "nvim";
+    };
 
-  home.username = "anian";
-  home.homeDirectory = "/home/anian";
+    home.username = "anian";
+    home.homeDirectory = "/home/anian";
 
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
+    home.sessionPath = [
+        "$HOME/.local/bin"
+    ];
 
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
 #manual.manpages.enable = false;
-  programs.bash.enable = true;
+    programs.bash.enable = true;
 
-  home.stateVersion = "24.11";
-			       }
+    home.stateVersion = "24.11";
+                                              }
