@@ -27,7 +27,7 @@ in {
 	grey = mkLiteral "#ffffff";
 
 	width = mkLiteral "600";
-	font = "JetBrainsMono Nerd Font 14"; # Custom font
+	font = "JetBrainsMono Nerd Font 18"; # Custom font
       };
 
       "element-text, element-icon , mode-switcher" = {
@@ -37,7 +37,7 @@ in {
       };
 
       "window" =  {
-	height = mkLiteral "360px";
+	height = mkLiteral "380px";
 	border = mkLiteral "3px";
 	border-color = mkLiteral "@border-col";
 	background-color = mkLiteral "@bg-col";
