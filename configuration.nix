@@ -108,7 +108,7 @@ services.xserver.libinput.enable = true;
     users.users.anian = {
         isNormalUser = true;
         description = "anian";
-        extraGroups = [ "networkmanager" "wheel" "docker"];
+        extraGroups = [ "networkmanager" "wheel" "docker" "dialout"];
         packages = with pkgs; [
         ];
     };
