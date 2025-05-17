@@ -85,6 +85,15 @@
         "$HOME/.local/bin"
     ];
 
+    home.pointerCursor = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+        size = 24;
+
+        gtk.enable = true;
+        x11.enable = true;
+    };
+
     programs.home-manager.enable = true;
 #manual.manpages.enable = false;
     programs.bash.enable = true;
