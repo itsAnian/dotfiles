@@ -26,9 +26,19 @@ $time\
 [ ](fg:purple)\
 $line_break$character"""
 
-palette = 'catppuccin_mocha'
+palette = 'everforest'
 
-[palettes.gruvbox_dark]
+[palettes.wombat]
+black = '#000000'
+blue = '#5da9f6'
+cyan = '#82fff7'
+green = '#b1e969'
+purple = '#e86aff'
+red = '#ff615a'
+white = '#dedacf'
+yellow = '#ebd99c'
+
+[palettes.random]
 color_fg0 = '#fbf1c7'
 color_bg1 = '#3c3836'
 color_bg3 = '#665c54'
@@ -39,6 +49,57 @@ color_orange = '#d65d0e'
 color_purple = '#b16286'
 color_red = '#cc241d'
 color_yellow = '#d79921'
+
+[palettes.ic_green]
+background = '#2b3339'
+foreground = '#d9eed2'
+cursor = '#41ff58'
+selection_background = '#2a9b34'
+color0 = '#1e1e1e'
+color8 = '#03260f'
+color1 = '#fb0029'
+color9 = '#a6ff3e'
+color2 = '#329b24'
+color10 = '#9fff6d'
+color3 = '#649a25'
+color11 = '#d1ff6d'
+color4 = '#149b45'
+color12 = '#72ffb5'
+color5 = '#53b82b'
+color13 = '#50ff3d'
+color6 = '#2bb767'
+color14 = '#22ff71'
+color7 = '#dffeee'
+color15 = '#daeed0'
+selection_foreground = '#3a3c3e'
+
+[palettes.everforest]
+rosewater = "#d3e0d3"
+flamingo  = "#c8ddc1"
+pink      = "#b4e0c2"
+orange    = "#cedfb4"
+red       = "#d17b69"
+maroon    = "#a05f5c"
+peach     = "#dcb07f"
+yellow    = "#dbd98d"
+green     = "#a7c080"  # Everforest main green
+teal      = "#8fbf9f"
+sky       = "#a1c9b8"
+sapphire  = "#7fbbb3"
+blue      = "#6eaaae"
+lavender  = "#7daea3"
+text      = "#d3c6aa"
+subtext1  = "#c5c1a0"
+subtext0  = "#b4b49c"
+overlay2  = "#a6a683"
+overlay1  = "#93936c"
+overlay0  = "#7a7a5e"
+surface2  = "#5c6a72"
+surface1  = "#475258"
+surface0  = "#3a454a"
+base      = "#2f383e"
+mantle    = "#272f35"
+crust     = "#1e2326"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

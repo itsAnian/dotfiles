@@ -12,6 +12,9 @@
     boot.initrd.kernelModules = [ ];
     boot.kernelModules = [ "kvm-amd" ];
     boot.extraModulePackages = [ ];
+    # Avoid touchpad click to tap (clickpad) bug. For more detail see:
+    # https://wiki.archlinux.org/title/Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate/suspend
+    boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
 
     fileSystems."/" =
     { device = "/dev/disk/by-uuid/3c0ad4ef-0b0c-4432-bf81-1b575da68b29";

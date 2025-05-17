@@ -4,7 +4,7 @@
         enable = true;
         settings = {
             background = [{
-                path = "~/dotfiles/hyprland/wallpaper/pexels-sebastiaan9977-1480690.jpg";
+                path = "~/dotfiles/hyprland/WQHD_Panda_1920_1200_blur.jpg";
                 blur_passes = 0;
                 contrast = 0.8916;
                 brightness = 0.8172;
@@ -13,15 +13,19 @@
             }];
 
             general = {
-                no_fade_in = false;
-                grace = 0;
+                no_fade_in = true;
+                grace = 10;
                 disable_loading_bar = false;
+            };
+
+            auth = {
+                fingerprint.enabled = true;
             };
 
             label = [
             {
                 text = "Welcome!";
-                color = "rgba(0, 221, 254, 1.0)";
+                color = "rgba(167, 192, 128, 1.0)";
                 font_size = 55;
                 font_family = "JetBrainsMono Bold";
                 position = "145, 320";
@@ -30,7 +34,7 @@
             }
             {
                 text = "cmd[update:1000] echo \"<span>$(date +\"%H:%M\")</span>\"";
-                color = "rgba(0, 221, 254, 1.0)";
+                color = "rgba(167, 192, 128, 1.0)";
                 font_size = 40;
                 font_family = "JetBrainsMono Bold";
                 position = "240, 240";
@@ -39,7 +43,7 @@
             }
             {
                 text = "cmd[update:1000] echo -e \"$(date +\"%a, %b %d\")\"";
-                color = "rgba(0, 221, 254, 1.0)";
+                color = "rgba(167, 192, 128, 1.0)";
                 font_size = 19;
                 font_family = "JetBrainsMono Bold";
                 position = "245, 175";
@@ -48,20 +52,20 @@
             }
             {
                 text = "  $USER";
-                color = "rgba(0, 0, 0, 1)";
+                color = "rgba(167, 192, 128, 1.0)";
                 outline_thickness = 0;
                 font_size = 16;
                 font_family = "JetBrainsMono Bold";
-                position = "275, -140";
+                position = "273, -140";
                 halign = "left";
                 valign = "center";
             }
             ];
 
             image = [{
-                path = "~/dotfiles/hyprland/nix_icon_neonblue.png";
+                path = "~/dotfiles/hyprland/panda.jpeg";
                 border_size = 0;
-                border_color = "rgba(255, 255, 255, .75)";
+                border_color = "rgba(255, 255, 255, 0)";
                 size = 95;
                 rounding = -1;
                 rotate = 0;
@@ -73,10 +77,10 @@
 
             shape = [{
                 size = "320, 55";
-                color = "rgba(255, 255, 255, .1)";
+                color = "rgba(45, 53, 59, 1.0)";
                 rounding = -1;
                 border_size = 1;
-                border_color = "rgba(0, 221, 254, 1.0)";
+                border_color = "rgba(45, 53, 59, 1.0)";
                 rotate = 0;
                 xray = false;
                 position = "160, -140";
@@ -90,17 +94,16 @@
                 dots_size = 0.2;
                 dots_spacing = 0.2;
                 dots_center = true;
-                outer_color = "rgba(0, 221, 254, 1.0)";
-                inner_color = "rgba(255, 255, 255, 0.1)";
-                font_color = "rgb(200, 200, 200)";
+                outer_color = "rgba(45, 53, 59, 1.0)";
+                inner_color = "rgba(45, 53, 59, 1.0)";
+                font_color = "rgba(167, 192, 128, 1.0)";
                 fade_on_empty = false;
                 font_family = "JetBrainsMono Bold";
                 placeholder_text = "<i><span foreground=\"##ffffff99\">🔒Enter Pass</span></i>";
-                check_color = "rgba(0, 221, 254, 1.0)";
-                fail_color = "rgba(204, 34, 34, 0.5)";
+                check_color = "rgba(209, 255, 109, 1.0)";
+                fail_color = "rgba(230, 126, 128, 1.0)";
                 fail_text = "<i>FAILED: <b>($ATTEMPTS)</b></i>";
-                capslock_color = "rgba(255, 0, 0, 1.0)";
-                numlock_color = "rgba(255, 255, 255, 0.1)";
+                capslock_color = "rgba(230, 152, 117, 1.0)";
                 hide_input = false;
                 position = "160, -220";
                 halign = "left";

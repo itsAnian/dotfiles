@@ -17,10 +17,10 @@ in {
         theme = {
             "*" = {
 # Define color variables for easy customization
-                bg-col = mkLiteral "#080808";
-                bg-col-light = mkLiteral "#1a1a1a";
-                border-col = mkLiteral "#33ccff";
-                selected-col = mkLiteral "#181818";
+                bg-col = mkLiteral "#343F44";
+                bg-col-light = mkLiteral "#475258";
+                border-col = mkLiteral "#a7c080";
+                selected-col = mkLiteral "#475258";
                 blue = mkLiteral "#ffffff";
                 fg-col = mkLiteral "#ffffff";
                 fg-col2 = mkLiteral "#ffffff";

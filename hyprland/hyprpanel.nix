@@ -14,7 +14,7 @@
     ];
 
     imports = [
-        ./custom_theme.nix
+        #./custom_theme.nix
             inputs.hyprpanel.homeManagerModules.hyprpanel
     ];
 
@@ -22,7 +22,7 @@
         enable = true;
         overlay.enable = true;
         overwrite.enable = true;
-        theme = "dracula";
+        theme = "everforest_vivid";
 
         layout = {
             "bar.layouts" = {
@@ -58,7 +58,7 @@
             menus = {
                 dashboard = {
                     powermenu = {
-                        avatar.image = "~/dotfiles/hyprland/nix_icon_neonblue_transparent.png";
+                        avatar.image = "~/dotfiles/hyprland/panda.jpeg";
                         avatar.name = "itsAnian";
                     };
                     shortcuts.enabled = false;
