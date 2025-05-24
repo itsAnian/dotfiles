@@ -52,6 +52,8 @@
 - todo-shell (selfwritten todo-list in shell)
 - unstable obsidian (IDE for Markdown / handwritten files)
 - vlc (Media player)
+- signal-desktop (Signal Messenger)
+- nil (nix-language-server)
 
 ## rofi
 ### Programs:

@@ -16,6 +16,8 @@
             vlc
             inputs.todo-shell.defaultPackage.x86_64-linux
             pkgs-unstable.obsidian
+            signal-desktop
+            nil
     ];
 
     programs.brave = {
