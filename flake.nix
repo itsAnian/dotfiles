@@ -3,12 +3,12 @@
 
   inputs = {
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprpanel = {
-      url = "github:jas-singhfsu/hyprpanel";
+      url = "github:jas-singhfsu/hyprpanel/a4e9a99f82d09b16d3a164d6c20af23d8acee9be";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -16,7 +16,7 @@
       url = "github:itsanian/todo-shell";
     };
 
-    nixpkgs.url = "nixpkgs/nixos-24.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 

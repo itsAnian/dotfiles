@@ -85,7 +85,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -129,10 +129,6 @@
 
   # flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

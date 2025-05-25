@@ -25,6 +25,7 @@
     signal-desktop
     nil
     alejandra
+    nerd-fonts.jetbrains-mono
   ];
 
   programs.brave = {
@@ -106,5 +107,5 @@
   #manual.manpages.enable = false;
   programs.bash.enable = true;
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 }

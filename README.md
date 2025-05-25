@@ -55,6 +55,7 @@
 - signal-desktop (Signal Messenger)
 - nil (nix-language-server)
 - alejandra (nix-formatting)
+- nerd-fonts.jetbrains-mono (Nerdfont for icons)
 
 ## rofi
 ### Programs:
