@@ -54,6 +54,7 @@
 - vlc (Media player)
 - signal-desktop (Signal Messenger)
 - nil (nix-language-server)
+- alejandra (nix-formatting)
 
 ## rofi
 ### Programs:

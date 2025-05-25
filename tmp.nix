@@ -1,4 +1,10 @@
-{ config, pkgs, pkgs-unstable, inputs, ... }: {
-    home.packages = with pkgs; [
-    ];
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  inputs,
+  ...
+}: {
+  home.packages = with pkgs; [
+  ];
 }
