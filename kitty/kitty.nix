@@ -14,7 +14,7 @@
             cursor_trail = 0;
 
 
-            background_opacity = "0.8";
+            background_opacity = "0.7";
             background_blur = 100;
 
             tab_bar_edge = "top";
@@ -41,7 +41,7 @@
             "ctrl+alt+k" = "previous_tab";
         };
 
-        extraConfig = ''include themes/IC_Green_PPL.conf'';
+        extraConfig = ''include themes/Cattpuccin.conf'';
 
     };
 
