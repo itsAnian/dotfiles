@@ -113,6 +113,20 @@
         "$mainMod, L, exec, hyprlock --immediate"
         "$mainMod, S, exec, hyprshot -m region --clipboard-only"
         "$mainMod, F, fullscreen,"
+
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
+        "$mainMod, 0, workspace, 10"
+
+        "$mainMod SHIFT, left, movetoworkspace, r-1"
+        "$mainMod SHIFT, right, movetoworkspace, r+1"
       ];
 
       bindm = [
