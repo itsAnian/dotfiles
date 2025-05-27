@@ -51,7 +51,6 @@ in {
       "inputbar" = {
         children = mkLiteral "[prompt,entry]";
         background-color = mkLiteral "@bg-col";
-        border-radius = mkLiteral "5px";
         padding = mkLiteral "2px";
       };
 
@@ -59,7 +58,7 @@ in {
         background-color = mkLiteral "@blue";
         padding = mkLiteral "6px";
         text-color = mkLiteral "@bg-col";
-        border-radius = mkLiteral "3px";
+        border-radius = mkLiteral "5px";
         margin = mkLiteral "20px 0px 0px 20px";
       };
 
@@ -86,16 +85,23 @@ in {
 
       "element" = {
         padding = mkLiteral "5px";
+        margin = mkLiteral "0px 20px 0px 0px";
         background-color = mkLiteral "@bg-col";
         text-color = mkLiteral "@fg-col  ";
+        border-radius = mkLiteral "10px";
       };
 
       "element-icon" = {
+        margin = mkLiteral "0px 0px 0px 10px";
         size = mkLiteral "25px";
       };
 
+      "element-text" = {
+        margin = mkLiteral "0px 0px 0px 10px";
+      };
+
       "element selected" = {
-        background-color = mkLiteral "@selected-col ";
+        background-color = mkLiteral "@selected-col";
         text-color = mkLiteral "@fg-col2  ";
       };
 
@@ -120,7 +126,6 @@ in {
         background-color = mkLiteral "@bg-col-light";
         margin = mkLiteral "2px";
         padding = mkLiteral "2px";
-        border-radius = mkLiteral "5px";
       };
 
       "textbox" = {

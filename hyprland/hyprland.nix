@@ -17,6 +17,7 @@
     ./hyprlock.nix
     ./hypridle.nix
     ./wpaperd.nix
+    ./rofi.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -29,7 +30,7 @@
 
       "$terminal" = "kitty";
       "$fileManager" = "superfile";
-      "$menu" = "rofi -show drun";
+      "$menu" = "rofi -show drun -drun-display-format {name}";
 
       exec-once = [
         "hypridle &"

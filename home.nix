@@ -66,7 +66,6 @@
 
   imports = [
     ./kitty/kitty.nix
-    ./rofi.nix
     ./hyprland/hyprland.nix
     ./tmp.nix
   ];
