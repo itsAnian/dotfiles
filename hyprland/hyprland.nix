@@ -84,16 +84,19 @@
         sensitivity = 0;
         touchpad = {
           natural_scroll = true;
+          disable_while_typing = false;
+          middle_button_emulation = true;
         };
       };
 
       gestures = {
         workspace_swipe = true;
+
       };
 
       misc = {
         force_default_wallpaper = -1;
-        disable_hyprland_logo = false;
+        disable_hyprland_logo = true;
       };
 
       "$mainMod" = "SUPER";

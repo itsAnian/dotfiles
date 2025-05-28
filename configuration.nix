@@ -104,12 +104,14 @@
   services.libinput = {
     enable = true;
 
+    /*
     touchpad = {
       disableWhileTyping = false;
       tapping = true;
       naturalScrolling = true;
       scrollMethod = "twofinger";
     };
+    */
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
