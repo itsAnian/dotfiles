@@ -35,6 +35,7 @@
 - starship (terminal addon git branch etc.)
 - git (git, nothing more to say)
 - bash (enables bash)
+- zoxide (smart cd)
 
 ### Packages:
 - vesktop (discord client with vencord)
