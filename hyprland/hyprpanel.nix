@@ -3,69 +3,49 @@
   pkgs,
   inputs,
   ...
-}: {
-  home.packages = with pkgs; [
-    #aylurs-gtk-shell-git
-    wireplumber
-    libgtop
-    bluez
-    #bluez-utils
-    networkmanager
-    dart-sass
-    wl-clipboard
-    upower
-    gvfs
-  ];
-
-  imports = [
-    #./custom_theme.nix
-    inputs.hyprpanel.homeManagerModules.hyprpanel
-  ];
-
+}: let
+  theme = builtins.fromJSON (builtins.readFile ./everforest_vivid.json);
+in {
   programs.hyprpanel = {
     enable = true;
-    overlay.enable = true;
-    overwrite.enable = true;
-    theme = "everforest_vivid";
-
-    layout = {
-      "bar.layouts" = {
-        "*" = {
-          left = [
-            "dashboard"
-            "workspaces"
-            "windowtitle"
-          ];
-          middle = [
-            "media"
-          ];
-          right = [
-            "volume"
-            "bluetooth"
-            "battery"
-            "network"
-            "clock"
-            "notifications"
-          ];
-        };
-      };
-    };
+    systemd.enable = true;
     settings = {
+      theme = theme;
       bar = {
+        layouts = {
+          "*" = {
+            left = [
+              "dashboard"
+              "workspaces"
+              "windowtitle"
+            ];
+            middle = [
+              "media"
+            ];
+            right = [
+              "volume"
+              "bluetooth"
+              "battery"
+              "network"
+              "clock"
+              "notifications"
+            ];
+          };
+        };
         launcher.autoDetectIcon = true;
 
         clock = {
           format = "%a %b %d  %H:%M";
           icon = "󰸗";
         };
-      };
-      menus = {
-        dashboard = {
-          powermenu = {
-            avatar.image = "~/dotfiles/hyprland/panda.jpeg";
-            avatar.name = "itsAnian";
+        menus = {
+          dashboard = {
+            powermenu = {
+              avatar.image = "~/dotfiles/hyprland/panda.jpeg";
+              avatar.name = "itsAnian";
+            };
+            shortcuts.enabled = false;
           };
-          shortcuts.enabled = false;
         };
       };
     };

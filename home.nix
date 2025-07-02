@@ -26,6 +26,7 @@
     nil
     alejandra
     nerd-fonts.jetbrains-mono
+    wl-clipboard
   ];
 
   programs.brave = {

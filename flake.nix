@@ -7,11 +7,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprpanel = {
-      url = "github:jas-singhfsu/hyprpanel/a4e9a99f82d09b16d3a164d6c20af23d8acee9be";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     todo-shell = {
       url = "github:itsanian/todo-shell";
     };
@@ -25,7 +20,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    hyprpanel,
     todo-shell,
     ...
   }: let
@@ -49,9 +43,6 @@
           ./hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
-            nixpkgs.overlays = [
-              inputs.hyprpanel.overlay
-            ];
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.anian = import ./home.nix;

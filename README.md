@@ -57,6 +57,7 @@
 - nil (nix-language-server)
 - alejandra (nix-formatting)
 - nerd-fonts.jetbrains-mono (Nerdfont for icons)
+- wl-clipboard (clipboard utils)
 
 ## rofi
 ### Programs:
