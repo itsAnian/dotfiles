@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   # Bootloader.
@@ -15,11 +16,11 @@
     devices = ["nodev"];
     efiSupport = true;
     useOSProber = true;
-    gfxmodeEfi = "1920x1200";
-    # font has to be converted to .pf2 and added manually
-    # grub-mkfont -s 25 -o /boot/grub/fonts/JetBrainsMonoBold25.pf2 JetBrainsMono-Bold.ttf
-    font = "/boot/grub/fonts/JetBrainsMonoBold25.pf2";
-    fontSize = 25;
+  };
+  boot.loader.grub2-theme = {
+    enable = true;
+    theme = "stylish";
+    footer = true;
   };
 
   networking.hostName = "nixos"; # Define your hostname.
