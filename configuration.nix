@@ -10,10 +10,17 @@
   boot.supportedFilesystems = ["ntfs"];
 
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.enable = true;
-  boot.loader.grub.devices = ["nodev"];
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub = {
+    enable = true;
+    devices = ["nodev"];
+    efiSupport = true;
+    useOSProber = true;
+    gfxmodeEfi = "1920x1200";
+    # font has to be converted to .pf2 and added manually
+    # grub-mkfont -s 25 -o /boot/grub/fonts/JetBrainsMonoBold25.pf2 JetBrainsMono-Bold.ttf
+    font = "/boot/grub/fonts/JetBrainsMonoBold25.pf2";
+    fontSize = 25;
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
