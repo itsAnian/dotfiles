@@ -33,19 +33,24 @@ in {
           };
         };
         launcher.autoDetectIcon = true;
-
         clock = {
-          format = "%a %b %d  %H:%M";
+          format = "%a %d %b - %H:%M";
           icon = "󰸗";
         };
-        menus = {
-          dashboard = {
-            powermenu = {
-              avatar.image = "~/dotfiles/hyprland/panda.jpeg";
-              avatar.name = "itsAnian";
-            };
-            shortcuts.enabled = false;
+      };
+
+      menus = {
+        clock = {
+          weather.enabled = false;
+          time.military = true;
+        };
+        dashboard = {
+          directories.enabled = false;
+          powermenu = {
+            avatar.image = "~/dotfiles/hyprland/panda.jpeg";
+            avatar.name = "itsAnian";
           };
+          shortcuts.enabled = false;
         };
       };
     };
