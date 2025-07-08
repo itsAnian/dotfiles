@@ -75,7 +75,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd Hyprland";
       };
     };
   };
@@ -126,7 +126,7 @@
   users.users.anian = {
     isNormalUser = true;
     description = "anian";
-    extraGroups = ["networkmanager" "wheel" "docker" "dialout"];
+    extraGroups = ["networkmanager" "wheel" "docker" "dialout" "tty"];
     packages = with pkgs; [
     ];
   };

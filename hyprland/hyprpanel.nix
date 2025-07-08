@@ -8,7 +8,7 @@
 in {
   programs.hyprpanel = {
     enable = true;
-    systemd.enable = true;
+    systemd.enable = false;
     settings = {
       theme = theme;
       bar = {

@@ -93,6 +93,7 @@
     ".." = "cd ../";
     vi = "nvim";
     vim = "nvim";
+    cd = "z";
   };
 
   home.username = "anian";
