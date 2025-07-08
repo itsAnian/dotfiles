@@ -9,6 +9,8 @@
 - greetd (login customization + start command hyprland)
 - printing (enable CUPS to print docs)
 - pipewire (improvement for audio and video)
+- fprintd (fingerprint login)
+    - to Add fingerprint add it with `sudo fprintd-enroll $USER`
 
 ### Programs:
 - hyprland (desktop env)
