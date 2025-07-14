@@ -102,17 +102,6 @@
 ### Packages:
 - wpaperd (lets you set wallpaper)
 
-## hyprland/hyprpanel
-### Packages (hyprpanel relies on these):
-- wireplumber (session & policy manager for pipewire)
-- libgtop (information about system)
-- bluez (bluetooth control)
-- networkmanager (networkmanager)
-- dart-sass (css preprocessor language)
-- wl-clipboard (commandlinetools for clipboard)
-- upower (battery management)
-- gvfs (virtual filesystem)
-
 ## kitty/kitty
 ### Programs:
 - kitty (customizeable terminal)
