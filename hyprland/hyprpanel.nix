@@ -24,8 +24,8 @@ in {
             ];
             right = [
               "volume"
-              "bluetooth"
               "battery"
+              "bluetooth"
               "network"
               "clock"
               "notifications"
@@ -36,6 +36,20 @@ in {
         clock = {
           format = "%a %d %b - %H:%M";
           icon = "󰸗";
+        };
+        bluetooth = {
+          label = false;
+        };
+        network = {
+          label = false;
+          showWifiInfo = true;
+        };
+        battery = {
+          hideLabelWhenFull = true;
+        };
+        notifications = {
+          show_total = true;
+          hideCountWhenZero = true;
         };
       };
 
