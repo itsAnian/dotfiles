@@ -51,6 +51,12 @@
     enable = true;
     userEmail = "anian.seidl@gmail.com";
     userName = "itsAnian";
+    delta = {
+      enable = true;
+      options = {
+        features = "decorations";
+      };
+    };
     extraConfig = {
       push.autoSetupRemote = true;
       core.editor = "nvim";
@@ -94,6 +100,7 @@
     vi = "nvim";
     vim = "nvim";
     cd = "z";
+    weather = "curl wttr.in";
   };
 
   home.username = "anian";
