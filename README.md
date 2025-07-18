@@ -31,8 +31,7 @@
 - .. (one directory up)
 
 ### Programs:
-- brave 
-    - bitwarden (password manager)
+- brave bitwarden (password manager)
 - zsh
 - starship (terminal addon git branch etc.)
 - git (git, nothing more to say)
@@ -60,6 +59,13 @@
 - alejandra (nix-formatting)
 - nerd-fonts.jetbrains-mono (Nerdfont for icons)
 - wl-clipboard (clipboard utils)
+
+## tmp
+To utilize the tmp file for temporary packages you have track it with git - this is a workaround so it is tracked but can not be commited.
+```bash
+git add --intent-to-add tmp.nix && \
+git update-index --assume-unchanged tmp.nix
+```
 
 ## rofi
 ### Programs:
