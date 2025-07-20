@@ -149,6 +149,9 @@
   #docker
   virtualisation.docker.enable = true;
 
+  #wireguard
+  networking.firewall.checkReversePath = "loose";
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
