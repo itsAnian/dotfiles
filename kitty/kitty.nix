@@ -7,6 +7,7 @@
     enable = true;
 
     settings = {
+      term = "xterm-256color";
       font_family = "JetBrainsMono Nerd Font";
       bold_font = "auto";
       italic_font = "auto";
