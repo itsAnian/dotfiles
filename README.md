@@ -59,6 +59,7 @@
 - alejandra (nix-formatting)
 - nerd-fonts.jetbrains-mono (Nerdfont for icons)
 - wl-clipboard (clipboard utils)
+- ferdium (centralized chat client)
 
 ## tmp
 To utilize the tmp file for temporary packages you have track it with git - this is a workaround so it is tracked but can not be commited.

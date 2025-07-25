@@ -27,6 +27,7 @@
     alejandra
     nerd-fonts.jetbrains-mono
     wl-clipboard
+    ferdium
   ];
 
   programs.brave = {
