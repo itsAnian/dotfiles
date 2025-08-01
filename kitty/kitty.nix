@@ -22,25 +22,25 @@
       tab_bar_edge = "top";
       tab_bar_style = "powerline";
       tab_bar_align = "left";
-      tab_separator = " ┇";
+      tab_separator = " | ";
       tab_activity_symbol = "none";
       tab_title_max_length = 15;
-      tab_title_template = "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{tab.last_focused_progress_percent}{title}";
+      tab_title_template = "{index}:{title}";
+      tab_powerline_style = "slanted";
       active_tab_title_template = "none";
-      active_tab_foreground = "#080808";
-      active_tab_background = "#33ccff";
-      active_tab_font_style = "bold-italic";
-      inactive_tab_foreground = "#080808";
-      inactive_tab_background = "#ffffff";
+      active_tab_foreground = "#d3c6aa";
+      active_tab_background = "#5c6a72";
+      active_tab_font_style = "bold";
+      inactive_tab_foreground = "#a7c080";
+      inactive_tab_background = "#2d353b";
       inactive_tab_font_style = "normal";
-      tab_bar_background = "none";
     };
 
     keybindings = {
-      "ctrl+alt+n" = "new_tab";
-      "ctrl+alt+#" = "close_tab";
-      "ctrl+alt+j" = "next_tab";
-      "ctrl+alt+k" = "previous_tab";
+      "shift+super+n" = "new_tab";
+      "shift+super+p" = "close_tab";
+      "shift+super+j" = "next_tab";
+      "shift+super+k" = "previous_tab";
     };
 
     extraConfig = ''include themes/Cattpuccin.conf'';
