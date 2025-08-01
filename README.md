@@ -37,6 +37,7 @@
 - git (git, nothing more to say)
 - bash (enables bash)
 - zoxide (smart cd)
+- direnv (automatically activates flakes)
 
 ### Packages:
 - vesktop (discord client with vencord)
