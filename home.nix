@@ -28,6 +28,8 @@
     nerd-fonts.jetbrains-mono
     wl-clipboard
     ferdium
+    bat
+    tree
   ];
 
   programs.brave = {
@@ -107,6 +109,7 @@
     vim = "nvim";
     cd = "z";
     weather = "curl wttr.in";
+    cat = "bat";
   };
 
   home.username = "anian";

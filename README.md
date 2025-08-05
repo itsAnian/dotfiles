@@ -22,6 +22,7 @@
 
 ### Aliases:
 - nrs (nixos-rebuild flake)
+- nsp (nix-shell -p)
 - gs (git status)
 - ga (git add)
 - gc (git commit)
@@ -29,6 +30,10 @@
 - gd (git diff)
 - ll (ls with more information)
 - .. (one directory up)
+- vi / vim (rebind to nvim)
+- cd (rebind for z)
+- weather (curls weather from wttr.in)
+- cat (bat)
 
 ### Programs:
 - brave bitwarden (password manager)
@@ -61,6 +66,8 @@
 - nerd-fonts.jetbrains-mono (Nerdfont for icons)
 - wl-clipboard (clipboard utils)
 - ferdium (centralized chat client)
+- bat (improved cat)
+- tree (shows folder structure)
 
 ## tmp
 To utilize the tmp file for temporary packages you have track it with git - this is a workaround so it is tracked but can not be commited.
