@@ -12,6 +12,11 @@ in {
     settings = {
       theme = theme;
       bar = {
+        windowtitle.title_map = [
+          ["kitty" "" "Terminal"]
+          ["brave" "" "Brave"]
+          ["vesktop" "󰙯" "Discord"]
+        ];
         layouts = {
           "*" = {
             left = [
