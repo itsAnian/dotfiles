@@ -142,9 +142,12 @@
     isNormalUser = true;
     description = "anian";
     extraGroups = ["networkmanager" "wheel" "docker" "dialout" "tty"];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     ];
   };
+
+  programs.zsh.enable = true;
 
   #docker
   virtualisation.docker.enable = true;
