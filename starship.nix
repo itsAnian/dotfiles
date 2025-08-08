@@ -61,7 +61,7 @@
       };
 
       git_status = {
-        format = '' [\[](fg:branch bg:background)[$all_status](fg:branch bg:background)[\]](fg:branch bg:background)[](fg:background) '';
+        format = ''[\[](fg:branch bg:background)[$all_status](fg:branch bg:background)[\]](fg:branch bg:background)[](fg:background) '';
         conflicted = "=";
         up_to_date = "";
         untracked = "?";

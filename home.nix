@@ -44,12 +44,6 @@
     enableCompletion = true;
   };
 
-  programs.starship = {
-    enable = true;
-    settings = pkgs.lib.importTOML ./starship/starship.toml;
-    enableZshIntegration = true;
-  };
-
   programs.git = {
     enable = true;
     userEmail = "anian.seidl@gmail.com";
@@ -90,6 +84,7 @@
   imports = [
     ./kitty/kitty.nix
     ./hyprland/hyprland.nix
+    ./starship.nix
     ./tmp.nix
   ];
 
