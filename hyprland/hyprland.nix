@@ -34,7 +34,6 @@
 
       exec-once = [
         "hypridle &"
-        "hyprpanel &"
         "wpaperd"
       ];
 
