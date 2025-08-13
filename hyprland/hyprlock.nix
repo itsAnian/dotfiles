@@ -8,7 +8,7 @@
     settings = {
       background = [
         {
-          path = "~/dotfiles/hyprland/WQHD_Panda_1920_1200_blur.jpg";
+          path = "~/dotfiles/hyprland/images/WQHD_Panda_1920_1200_blur.jpg";
           blur_passes = 0;
           contrast = 0.8916;
           brightness = 0.8172;
@@ -69,7 +69,7 @@
 
       image = [
         {
-          path = "~/dotfiles/hyprland/panda.jpeg";
+          path = "~/dotfiles/hyprland/images/panda.jpeg";
           border_size = 0;
           border_color = "rgba(255, 255, 255, 0)";
           size = 95;
