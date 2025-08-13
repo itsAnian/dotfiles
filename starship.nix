@@ -31,8 +31,9 @@
 
       directory = {
         format = "[](fg:directory)[ ](fg:icon bg:directory)[](fg:directory bg:background)[ $path](bg:background)[](fg:background) ";
-        truncate_to_repo = false;
-        truncation_length = 0;
+        truncation_symbol = "../";
+        truncate_to_repo = true;
+        truncation_length = 2;
       };
 
       status = {
