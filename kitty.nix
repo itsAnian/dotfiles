@@ -42,16 +42,9 @@
       "shift+super+j" = "next_tab";
       "shift+super+k" = "previous_tab";
     };
-
-    extraConfig = ''include themes/Cattpuccin.conf'';
-  };
-
-  home.file.".config/kitty/themes" = {
-    source = ./themes;
-    recursive = true;
   };
 
   home.packages = with pkgs; [
-    jetbrains-mono # Ensure the font is installed
+    jetbrains-mono
   ];
 }

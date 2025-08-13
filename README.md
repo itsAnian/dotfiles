@@ -118,7 +118,7 @@ git update-index --assume-unchanged tmp.nix
 ### Packages:
 - wpaperd (lets you set wallpaper)
 
-## kitty/kitty
+## kitty
 ### Programs:
 - kitty (customizeable terminal)
 

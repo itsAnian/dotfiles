@@ -83,7 +83,7 @@
   };
 
   imports = [
-    ./kitty/kitty.nix
+    ./kitty.nix
     ./hyprland/hyprland.nix
     ./starship.nix
     ./tmp.nix
