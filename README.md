@@ -58,6 +58,7 @@
 - nwg-displays (gui for monitor settings)
 - remnote (note taking application)
 - todo-shell (selfwritten todo-list in shell)
+- edu-sync-cli (fetch and download moodle documents)
 - unstable obsidian (IDE for Markdown / handwritten files)
 - vlc (Media player)
 - signal-desktop (Signal Messenger)

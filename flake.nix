@@ -11,6 +11,11 @@
       url = "github:itsanian/todo-shell";
     };
 
+    edu-sync-nix = {
+      url = "github:Marc55s/edu-sync-nix";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     grub2-themes = {
       url = "github:vinceliuice/grub2-themes";
     };
@@ -25,12 +30,19 @@
     nixpkgs-unstable,
     home-manager,
     todo-shell,
+    edu-sync-nix,
     grub2-themes,
     ...
   }: let
     system = "x86_64-linux";
+
+    overlay = final: prev: {
+      edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
+    };
+
     pkgs = import nixpkgs {
       inherit system;
+      overlays = [overlay];
       config = {allowUnfree = true;};
     };
 
@@ -53,7 +65,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.anian = import ./home.nix;
             home-manager.extraSpecialArgs = {
-              inherit inputs pkgs-unstable;
+              inherit inputs pkgs pkgs-unstable;
             };
           }
         ];
