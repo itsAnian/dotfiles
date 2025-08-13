@@ -29,6 +29,9 @@
       ];
 
       "$terminal" = "kitty";
+      "$browser" = "brave";
+      "$browser-incognito" = "brave --incognito";
+      "$discord" = "vesktop";
       "$fileManager" = "superfile";
       "$menu" = "rofi -show drun -drun-display-format {name}";
 
@@ -102,11 +105,14 @@
 
       bind = [
         "$mainMod, Q, exec, $terminal"
+        "$mainMod, B, exec, $browser"
+        "$mainMod SHIFT, B, exec, $browser-incognito"
+        "$mainMod, D, exec, $discord"
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, $menu"
+        "$mainMod, T, exec, $menu"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "$mainMod, left, movefocus, l"
@@ -115,7 +121,8 @@
         "$mainMod, down, movefocus, d"
         "$mainMod, L, exec, hyprlock --immediate"
         "$mainMod, S, exec, hyprshot -m region --clipboard-only"
-        "$mainMod, F, fullscreen,"
+        "$mainMod, F, fullscreen, 1"
+        "$mainMod SHIFT, F, fullscreen, 0"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
