@@ -24,9 +24,6 @@
     enable = true;
     settings = {
       source = "~/.config/hypr/monitors.conf";
-      monitor = [
-        "eDP-1, highres, auto, 1"
-      ];
 
       "$terminal" = "kitty";
       "$browser" = "brave";
@@ -93,7 +90,6 @@
 
       gestures = {
         workspace_swipe = true;
-
       };
 
       misc = {
