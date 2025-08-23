@@ -10,5 +10,7 @@
     fd
     unzip
     ripgrep
+    redisinsight
+    gparted
   ];
 }
