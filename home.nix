@@ -16,7 +16,6 @@
     superfile
     neovim
     lua-language-server
-    pkgs-unstable.presenterm
     nwg-displays
     remnote
     vlc
@@ -86,6 +85,7 @@
     ./kitty.nix
     ./hyprland/hyprland.nix
     ./starship.nix
+    ./presenterm.nix
     ./tmp.nix
   ];
 
