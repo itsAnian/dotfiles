@@ -20,6 +20,12 @@
       url = "github:vinceliuice/grub2-themes";
     };
 
+    openconnect-sso = {
+      url = "github:jcszymansk/openconnect-sso";
+      inputs.nixpkgs.follows = "nixpkgs-openconnect-sso";
+    };
+    nixpkgs-openconnect-sso.url = "github:nixos/nixpkgs/46397778ef1f73414b03ed553a3368f0e7e33c2f";
+
     nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
@@ -32,12 +38,14 @@
     todo-shell,
     edu-sync-nix,
     grub2-themes,
+    openconnect-sso,
     ...
   }: let
     system = "x86_64-linux";
 
     overlay = final: prev: {
       edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
+      openconnect-sso = inputs.openconnect-sso.packages.${pkgs.system}.openconnect-sso;
     };
 
     pkgs = import nixpkgs {

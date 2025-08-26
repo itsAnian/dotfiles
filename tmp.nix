@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     mqtt-explorer
-    openconnect
     thunderbird
     fastfetch
     astal.hyprland

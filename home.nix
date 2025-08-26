@@ -30,6 +30,7 @@
     ferdium
     bat
     tree
+    openconnect-sso
   ];
 
   programs.brave = {
@@ -106,6 +107,7 @@
     cd = "z";
     weather = "curl wttr.in";
     cat = "bat";
+    dhbw-vpn = "openconnect-sso --server vpn.dhbw-heidenheim.de --authgroup Studenten+Externe-MFA";
   };
 
   home.username = "anian";
