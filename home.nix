@@ -99,7 +99,7 @@
     gl = "git log --oneline";
     gd = "git diff";
     gp = "git push";
-    "gpfusch" = "git push -f";
+    "gpfusch" = "git push --force-with-lease";
     ll = "ls -la";
     ".." = "cd ../";
     vi = "nvim";
