@@ -90,6 +90,12 @@ in {
             default = {};
             description = "Configuration for incremental lists";
           };
+
+          validate_overflows = lib.mkOption {
+            type = lib.types.enum ["never" "always" "when_presenting" "when_developing"];
+            default = "never";
+            description = "Checks if the presentation fits into the terminal";
+          };
         };
       };
       default = {};
@@ -159,6 +165,38 @@ in {
                   type = lib.types.bool;
                   default = false;
                   description = "Enable snippet execution";
+                };
+
+                custom = lib.mkOption {
+                  type = lib.types.attrsOf (lib.types.submodule {
+                    options = {
+                      filename = lib.mkOption {
+                        type = with lib.types; nullOr str;
+                        default = null;
+                        description = "File name for the snippet";
+                      };
+
+                      environment = lib.mkOption {
+                        type = with lib.types; attrsOf (nullOr str);
+                        default = {};
+                        description = "Environment variables for snippet execution";
+                      };
+
+                      hidden_line_prefix = lib.mkOption {
+                        type = with lib.types; nullOr str;
+                        default = null;
+                        description = "Prefix for hidden lines";
+                      };
+
+                      commands = lib.mkOption {
+                        type = with lib.types; listOf (listOf str);
+                        default = [];
+                        description = "List of commands to run";
+                      };
+                    };
+                  });
+                  default = {};
+                  description = "Custom snippet executors by language";
                 };
               };
             };
@@ -367,8 +405,9 @@ in {
 
   config = lib.mkIf config.unstable-presenterm.enable {
     home.packages = [pkgs-unstable.presenterm];
-
-    home.sessionVariables.PRESENTERM_CONFIG_FILE = "${config.xdg.configHome}/presenterm/config.yaml";
+    home.sessionVariables = {
+      PRESENTERM_CONFIG_FILE = "${config.xdg.configHome}/presenterm/config.yaml";
+    };
 
     xdg.configFile.${cfgPath}.source = yamlFormat.generate "presenterm-config" (
       cleanAttrs {
