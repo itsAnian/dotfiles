@@ -83,10 +83,10 @@
   };
 
   imports = [
-    ./kitty.nix
+    ./modules/kitty.nix
     ./hyprland/hyprland.nix
-    ./starship.nix
-    ./presenterm.nix
+    ./modules/starship.nix
+    ./modules/presenterm.nix
     ./tmp.nix
   ];
 

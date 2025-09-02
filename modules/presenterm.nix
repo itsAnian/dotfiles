@@ -10,7 +10,7 @@
     python313Packages.weasyprint
   ];
   imports = [
-    ./custom_modules/presenterm.nix
+    ../custom_modules/presenterm.nix
   ];
 
   unstable-presenterm = {
