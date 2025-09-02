@@ -11,5 +11,6 @@
     ripgrep
     redisinsight
     gparted
+    gowall
   ];
 }

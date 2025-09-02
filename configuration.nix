@@ -176,6 +176,8 @@
     xorg.libXi
     xorg.libXxf86vm
     wayland
+    vulkan-tools
+    vulkan-loader
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
