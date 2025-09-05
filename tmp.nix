@@ -12,5 +12,6 @@
     redisinsight
     gparted
     gowall
+    nemo
   ];
 }

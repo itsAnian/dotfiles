@@ -29,7 +29,7 @@
       "$browser" = "brave";
       "$browser-incognito" = "brave --incognito";
       "$discord" = "vesktop";
-      "$fileManager" = "superfile";
+      "$fileManager" = "nemo";
       "$menu" = "rofi -show drun -drun-display-format {name}";
 
       exec-once = [
@@ -148,8 +148,9 @@
         ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
         ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
       ];
-
-      windowrulev2 = "suppressevent maximize, class:.*";
+      windowrulev2 = [
+        "suppressevent maximize, class:.*"
+      ];
     };
   };
 }
