@@ -66,7 +66,7 @@ in {
         dashboard = {
           directories.enabled = false;
           powermenu = {
-            avatar.image = "~/dotfiles/hyprland/images/panda.jpeg";
+            avatar.image = "~/dotfiles/home/hyprland/images/panda.jpeg";
             avatar.name = "itsAnian";
           };
           shortcuts.enabled = false;

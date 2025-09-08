@@ -46,6 +46,7 @@
     overlay = final: prev: {
       edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
       openconnect-sso = inputs.openconnect-sso.packages.${pkgs.system}.openconnect-sso;
+      todo-shell = inputs.todo-shell.defaultPackage.${pkgs.system};
     };
 
     pkgs = import nixpkgs {
@@ -65,13 +66,13 @@
       nixos = lib.nixosSystem {
         modules = [
           grub2-themes.nixosModules.default
-          ./configuration.nix
-          ./hardware-configuration.nix
+          ./hosts/laptop/configuration.nix
+          ./hosts/laptop/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.anian = import ./home.nix;
+            home-manager.users.anian = import ./home/laptop.nix;
             home-manager.extraSpecialArgs = {
               inherit inputs pkgs pkgs-unstable;
             };
