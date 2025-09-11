@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, pkgs-unstable, ...}: {
   home.packages = with pkgs; [
     edu-sync-cli
     pkgs-unstable.obsidian

@@ -17,6 +17,8 @@
     ./hyprland/hyprland.nix
     ./common.nix
     ./tmp.nix
+    ./programs/gtk.nix
+    ./programs/dhbw.nix
   ];
 
   home.username = "anian";
