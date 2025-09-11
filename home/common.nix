@@ -22,6 +22,7 @@
     gowall
     ripgrep
     fastfetch
+    libreoffice
   ];
 
   imports = [
