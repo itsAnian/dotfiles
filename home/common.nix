@@ -38,6 +38,7 @@
     ./programs/tree.nix
     ./programs/rofi.nix
     ./programs/fzf.nix
+    ./programs/television.nix
   ];
 
   home.shellAliases = {
