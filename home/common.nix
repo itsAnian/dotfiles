@@ -40,6 +40,7 @@
     ./programs/rofi.nix
     ./programs/fzf.nix
     ./programs/television.nix
+    ./programs/btop.nix
   ];
 
   home.shellAliases = {
