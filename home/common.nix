@@ -44,6 +44,7 @@
 
   home.shellAliases = {
     nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#";
+    nfu = "nix flake update --flake ~/dotfiles#";
     nsp = "nix-shell -p";
     nd = "nix develop";
     ll = "ls -la";
