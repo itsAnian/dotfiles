@@ -3,6 +3,7 @@
     edu-sync-cli
     pkgs-unstable.obsidian
     openconnect-sso
+    arduino-ide
 
     mqtt-explorer
     redisinsight
