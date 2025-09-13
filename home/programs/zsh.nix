@@ -2,6 +2,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    history.share = false;
     plugins = [
       {
         name = "zsh-nix-shell";
