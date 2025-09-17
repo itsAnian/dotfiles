@@ -35,6 +35,7 @@
     gamescopeSession.enable = false;
   };
   environment.systemPackages = with pkgs; [
+    gparted
     wl-clipboard
     gamescope
     kdePackages.kcalc
