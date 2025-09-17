@@ -41,6 +41,7 @@
     ./programs/fzf.nix
     ./programs/television.nix
     ./programs/btop.nix
+    ./programs/cursor.nix
   ];
 
   home.shellAliases = {

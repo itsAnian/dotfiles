@@ -17,7 +17,6 @@
     ./hyprlock.nix
     ./hypridle.nix
     ./wpaperd.nix
-    ./cursor.nix
   ];
 
   wayland.windowManager.hyprland = {
