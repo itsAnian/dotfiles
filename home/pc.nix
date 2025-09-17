@@ -6,18 +6,11 @@
   ...
 }: {
   home.packages = with pkgs; [
-    nwg-displays
-    vlc
-    wl-clipboard
-
-    python3
   ];
 
   imports = [
-    ./hyprland/hyprland.nix
     ./common.nix
     ./tmp.nix
-    ./programs/gtk.nix
     ./programs/dhbw.nix
   ];
 
@@ -30,11 +23,10 @@
 
   programs.home-manager.enable = true;
 
-  home.stateVersion = "25.05";
-  home.
-
   home.shellAliases = {
-    nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos-laptop";
-    nfu = "nix flake update --flake ~/dotfiles#nixos-laptop";
+    nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos-pc";
+    nfu = "nix flake update --flake ~/dotfiles#nixos-pc";
   };
+
+  home.stateVersion = "25.05";
 }

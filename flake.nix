@@ -63,7 +63,7 @@
     lib = nixpkgs.lib;
   in {
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      nixos-laptop = lib.nixosSystem {
         modules = [
           grub2-themes.nixosModules.default
           ./hosts/laptop/configuration.nix
@@ -73,6 +73,23 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.anian = import ./home/laptop.nix;
+            home-manager.extraSpecialArgs = {
+              inherit inputs pkgs pkgs-unstable;
+            };
+          }
+        ];
+      };
+
+      nixos-pc = lib.nixosSystem {
+        modules = [
+          grub2-themes.nixosModules.default
+          ./hosts/pc/configuration.nix
+          ./hosts/pc/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.anian = import ./home/pc.nix;
             home-manager.extraSpecialArgs = {
               inherit inputs pkgs pkgs-unstable;
             };
