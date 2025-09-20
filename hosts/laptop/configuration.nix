@@ -7,24 +7,13 @@
   inputs,
   ...
 }: {
-  # Bootloader.
-  boot.supportedFilesystems = ["ntfs"];
-
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-    enable = true;
-    devices = ["nodev"];
-    efiSupport = true;
-    useOSProber = true;
-  };
-  boot.loader.grub2-theme = {
-    enable = true;
-    theme = "stylish";
-    footer = true;
-  };
 
   imports = [
     ../../modules/nix-ld.nix
+    ../../modules/grub.nix
+    ../../modules/local.nix
+    ../../modules/settings.nix
+    ../../modules/docker.nix
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -37,32 +26,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
-  };
-
   # Enable the X11 windowing system.
   services.xserver.enable = false;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = false;
-  services.xserver.desktopManager.plasma5.enable = false;
 
   # Bluetooth
   services.blueman.enable = true;
@@ -153,17 +118,11 @@
 
   programs.zsh.enable = true;
 
-  #docker
-  virtualisation.docker.enable = true;
-
   #wireguard
   networking.firewall.checkReversePath = "loose";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-
-  # flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
