@@ -25,7 +25,6 @@
 
   home.shellAliases = {
     nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos-pc";
-    nfu = "nix flake update --flake ~/dotfiles#nixos-pc";
   };
 
   home.stateVersion = "25.05";
