@@ -31,7 +31,6 @@
   programs.home-manager.enable = true;
 
   home.stateVersion = "25.05";
-  home.
 
   home.shellAliases = {
     nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos-laptop";
