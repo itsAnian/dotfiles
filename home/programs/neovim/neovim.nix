@@ -12,6 +12,7 @@
   telescope = builtins.readFile ./telescope.lua;
   treesitter = builtins.readFile ./treesitter.lua;
   hlchunk = builtins.readFile ./hlchunk.lua;
+  diagnostics = builtins.readFile ./diagnostics.lua;
 in {
   home.packages = with pkgs; [
     # lsps
@@ -67,6 +68,7 @@ in {
       ${telescope}
       ${treesitter}
       ${hlchunk}
+      ${diagnostics}
     '';
   };
 

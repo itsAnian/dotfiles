@@ -20,3 +20,5 @@ vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Keymap
 vim.keymap.set("n", "<leader>fc", "<cmd>Telescope commands<CR>", { desc = "Command palette" })
 vim.keymap.set("n", "<leader>fC", "<cmd>Telescope command_history<CR>", { desc = "Command history" })
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope builtin<CR>", { desc = "Telescope pickers" })
+
+

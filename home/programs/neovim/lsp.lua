@@ -60,6 +60,14 @@ lspconfig.rust_analyzer.setup({
         ["rust-analyzer"] = {
             cargo = { allFeatures = true },
             checkOnSave = { command = "clippy" },
+            diagnostics = {
+                enable = true,
+                disabled = {},
+                enableExperimental = true,
+            },
+            inlayHints = {
+                enable = true,
+            },
         },
     },
 })
