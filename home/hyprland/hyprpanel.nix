@@ -10,7 +10,11 @@ in {
     enable = true;
     systemd.enable = true;
     settings = {
-      theme = theme;
+      theme =
+        theme
+        // {
+          bar.floating = true;
+        };
       bar = {
         windowtitle.title_map = [
           ["kitty" "" "Terminal"]
