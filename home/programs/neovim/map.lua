@@ -21,4 +21,6 @@ vim.keymap.set("n", "<leader>fc", "<cmd>Telescope commands<CR>", { desc = "Comma
 vim.keymap.set("n", "<leader>fC", "<cmd>Telescope command_history<CR>", { desc = "Command history" })
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope builtin<CR>", { desc = "Telescope pickers" })
 
-
+vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<CR>", { desc = "Start compilation" })
+vim.keymap.set("n", "<leader>lv", "<cmd>VimtexView<CR>", { desc = "View PDF" })
+vim.keymap.set("n", "<leader>lc", "<cmd>VimtexClean<CR>", { desc = "Clean aux files" })

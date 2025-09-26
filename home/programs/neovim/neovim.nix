@@ -13,6 +13,8 @@
   treesitter = builtins.readFile ./treesitter.lua;
   hlchunk = builtins.readFile ./hlchunk.lua;
   diagnostics = builtins.readFile ./diagnostics.lua;
+  vimtex = builtins.readFile ./vimtex.lua;
+  windsurf = builtins.readFile ./windsurf-nvim.lua;
 in {
   home.packages = with pkgs; [
     # lsps
@@ -51,6 +53,7 @@ in {
       which-key-nvim
       snacks-nvim
       mini-icons
+      windsurf-nvim
     ];
 
     extraLuaConfig = ''
@@ -69,6 +72,8 @@ in {
       ${treesitter}
       ${hlchunk}
       ${diagnostics}
+      ${vimtex}
+      ${windsurf}
     '';
   };
 
