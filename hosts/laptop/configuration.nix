@@ -7,7 +7,6 @@
   inputs,
   ...
 }: {
-
   imports = [
     ../../modules/nix-ld.nix
     ../../modules/grub.nix
@@ -40,6 +39,7 @@
 
   # Enable hyprland
   programs.hyprland.enable = true;
+  programs.niri.enable = true;
   services.greetd = {
     enable = true;
     settings = {
