@@ -54,6 +54,7 @@ in {
       snacks-nvim
       mini-icons
       windsurf-nvim
+      vim-wakatime
     ];
 
     extraLuaConfig = ''
