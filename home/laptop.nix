@@ -15,6 +15,7 @@
 
   imports = [
     ./hyprland/hyprland.nix
+    ./niri/niri.nix
     ./common.nix
     ./tmp.nix
     ./programs/gtk.nix

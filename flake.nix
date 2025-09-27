@@ -26,6 +26,11 @@
     };
     nixpkgs-openconnect-sso.url = "github:nixos/nixpkgs/46397778ef1f73414b03ed553a3368f0e7e33c2f";
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
@@ -39,6 +44,7 @@
     edu-sync-nix,
     grub2-themes,
     openconnect-sso,
+    niri,
     ...
   }: let
     system = "x86_64-linux";
