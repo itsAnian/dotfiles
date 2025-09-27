@@ -1,0 +1,164 @@
+/* === Global font === */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  padding: 0 5px;
+}
+
+/* === Tooltip overrides === */
+tooltip {
+  background: #1e1e2e;
+  border: 1px solid #89b4fa;
+  color: #cdd6f4;
+}
+
+/* === Bar background and overall look === */
+window#waybar {
+  background-color: rgba(30, 30, 46, 0.95); /* subtle dark */
+  color: #cdd6f4; /* light text */
+  border-bottom: 2px solid #89b4fa;
+}
+
+/* === Tray === */
+#tray {
+  padding: 0 5px; /*top&bottom left&right*/
+}
+
+/* === Battery Module === */
+#battery {
+  color: #a6e3a1;
+  padding: 0 5px;
+}
+
+#battery.warning {
+  color: #fab387;
+}
+
+#battery.critical {
+  color: #f38ba8;
+}
+
+#battery.charging {
+  color: #89b4fa;
+}
+
+/* === Pulseaudio (Volume) === */
+#pulseaudio {
+  color: #f9e2af;
+  padding: 0 5px;
+}
+
+#pulseaudio.muted {
+  color: #f38ba8;
+}
+
+/* === Network === */
+#network {
+  color: #94e2d5;
+  padding: 0 5px;
+}
+
+#network.disconnected {
+  color: #f38ba8;
+}
+
+/* === Clock === */
+#clock {
+  color: #cdd6f4;
+  padding: 0 10px;
+}
+
+/* === Bluetooth === */
+#bluetooth {
+  padding: 0 5px;
+  color: #5ec4ff;
+}
+
+#bluetooth.on {
+  color: #8ab4f8;
+}
+
+#bluetooth.connected {
+  color: #7ef9ae;
+}
+
+#bluetooth.off {
+  color: #f38ba8;
+  font-style: italic;
+}
+
+#bluetooth.no-controller {
+  color: #888888;
+}
+
+/* === hyprland/windo & workspaces === */
+#window {
+  border-width: 1px;
+  border-top-style: solid;
+  border-color: #89b4fa;
+}
+
+#workspaces {
+  margin: 0;
+  /* border: 1px solid purple; */
+  padding: 0;
+}
+
+#workspaces button {
+  padding: 0 4px 0 0;
+  margin: 0 5px;
+  background-color: transparent;
+  color: #7f849c;
+  /* border: 1px solid yellow; */
+  border-radius: 5px;
+}
+
+#workspaces button.active {
+  background-color: #89b4fa;
+  color: #f2f2f2;
+  /* border: 1px solid #cba6f7; */
+}
+
+#workspaces button.urgent {
+  background-color: #f2f2f2;
+  color: #f38ba8;
+  border: 1px solid #f38ba8;
+}
+
+/* === Power Menu (custom/power) === */
+#custom-power {
+  color: #94e2d5;
+  padding: 0 8px;
+}
+
+menu,
+GtkMenu {
+  background-color: #1e1e2e;
+  border: 1px solid #89b4fa;
+  padding: 4px 0px;
+  margin: 0;
+}
+
+menuitem,
+GtkMenuItem {
+  color: #cdd6f4;
+}
+
+menuitem:hover,
+GtkMenuItem:hover {
+  background-color: #313244;
+  color: #89b4fa;
+}
+
+/* === Koofr-Sync === */
+#custom-koofr-sync{
+  padding: 0 5px;
+}
+
+#custom-koofr-sync.synced {
+  color: #a6e3a1;
+}
+
+#custom-koofr-sync.not-synced {
+  color: #f38ba8;
+}
