@@ -7,7 +7,6 @@
   inputs,
   ...
 }: {
-
   imports = [
     ../../modules/nix-ld.nix
     ../../modules/grub.nix
@@ -63,6 +62,20 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  environment.etc."xdg/wireplumber/main.lua.d/50-mic-config.lua".text = ''
+    rule = {
+      matches = {
+        {
+          { "node.name", "matches", "alsa_input.*" },
+        },
+      },
+      apply_properties = {
+        ["audio.processing"] = "false",
+      },
+    }
+    table.insert(alsa_monitor.rules, rule)
+  '';
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
