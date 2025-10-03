@@ -12,6 +12,7 @@
     ./common.nix
     ./tmp.nix
     ./programs/dhbw.nix
+    ./programs/3d-print.nix
   ];
 
   home.username = "anian";
