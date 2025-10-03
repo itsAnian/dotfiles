@@ -1,5 +1,5 @@
-{
-  programs.btop = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    btop-cuda
+  ];
 }
