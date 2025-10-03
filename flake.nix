@@ -81,6 +81,7 @@
             home-manager.users.anian = import ./home/laptop.nix;
             home-manager.extraSpecialArgs = {
               inherit inputs pkgs pkgs-unstable;
+              host = "nixos-laptop";
             };
           }
         ];
@@ -98,6 +99,7 @@
             home-manager.users.anian = import ./home/pc.nix;
             home-manager.extraSpecialArgs = {
               inherit inputs pkgs pkgs-unstable;
+              host = "nixos-pc";
             };
           }
         ];

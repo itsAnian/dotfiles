@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  host,
   ...
 }: {
   programs.kitty = {
@@ -13,7 +14,7 @@
       italic_font = "auto";
       bold_italic_font = "auto";
 
-      font_size = 12;
+      font_size = if host == "nixos-laptop" then 12 else 10;
       cursor_trail = 0;
 
       background_opacity = "0.7";
