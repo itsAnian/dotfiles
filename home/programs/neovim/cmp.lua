@@ -10,8 +10,8 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<C-j>'] = cmp.mapping.select_next_item(),
         ['<C-k>'] = cmp.mapping.select_prev_item(),
-        ['<C-z>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-Space>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-z>'] = cmp.mapping.complete(),
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
