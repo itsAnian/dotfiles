@@ -3,6 +3,11 @@
   pkgs,
   ...
 }: {
+  home.packages = with pkgs; [
+    pavucontrol
+    networkmanagerapplet
+  ];
+
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -11,17 +16,21 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 34;
+        margin-top = 10;
+        margin-bottom = 4;
+        margin-left = 10;
+        margin-right = 10;
         modules-left = [
           "niri/workspaces"
           "niri/window"
         ];
-        modules-center = ["clock"];
+        modules-center = ["media"];
         modules-right = [
           "pulseaudio"
           "network"
           "bluetooth"
           "battery"
+          "clock"
         ];
         font = "JetBrainsMono Nerd Font 13";
 
@@ -40,51 +49,52 @@
             warning = 30;
             critical = 10;
           };
-          format = "{icon} {capacity}%";
-          format-charging = "󰂄 {capacity}%";
-          format-plugged = " {capacity}%";
+          format = "{capacity}%{icon}";
+          format-charging = "󰂄{capacity}%";
+          format-plugged = "{capacity}%";
           format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-          tooltip = true;
+          tooltip = false;
         };
 
         pulseaudio = {
-          format = "{icon} {volume}% {format_source}";
+          format = "{icon}{volume}% {format_source}";
           format-bluetooth = "{icon} {volume}% {format_source}";
           format-bluetooth-muted = " {icon}  {format_source}";
           format-muted = " {format_source}";
-          format-source = " {volume}%";
+          format-source = "{volume}%";
           format-source-muted = " ";
           format-icons = {
-            headphone = "";
-            headset = "󰋎";
-            default = ["" "" ""];
+            headphone = " ";
+            headset = "󰋎 ";
+            default = ["" " " " "];
           };
-          on-click = "sleep 0.1 && pavucontrol";
+          on-click = "pavucontrol";
           tooltip = false;
         };
 
         network = {
-          format = "{icon} ";
-          format-wifi = "{icon} ";
-          format-ethernet = "{icon} ";
-          format-disconnected = "{icon} ";
+          format = "{icon}{essid}";
+          max-length = 15;
+          format-wifi = "{icon}{essid}";
+          format-ethernet = "{icon}";
+          format-disconnected = "{icon}";
           format-icons = {
-            wifi = ["󰤩" "󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+            wifi = ["󰤩 " "󰤯 " "󰤟 " "󰤢 " "󰤥 " "󰤨 "];
             ethernet = "󰈁";
-            disconnected = "󰤭";
+            disconnected = "󰤭 ";
           };
           tooltip = true;
           tooltip-format = "󰕒: {bandwidthUpBytes}\n󰇚: {bandwidthDownBytes}";
-          tooltip-format-wifi = "SSID: {essid}\nSignal: {signalStrength}%\n󰕒: {bandwidthUpBytes}\n󰇚: {bandwidthDownBytes}\n󰤨: {bandwidthTotalBytes}";
-          tooltip-format-ethernet = "󰕒: {bandwidthUpBytes}\n󰇚: {bandwidthDownBytes}\n󰤨: {bandwidthTotalBytes}";
-          on-click = "sleep 0.1 && nm-applet";
+          tooltip-format-wifi = "SSID: {essid}\nSignal: {signalStrength}%\n󰕒: {bandwidthUpBytes}\n󰇚: {bandwidthDownBytes}\n󰤨 : {bandwidthTotalBytes}";
+          tooltip-format-ethernet = "󰕒: {bandwidthUpBytes}\n󰇚: {bandwidthDownBytes}\n󰤨 : {bandwidthTotalBytes}";
+          # on-click = "nm-applet";
         };
 
         bluetooth = {
           format = " {status}";
-          format-disabled = "󰂲 ";
-          format-off = " ";
-          format-on = " ";
+          format-disabled = "󰂲";
+          format-off = "";
+          format-on = "";
           format-connected = " {device_alias}";
           format-connected-battery = " {device_alias} {device_battery_percentage}%";
 
@@ -93,18 +103,18 @@
           tooltip-format-enumerate-connected = "{device_alias} - {device_address}";
           tooltip-format-enumerate-connected-battery = "{device_alias} - {device_address} - {device_battery_percentage}%";
 
-          on-click = "blueman-manager";
-          on-click-right = "bluetoothctl power off";
-          on-scroll-up = "bluetoothctl discoverable on";
-          on-scroll-down = "bluetoothctl discoverable off";
+          # on-click = "blueman-manager";
+          # on-click-right = "bluetoothctl power off";
+          # on-scroll-up = "bluetoothctl discoverable on";
+          # on-scroll-down = "bluetoothctl discoverable off";
         };
 
-        "hyprland/workspaces" = {
+        "niri/workspaces" = {
           format = "{icon}";
           format-icons = {
-            default = "";
-            active = "";
-            urgent = "󰨡";
+            default = "";
+            active = "";
+            urgent = "";
             "1" = "1";
             "2" = "2";
             "3" = "3";
@@ -114,17 +124,15 @@
             "7" = "7";
             "8" = "8";
             "9" = "9";
+            "10" = "10";
           };
         };
 
-        "hyprland/window" = {
-          format = "{title}";
+        "niri/window" = {
+          format = "{app_id}";
           max-length = 25;
           tooltip = true;
           tooltip-format = "{title}";
-          rewrite = {
-            "(.*) - Brave" = "$1";
-          };
         };
       };
     };
