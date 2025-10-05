@@ -43,8 +43,18 @@
   services.greetd = {
     enable = true;
     settings = {
+      sessions = [
+        {
+          name = "Niri";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri";
+        }
+        {
+          name = "Hyprland";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd Hyprland";
+        }
+      ];
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd Hyprland";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri";
       };
     };
   };
