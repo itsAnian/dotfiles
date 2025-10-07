@@ -5,6 +5,7 @@
 }: {
   home.packages = with pkgs; [
     pavucontrol
+    playerctl
     networkmanagerapplet
   ];
 
@@ -24,7 +25,7 @@
           "niri/workspaces"
           "niri/window"
         ];
-        modules-center = ["media"];
+        modules-center = ["mpris"];
         modules-right = [
           "pulseaudio"
           "network"
@@ -33,6 +34,27 @@
           "clock"
         ];
         font = "JetBrainsMono Nerd Font 13";
+
+        mpris = {
+          format = "{player_icon} {artist} - {title}";
+          format-paused = " {artist} - {title}";
+          format-stopped = "";
+          max-length = 40;
+          interval = 2;
+          player-icons = {
+            default = "";
+            spotify = "";
+            vlc = "󰕼";
+            firefox = "";
+          };
+          tooltip = true;
+          tooltip-format = "{position} / {length}";
+          on-click = "playerctl play-pause";
+          on-click-right = "playerctl next";
+          on-click-middle = "playerctl previous";
+          on-scroll-up = "playerctl next";
+          on-scroll-down = "playerctl previous";
+        };
 
         clock = {
           tooltip = false;
