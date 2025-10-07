@@ -6,10 +6,11 @@
   imports = [
     inputs.niri.homeModules.niri
     ./waybar.nix
+    ./fuzzel.nix
   ];
 
   home.packages = with pkgs; [
-    fuzzel
+    xwayland-satellite
   ];
 
   programs.niri = {
@@ -20,6 +21,9 @@
     # stylix?
 
     settings = {
+      spawn-at-startup = [
+        {sh = "waybar";}
+      ];
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;
       input = {
@@ -37,38 +41,40 @@
       # outputs.<name>.backdrop-color
       # outputs.<name>.background-color
       layout = {
+        always-center-single-column = true;
+        center-focused-column = "never";
         focus-ring.enable = true;
         focus-ring.width = 3;
-        # focus-ring.active = gradiant!;
-        # focus-ring.urgent = gradiant!;
-        # shadow.color = "000000";
+        focus-ring.active = {color = "#ffffff";};
+        focus-ring.inactive = {color = "#000000";};
+        focus-ring.urgent = {color = "#ffffff";};
         gaps = 10;
       };
       # animations = {
-        # slowdown = ;
-        # config-notification-open-close.kind = ;
-        # exit-confirmation-open-close.enable = ;
-        # config-notification-open-close.kind = ;
-        # exit-confirmation-open-close.enable
-        # horizontal-view-movement.enable
-        # horizontal-view-movement.kind
-        # overview-open-close.enable
-        # overview-open-close.kind
-        # screenshot-ui-open.enable
-        # screenshot-ui-open.kind
-        # window-close.custom-shader
-        # window-close.enable
-        # window-close.kind
-        # window-movement.enable
-        # window-movement.kind
-        # window-open.custom-shader
-        # window-open.enable
-        # window-open.kind
-        # window-resize.custom-shader
-        # window-resize.enable
-        # window-resize.kind
-        # workspace-switch.enable
-        # workspace-switch.kind
+      # slowdown = ;
+      # config-notification-open-close.kind = ;
+      # exit-confirmation-open-close.enable = ;
+      # config-notification-open-close.kind = ;
+      # exit-confirmation-open-close.enable
+      # horizontal-view-movement.enable
+      # horizontal-view-movement.kind
+      # overview-open-close.enable
+      # overview-open-close.kind
+      # screenshot-ui-open.enable
+      # screenshot-ui-open.kind
+      # window-close.custom-shader
+      # window-close.enable
+      # window-close.kind
+      # window-movement.enable
+      # window-movement.kind
+      # window-open.custom-shader
+      # window-open.enable
+      # window-open.kind
+      # window-resize.custom-shader
+      # window-resize.enable
+      # window-resize.kind
+      # workspace-switch.enable
+      # workspace-switch.kind
       # };
 
       binds = {
@@ -93,6 +99,21 @@
 
         "Mod+M".action.quit = {};
       };
+
+      window-rules = [
+        {
+          geometry-corner-radius = let
+            radius = 8.0;
+          in {
+            bottom-left = radius;
+            bottom-right = radius;
+            top-left = radius;
+            top-right = radius;
+          };
+          clip-to-geometry = true;
+          draw-border-with-background = false;
+        }
+      ];
     };
   };
 }
