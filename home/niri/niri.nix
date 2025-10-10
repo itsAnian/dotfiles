@@ -7,6 +7,7 @@
     inputs.niri.homeModules.niri
     ./waybar.nix
     ./fuzzel.nix
+    ./swaylock.nix
   ];
 
   home.packages = with pkgs; [
@@ -98,6 +99,7 @@
         "Mod+Shift+F".action.fullscreen-window = {};
 
         "Mod+M".action.quit = {};
+        "Mod+L".action.spawn = "swaylock";
       };
 
       window-rules = [
