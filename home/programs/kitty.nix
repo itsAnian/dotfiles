@@ -14,7 +14,10 @@
       italic_font = "auto";
       bold_italic_font = "auto";
 
-      font_size = if host == "nixos-laptop" then 12 else 10;
+      font_size =
+        if host == "nixos-laptop"
+        then 12
+        else 10;
       cursor_trail = 0;
 
       background_opacity = "0.7";
@@ -43,6 +46,10 @@
       "shift+super+j" = "next_tab";
       "shift+super+k" = "previous_tab";
     };
+
+    extraConfig = ''
+      map ctrl+l clear_terminal scroll active
+    '';
   };
 
   home.packages = with pkgs; [
