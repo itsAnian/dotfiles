@@ -33,6 +33,11 @@ window#waybar {
   padding: 0;
 }
 
+#custom-windowlist {
+  margin-left: 20;
+  padding: 0;
+}
+
 .modules-right {
   margin: 0 10px;
 }
