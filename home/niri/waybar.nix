@@ -3,77 +3,75 @@
   pkgs,
   ...
 }: let
-list-niri-windows = pkgs.writeShellScriptBin "list-niri-windows" ''
-  #!/usr/bin/env bash
-  INTERVAL=0.1
-  set -euo pipefail
+  list-niri-windows = pkgs.writeShellScriptBin "list-niri-windows" ''
+    #!/usr/bin/env bash
+    INTERVAL=0.1
+    set -euo pipefail
 
-  while true; do
-  FOCUSED_WS_ID=$(niri msg -j workspaces | jq '.[] | select(.is_focused == true) | .id')
+    while true; do
+    FOCUSED_WS_ID=$(niri msg -j workspaces | jq '.[] | select(.is_focused == true) | .id')
 
-  if [ -z "$FOCUSED_WS_ID" ]; then
-    echo '{"text": ""}'
-    exit 0
-  fi
-
-  mapfile -t original_array < <(
-    niri msg -j windows | jq -r --argjson id "$FOCUSED_WS_ID" '
-      [
-        .[]
-        | select(
-            .workspace_id == $id and
-            .layout.pos_in_scrolling_layout != null
-          )
-      ]
-      | sort_by(.layout.pos_in_scrolling_layout)
-      | .[]
-      | .app_id, .is_focused // .title
-    '
-  )
-
-  if [ ''${#original_array[@]} -eq 0 ]; then
+    if [ -z "$FOCUSED_WS_ID" ]; then
       echo '{"text": ""}'
-      exit 0
-  fi
-
-  final_text=""
-  shopt -s nocasematch
-
-  COLOR_UNFOCUSED=#A0A0A0
-  COLOR_FOCUSED=#FFFFFF
-
-  for (( i=0; i < ''${#original_array[@]}; i+=2 )); do
-    app_name="''${original_array[$i]}"
-    is_focused="''${original_array[$i+1]}"
-
-    case "$app_name" in
-      *"brave"*) icon="󰖟 " ;;
-      *"kitty"*) icon=" " ;;
-      *"vesktop"*) icon=" " ;;
-      *"spotify"*) icon=" " ;;
-      *"signal"*) icon=" " ;;
-      *"zapzap"*) icon="󰖣 " ;;
-      *"obsidian"*) icon=" " ;;
-      *"gimp"*) icon=" " ;;
-      *) icon=" " ;;
-    esac
-
-    if [ "$is_focused" = "true" ]; then
-      color="$COLOR_FOCUSED"
-    else
-      color="$COLOR_UNFOCUSED"
     fi
 
-    final_text+="<span foreground=\"$color\">$icon</span> "
-  done
+    mapfile -t original_array < <(
+      niri msg -j windows | jq -r --argjson id "$FOCUSED_WS_ID" '
+        [
+          .[]
+          | select(
+              .workspace_id == $id and
+              .layout.pos_in_scrolling_layout != null
+            )
+        ]
+        | sort_by(.layout.pos_in_scrolling_layout)
+        | .[]
+        | .app_id, .is_focused // .title
+      '
+    )
 
-  shopt -u nocasematch
-  jq -c -n \
-    --arg text "''${final_text% }" \
-    '{text: $text}'
-  sleep $INTERVAL
-  done
-'';
+    if [ ''${#original_array[@]} -eq 0 ]; then
+        echo '{"text": ""}'
+    fi
+
+    final_text=""
+    shopt -s nocasematch
+
+    COLOR_UNFOCUSED=#A0A0A0
+    COLOR_FOCUSED=#FFFFFF
+
+    for (( i=0; i < ''${#original_array[@]}; i+=2 )); do
+      app_name="''${original_array[$i]}"
+      is_focused="''${original_array[$i+1]}"
+
+      case "$app_name" in
+        *"brave"*) icon="󰖟 " ;;
+        *"kitty"*) icon=" " ;;
+        *"vesktop"*) icon=" " ;;
+        *"spotify"*) icon=" " ;;
+        *"signal"*) icon=" " ;;
+        *"zapzap"*) icon="󰖣 " ;;
+        *"obsidian"*) icon=" " ;;
+        *"gimp"*) icon=" " ;;
+        *) icon=" " ;;
+      esac
+
+      if [ "$is_focused" = "true" ]; then
+        color="$COLOR_FOCUSED"
+      else
+        color="$COLOR_UNFOCUSED"
+      fi
+
+      final_text+="<span foreground=\"$color\">$icon</span> "
+    done
+
+    shopt -u nocasematch
+    jq -c -n \
+      --arg text "''${final_text% }" \
+      '{text: $text}'
+    sleep $INTERVAL
+    done
+  '';
 in {
   home.packages = with pkgs; [
     pavucontrol
