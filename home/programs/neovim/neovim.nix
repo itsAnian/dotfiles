@@ -1,5 +1,6 @@
 {pkgs, ...}: let
   lsp = builtins.readFile ./lsp.lua;
+  format = builtins.readFile ./format.lua;
   opt = builtins.readFile ./opt.lua;
   lualine = builtins.readFile ./lualine.lua;
   which-key = builtins.readFile ./which-key.lua;
@@ -21,9 +22,14 @@ in {
     lua-language-server
     nil
     pyright
+    nodejs
+    nodePackages.bash-language-server
 
     # formatter
     alejandra
+    jq
+    yamlfmt
+    shfmt
   ];
 
   programs.neovim = {
@@ -55,6 +61,7 @@ in {
       mini-icons
       windsurf-nvim
       vim-wakatime
+      conform-nvim
     ];
 
     extraLuaConfig = ''
@@ -63,6 +70,7 @@ in {
       ${lualine}
       ${which-key}
       ${lsp}
+      ${format}
       ${cmp}
       ${map}
       ${nvim-tree}
