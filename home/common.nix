@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     vesktop
+    discord
     zapzap
     p3x-onenote
     spotify
