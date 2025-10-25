@@ -15,6 +15,7 @@
     ../../modules/docker.nix
     ./nvidia.nix
     ./gaming.nix
+    ./controller.nix
   ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.
