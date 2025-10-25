@@ -47,11 +47,14 @@ list-niri-windows = pkgs.writeShellScriptBin "list-niri-windows" ''
     is_focused="''${original_array[$i+1]}"
 
     case "$app_name" in
-      *"brave"*) icon=" " ;;
+      *"brave"*) icon="󰖟 " ;;
       *"kitty"*) icon=" " ;;
+      *"vesktop"*) icon=" " ;;
       *"spotify"*) icon=" " ;;
       *"signal"*) icon=" " ;;
       *"zapzap"*) icon="󰖣 " ;;
+      *"obsidian"*) icon=" " ;;
+      *"gimp"*) icon=" " ;;
       *) icon=" " ;;
     esac
 
