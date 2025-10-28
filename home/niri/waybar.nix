@@ -44,8 +44,9 @@
       app_name="''${original_array[$i]}"
       is_focused="''${original_array[$i+1]}"
 
+    #   󰨈 󰅏 
       case "$app_name" in
-        *"brave"*) icon="󰖟 " ;;
+        *"brave"*) icon=" " ;;
         *"kitty"*) icon=" " ;;
         *"vesktop"*) icon=" " ;;
         *"spotify"*) icon=" " ;;

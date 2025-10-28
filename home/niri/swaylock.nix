@@ -18,19 +18,27 @@
       text-ver = "Verifying"; # verification message
       text-wrong = "Access Denied"; # wrong password message
       indicator-thickness = 6; # ring thickness
-      blur = 0; # no blur for minimal look
       effect = "none"; # no fancy effects
     };
   };
-  #ä services.swayidle = {
-  #ä   enable = true;
-  #ä   systemdTarget = "sway-session.target";
-  #ä   events = [
-  #ä     { event = "lock"; command = "${pkgs.swaylock}/bin/swaylock"; }
-  #ä     { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock"; }
-  #ä   ];
-  #ä   timeouts = [
-  #ä     { timeout = 30; command = "${pkgs.swaylock}/bin/swaylock"; }
-  #ä   ];
-  #ä };
+  services.swayidle = {
+    enable = true;
+    systemdTarget = "sway-session.target";
+    events = [
+      {
+        event = "lock";
+        command = "${pkgs.swaylock}/bin/swaylock";
+      }
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock}/bin/swaylock";
+      }
+    ];
+    timeouts = [
+      {
+        timeout = 30;
+        command = "${pkgs.swaylock}/bin/swaylock";
+      }
+    ];
+  };
 }

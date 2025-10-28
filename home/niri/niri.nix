@@ -8,6 +8,7 @@
     ./waybar.nix
     ./fuzzel.nix
     ./swaylock.nix
+    # ./swayidle.nix
   ];
 
   home.packages = with pkgs; [
