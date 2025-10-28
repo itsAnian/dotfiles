@@ -31,6 +31,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    termstat = {
+      url = "github:Marc55s/termstat/feat/nix";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
@@ -57,7 +62,7 @@
 
     pkgs = import nixpkgs {
       inherit system;
-      overlays = [overlay];
+      overlays = [overlay inputs.termstat.overlays.default];
       config = {allowUnfree = true;};
     };
 

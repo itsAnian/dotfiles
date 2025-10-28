@@ -43,6 +43,7 @@
     ./programs/television.nix
     ./programs/btop.nix
     ./programs/cursor.nix
+    ./programs/termstat.nix
   ];
 
   home.shellAliases = {
