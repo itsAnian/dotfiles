@@ -44,6 +44,7 @@
     ./programs/btop.nix
     ./programs/cursor.nix
     ./programs/termstat.nix
+    ./programs/nh.nix
   ];
 
   home.shellAliases = {

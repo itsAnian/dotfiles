@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
   ];
 
@@ -22,7 +19,7 @@
   programs.home-manager.enable = true;
 
   home.shellAliases = {
-    nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos-pc";
+    nrs = "nh os switch ~/dotfiles --hostname nixos-pc";
   };
 
   home.stateVersion = "25.05";

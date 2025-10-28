@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     nwg-displays
     vlc
@@ -31,6 +28,6 @@
   home.stateVersion = "25.05";
 
   home.shellAliases = {
-    nrs = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos-laptop";
+    nrs = "nh os switch ~/dotfiles --hostname nixos-laptop";
   };
 }
