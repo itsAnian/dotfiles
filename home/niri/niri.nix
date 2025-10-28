@@ -17,7 +17,7 @@
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri.overrideAttrs (old: {
+    package = pkgs.niri.overrideAttrs (_old: {
       doCheck = false;
     });
     # stylix?

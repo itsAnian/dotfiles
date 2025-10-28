@@ -1,6 +1,4 @@
 {
-  config,
-  pkgs,
   ...
 }: {
   # 1. Enable the xone driver

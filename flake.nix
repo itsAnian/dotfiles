@@ -41,20 +41,15 @@
   };
 
   outputs = inputs @ {
-    self,
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    todo-shell,
-    edu-sync-nix,
     grub2-themes,
-    openconnect-sso,
-    niri,
     ...
   }: let
     system = "x86_64-linux";
 
-    overlay = final: prev: {
+    overlay = _final: _prev: {
       edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
       openconnect-sso = inputs.openconnect-sso.packages.${pkgs.system}.openconnect-sso;
       todo-shell = inputs.todo-shell.defaultPackage.${pkgs.system};

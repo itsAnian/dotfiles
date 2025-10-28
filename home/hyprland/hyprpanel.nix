@@ -1,7 +1,4 @@
 {
-  config,
-  pkgs,
-  inputs,
   ...
 }: let
   theme = builtins.fromJSON (builtins.readFile ./everforest_vivid.json);

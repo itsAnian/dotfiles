@@ -19,7 +19,7 @@
   ];
 
   nixpkgs.overlays = [
-    (self: super: {
+    (_self: super: {
       lutris = super.lutris.override {
         extraLibraries = pkgs:
           with pkgs; [
