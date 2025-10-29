@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   list-niri-windows = pkgs.writeShellScriptBin "list-niri-windows" ''
     #!/usr/bin/env bash
     INTERVAL=0.1
@@ -53,6 +50,7 @@
         *"zapzap"*) icon="󰖣 " ;;
         *"obsidian"*) icon=" " ;;
         *"gimp"*) icon=" " ;;
+        *"libreoffice"*) icon="󰅏" ;;
         *) icon=" " ;;
       esac
 
