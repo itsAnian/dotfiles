@@ -456,16 +456,15 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1761690428,
-        "narHash": "sha256-ywED2weJaTkXVolIf8CzwZHG73iLC0i/UvKh+RaYZlw=",
+        "lastModified": 1762097016,
+        "narHash": "sha256-hNjGfQsfprOy0zmBWjqRJ3WNclE/wvoSnExL/kehJo8=",
         "owner": "Marc55s",
         "repo": "termstat",
-        "rev": "49e0464161d7f695b85ebac77c5f0fc65f318e5d",
+        "rev": "8516eaaf042240b96fcec4e169e4754f5af847c5",
         "type": "github"
       },
       "original": {
         "owner": "Marc55s",
-        "ref": "feat/nix",
         "repo": "termstat",
         "type": "github"
       }

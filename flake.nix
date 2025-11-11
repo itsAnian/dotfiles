@@ -32,7 +32,7 @@
     };
 
     termstat = {
-      url = "github:Marc55s/termstat/feat/nix";
+      url = "github:Marc55s/termstat";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
