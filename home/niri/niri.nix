@@ -8,6 +8,7 @@
     ./waybar.nix
     ./fuzzel.nix
     ./swaylock.nix
+    ./mako.nix
     # ./swayidle.nix
   ];
 
@@ -23,9 +24,7 @@
     # stylix?
 
     settings = {
-      spawn-at-startup = [
-        {sh = "waybar";}
-      ];
+      spawn-at-startup = [];
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;
       input = {

@@ -60,6 +60,10 @@ window#waybar {
   margin-left: 20px;
 }
 
+#custom-notification {
+  margin-left: 20px;
+}
+
 tooltip {
   background-color: black;
   color: white;

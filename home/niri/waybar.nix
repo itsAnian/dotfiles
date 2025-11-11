@@ -102,6 +102,7 @@ in {
           "bluetooth"
           "battery"
           "clock"
+          "custom/notification"
         ];
         font = "JetBrainsMono Nerd Font 13";
 
@@ -141,7 +142,7 @@ in {
             warning = 30;
             critical = 10;
           };
-          format = "{capacity}%{icon}";
+          format = "{icon} {capacity}%";
           format-charging = "{capacity}%󰂄";
           format-plugged = "{capacity}%";
           format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
@@ -226,10 +227,21 @@ in {
           tooltip = true;
           tooltip-format = "{title}";
         };
+
         "custom/windowlist" = {
           format = "{}";
           return-type = "json";
           exec = "${list-niri-windows}/bin/list-niri-windows";
+        };
+
+        "custom/notification" = {
+          format = "󰂚 {}";
+          tooltip = false;
+          exec = "makoctl history | grep '^Notification ' | wc -l";
+          interval = 1;
+          on-click = "makoctl restore";
+          on-click-right = "makoctl dismiss --all";
+          on-click-middle = "makoctl dismiss --all --no-history";
         };
       };
     };

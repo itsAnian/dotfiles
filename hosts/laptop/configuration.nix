@@ -1,10 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ../../modules/nix-ld.nix
     ../../modules/grub.nix
@@ -44,7 +41,7 @@
       sessions = [
         {
           name = "Niri";
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri";
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri-session";
         }
         {
           name = "Hyprland";
@@ -52,7 +49,7 @@
         }
       ];
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri-session";
       };
     };
   };
