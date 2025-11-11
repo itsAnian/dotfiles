@@ -128,11 +128,15 @@ in {
         };
 
         clock = {
-          tooltip = false;
           format = "{:%H:%M}";
-          format-alt = "{:%A, %B %d, %Y (%R)}";
-          actions = {
-            on-click-right = "mode";
+          tooltip = true;
+          tooltip-format = "{calendar}";
+          calendar = {
+            mode = "month";
+            mode-mon-col = 3;
+            format = {
+              today = "<span color='#FFFFFF'><b><u>{}</u></b></span>";
+            };
           };
         };
 
@@ -236,7 +240,6 @@ in {
 
         "custom/notification" = {
           format = "󰂚 {}";
-          tooltip = false;
           exec = "makoctl history | grep '^Notification ' | wc -l";
           interval = 1;
           on-click = "makoctl restore";
