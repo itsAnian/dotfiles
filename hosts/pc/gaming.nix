@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Gaming
   programs.steam = {
     enable = true;
@@ -10,12 +7,17 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     gamescopeSession.enable = false;
   };
+
   environment.systemPackages = with pkgs; [
     gparted
     wl-clipboard
     gamescope
     kdePackages.kcalc
     lutris
+    vulkan-tools
+    wineWowPackages.full
+    winetricks
+    heroic
   ];
 
   nixpkgs.overlays = [

@@ -24,6 +24,7 @@
     ripgrep
     fastfetch
     libreoffice
+    vlc
   ];
 
   imports = [
