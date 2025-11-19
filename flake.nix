@@ -104,6 +104,24 @@
           }
         ];
       };
+
+      nixos-server = lib.nixosSystem {
+        modules = [
+          ./hosts/server/configuration.nix
+          ./hosts/server/hardware-configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.server = import ./home/server.nix;
+            home-manager.extraSpecialArgs = {
+              inherit inputs pkgs pkgs-unstable;
+              host = "nixos-server";
+            };
+          }
+        ];
+      };
+
     };
   };
 }
