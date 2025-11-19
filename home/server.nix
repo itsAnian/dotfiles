@@ -1,11 +1,18 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     vim
+    lazydocker
+    btop
+    systemctl-tui
+    unzip
+    fastfetch
   ];
 
   imports = [
     ./programs/git.nix
     ./programs/nh.nix
+    ./programs/fzf.nix
+    ./programs/bat.nix
   ];
 
   home.username = "server";
