@@ -20,7 +20,7 @@
 
   programs.home-manager.enable = true;
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 
   home.shellAliases = {
     nrs = "nh os switch ~/dotfiles --hostname nixos-server";

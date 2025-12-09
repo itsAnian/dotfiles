@@ -23,5 +23,5 @@
     nrs = "nh os switch ~/dotfiles --hostname nixos-pc";
   };
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 }
