@@ -6,7 +6,7 @@
     p3x-onenote
     spotify
     vscode
-    bitwarden
+    bitwarden-desktop
     gimp
     remnote
     todo-shell

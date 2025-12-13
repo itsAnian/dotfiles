@@ -1,16 +1,13 @@
-{
-  config,
-  ...
-}: {
+{config, ...}: {
   # Enable OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
 
     # This is the single, correct line to enable 32-bit NVIDIA support.
     # It tells NixOS to provide the 32-bit libs for
     # both OpenGL and Vulkan, which the hardware.nvidia
     # module will supply.
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Load nvidia driver for Xorg and Wayland

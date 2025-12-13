@@ -1,17 +1,18 @@
 {
   programs.git = {
     enable = true;
-    userEmail = "anian.seidl@gmail.com";
-    userName = "itsAnian";
-    delta = {
-      enable = true;
-      options = {
-        features = "decorations";
-      };
-    };
-    extraConfig = {
+    settings = {
+      user.email = "anian.seidl@gmail.com";
+      user.name = "itsAnian";
       push.autoSetupRemote = true;
       core.editor = "nvim";
+    };
+  };
+
+  programs.delta = {
+    enable = true;
+    options = {
+      features = "decorations";
     };
   };
 

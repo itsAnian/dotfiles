@@ -51,8 +51,8 @@
 
     overlay = _final: _prev: {
       edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
-      openconnect-sso = inputs.openconnect-sso.packages.${pkgs.system}.openconnect-sso;
-      todo-shell = inputs.todo-shell.defaultPackage.${pkgs.system};
+      openconnect-sso = inputs.openconnect-sso.packages.${system}.openconnect-sso;
+      todo-shell = inputs.todo-shell.defaultPackage.${system};
     };
 
     pkgs = import nixpkgs {
@@ -76,7 +76,7 @@
           ./hosts/laptop/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
+            # home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.anian = import ./home/laptop.nix;
             home-manager.extraSpecialArgs = {
@@ -94,7 +94,7 @@
           ./hosts/pc/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
+            # home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.anian = import ./home/pc.nix;
             home-manager.extraSpecialArgs = {
@@ -111,7 +111,7 @@
           ./hosts/server/hardware-configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
+            # home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.server = import ./home/server.nix;
             home-manager.extraSpecialArgs = {
@@ -121,7 +121,6 @@
           }
         ];
       };
-
     };
   };
 }
