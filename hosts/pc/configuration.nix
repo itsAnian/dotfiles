@@ -8,6 +8,7 @@
     ../../modules/local.nix
     ../../modules/settings.nix
     ../../modules/docker.nix
+    ../../modules/ssh.nix
     ./nvidia.nix
     ./gaming.nix
     ./controller.nix
