@@ -8,6 +8,7 @@
     ../../modules/local.nix
     ../../modules/settings.nix
     ../../modules/docker.nix
+    ../../modules/tailscale.nix
   ];
 
   networking.hostName = "nixos-laptop"; # Define your hostname.

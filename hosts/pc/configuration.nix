@@ -9,6 +9,7 @@
     ../../modules/settings.nix
     ../../modules/docker.nix
     ../../modules/ssh.nix
+    ../../modules/tailscale.nix
     ./nvidia.nix
     ./gaming.nix
     ./controller.nix
