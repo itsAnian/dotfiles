@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }: {
   home.packages = with pkgs; [
@@ -37,4 +38,5 @@
       ];
     };
   };
+  systemd.user.services.hypridle.Install.WantedBy = lib.mkForce [];
 }

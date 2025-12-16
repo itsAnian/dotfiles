@@ -5,11 +5,10 @@
 }: {
   imports = [
     inputs.niri.homeModules.niri
-    ./waybar.nix
     ./fuzzel.nix
     ./swaylock.nix
-    ./mako.nix
     # ./swayidle.nix
+    ./noctalia-shell.nix
   ];
 
   home.packages = with pkgs; [
@@ -24,7 +23,13 @@
     # stylix?
 
     settings = {
-      spawn-at-startup = [];
+      spawn-at-startup = [
+        {
+          command = [
+            "noctalia-shell"
+          ];
+        }
+      ];
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;
       input = {
@@ -100,6 +105,7 @@
 
         "Mod+M".action.quit = {};
         "Mod+L".action.spawn = "swaylock";
+        "Mod+O".action.toggle-overview = {};
       };
 
       window-rules = [

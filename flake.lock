@@ -305,6 +305,26 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765916394,
+        "narHash": "sha256-Rao0WX2ZVUC9hFEs3oqy/oIP6O2sSfQRq/mNhHqvG0Y=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "rev": "29d4347d9073ec66512d46c0d52a90c04131a5ed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "type": "github"
+      }
+    },
     "openconnect-sso": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -365,6 +385,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-openconnect-sso": "nixpkgs-openconnect-sso",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "noctalia": "noctalia",
         "openconnect-sso": "openconnect-sso",
         "termstat": "termstat",
         "todo-shell": "todo-shell"
