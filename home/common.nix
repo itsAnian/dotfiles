@@ -51,7 +51,7 @@
   home.shellAliases = {
     nfu = "nix flake update --flake ~/dotfiles";
     nsp = "nix-shell -p";
-    nd = "nix develop";
+    nd = "nix develop -c $SHELL";
     ll = "ls -la";
     ".." = "cd ../";
   };

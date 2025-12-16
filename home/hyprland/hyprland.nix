@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     dunst
     libnotify
@@ -86,7 +83,7 @@
       };
 
       gestures = {
-        workspace_swipe = true;
+        gesture = "3, horizontal, workspace";
       };
 
       misc = {
