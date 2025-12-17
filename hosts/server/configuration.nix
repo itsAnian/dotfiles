@@ -13,6 +13,7 @@
     ../../modules/docker.nix
     ../../modules/ssh.nix
     ../../modules/tailscale.nix
+    ./nextcloud.nix
   ];
 
   # Bootloader.
