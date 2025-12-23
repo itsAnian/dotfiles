@@ -52,7 +52,7 @@
     nfu = "nix flake update --flake ~/dotfiles";
     nsp = "nix-shell -p";
     nd = "nix develop -c $SHELL";
-    ll = "ls -la";
+    ll = "ls -la --group-directories-first";
     ".." = "cd ../";
   };
 }
