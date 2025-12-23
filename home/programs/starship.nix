@@ -1,4 +1,4 @@
-{ ...}: {
+{...}: {
   programs.starship = {
     enable = true;
 
@@ -7,7 +7,7 @@
       palette = "default";
 
       format = ''
-        $nix_shell$status$directory$git_branch$git_status$cmd_duration$line_break(fg:separator)$character
+        $hostname$nix_shell$status$directory$git_branch$git_status$cmd_duration$line_break(fg:separator)$character
       '';
 
       palettes.default = {
@@ -22,6 +22,7 @@
         branch = "#ffea03";
         status = "#e23140";
         nix = "#42f2ff";
+        ssh = "#49fb2b";
       };
 
       character = {
@@ -79,6 +80,12 @@
       nix_shell = {
         format = "[](fg:nix)[❄](fg:icon bg:nix)[](fg:nix bg:background)[ nix-shell](bg:background)[](fg:background) ";
         disabled = false;
+      };
+
+      hostname = {
+        format = "[](fg:ssh)[󰢹 ](fg:icon bg:ssh)[](fg:ssh bg:background)[ ssh](bg:background)[](fg:background) ";
+        disabled = false;
+        ssh_only = true;
       };
     };
   };
