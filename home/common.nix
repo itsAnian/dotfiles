@@ -25,6 +25,7 @@
     fastfetch
     libreoffice
     vlc
+    nemo
   ];
 
   imports = [
@@ -53,6 +54,7 @@
     nsp = "nix-shell -p";
     nd = "nix develop -c $SHELL";
     ll = "ls -la --group-directories-first";
+    pls = "sudo";
     ".." = "cd ../";
   };
 }
