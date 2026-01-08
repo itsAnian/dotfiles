@@ -21,7 +21,6 @@ in {
     # lsps
     lua-language-server
     nil
-    pyright
     nodejs
     nodePackages.bash-language-server
 
@@ -30,6 +29,12 @@ in {
     jq
     yamlfmt
     shfmt
+
+    # python cause python is special
+    (python313.withPackages (ps: [
+      ps.python-lsp-server
+      ps.autopep8
+    ]))
   ];
 
   programs.neovim = {

@@ -82,7 +82,7 @@
   users.users.anian = {
     isNormalUser = true;
     description = "anian";
-    extraGroups = ["networkmanager" "wheel" "docker" "dialout" "tty"];
+    extraGroups = ["networkmanager" "wheel" "docker" "dialout" "tty" "udev"];
     shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate

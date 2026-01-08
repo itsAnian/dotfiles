@@ -73,21 +73,19 @@ lspconfig.rust_analyzer.setup({
 })
 
 -- Python
-lspconfig.pyright.setup({
-    on_attach = on_attach,
-    capabilities = cmp_lsp.default_capabilities(),
+lspconfig.pylsp.setup({
     settings = {
-        python = {
-            checkOnType = true,
-            diagnostics = true,
-            inlayHints = true,
-            smartCompletion = true,
-        },
-    },
+        pylsp = {
+            plugins = {
+                autopep8 = { enabled = true },
+                pycodestyle = { enabled = true },
+            }
+        }
+    }
 })
 
 -- Bash
 lspconfig.bashls.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+    capabilities = capabilities,
+    on_attach = on_attach,
 })
