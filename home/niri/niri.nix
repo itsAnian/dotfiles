@@ -5,7 +5,6 @@
 }: {
   imports = [
     inputs.niri.homeModules.niri
-    ./fuzzel.nix
     ./swaylock.nix
     # ./swayidle.nix
     ./noctalia-shell.nix
@@ -13,6 +12,8 @@
 
   home.packages = with pkgs; [
     xwayland-satellite
+    wl-mirror
+    jq
   ];
 
   programs.niri = {
@@ -85,7 +86,7 @@
 
       binds = {
         "Mod+Q".action.spawn = "kitty";
-        "Mod+R".action.spawn = "fuzzel";
+        "Mod+R".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
         "Mod+B".action.spawn = "brave";
 
         "Mod+left".action.focus-window-down-or-column-left = {};
@@ -104,8 +105,14 @@
         "Mod+Shift+F".action.fullscreen-window = {};
 
         "Mod+M".action.quit = {};
-        "Mod+L".action.spawn = "swaylock";
+        "Mod+L".action.spawn = ["noctalia-shell" "ipc" "call" "lockScreen" "lock"];
         "Mod+O".action.toggle-overview = {};
+
+        "Mod+Shift+P".action.spawn = [
+          "bash"
+          "-c"
+          "${pkgs.wl-mirror}/bin/wl-mirror $(${pkgs.niri}/bin/niri msg --json focused-output | ${pkgs.jq}/bin/jq -r .name)"
+        ];
       };
 
       window-rules = [

@@ -51,9 +51,9 @@
           center = [
             {
               colorName = "primary";
-              hideWhenIdle = false;
+              hideWhenIdle = true;
               id = "AudioVisualizer";
-              width = 200;
+              width = 500;
             }
           ];
           left = [
@@ -141,7 +141,7 @@
         manualSunrise = "06:30";
         manualSunset = "18:30";
         matugenSchemeType = "scheme-fruit-salad";
-        predefinedScheme = "Noctalia (default)";
+        predefinedScheme = "Monochrome";
         schedulingMode = "off";
         useWallpaperColors = false;
       };
@@ -230,7 +230,7 @@
       location = {
         analogClockInCalendar = false;
         firstDayOfWeek = 1;
-        name = "Feuchtwangen";
+        name = "Heidenheim";
         showCalendarEvents = true;
         showCalendarWeather = true;
         showWeekNumberInCalendar = true;
