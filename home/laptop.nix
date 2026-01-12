@@ -3,8 +3,6 @@
     nwg-displays
     vlc
     wl-clipboard
-
-    python3
   ];
 
   imports = [

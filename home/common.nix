@@ -26,6 +26,7 @@
     libreoffice
     vlc
     nemo
+    onefetch
   ];
 
   imports = [
