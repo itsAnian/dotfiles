@@ -88,6 +88,7 @@
         "Mod+Q".action.spawn = "kitty";
         "Mod+R".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
         "Mod+B".action.spawn = "brave";
+        "Mod+Shift+B".action.spawn = ["brave" "--incognito"];
 
         "Mod+left".action.focus-window-down-or-column-left = {};
         "Mod+down".action.focus-window-down = {};
