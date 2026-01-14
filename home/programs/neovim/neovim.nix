@@ -16,6 +16,7 @@
   diagnostics = builtins.readFile ./diagnostics.lua;
   vimtex = builtins.readFile ./vimtex.lua;
   windsurf = builtins.readFile ./windsurf-nvim.lua;
+  teamtype-lua = builtins.readFile ./teamtype.lua;
 in {
   home.packages = with pkgs; [
     # lsps
@@ -35,6 +36,9 @@ in {
       ps.python-lsp-server
       ps.autopep8
     ]))
+
+    #for teamtype plugin
+    teamtype
   ];
 
   programs.neovim = {
@@ -67,6 +71,7 @@ in {
       windsurf-nvim
       vim-wakatime
       conform-nvim
+      teamtype
     ];
 
     extraLuaConfig = ''
@@ -88,6 +93,7 @@ in {
       ${diagnostics}
       ${vimtex}
       ${windsurf}
+      ${teamtype-lua}
     '';
   };
 
