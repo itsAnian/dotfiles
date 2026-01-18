@@ -6,6 +6,7 @@
       user.name = "itsAnian";
       push.autoSetupRemote = true;
       core.editor = "nvim";
+      core.pager = "delta";
     };
   };
 
