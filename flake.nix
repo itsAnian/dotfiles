@@ -40,6 +40,10 @@
       url = "github:Marc55s/termstat";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    hytale-launcher = {
+      url = "github:JPyke3/hytale-launcher-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixpkgs.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -58,6 +62,7 @@
       edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
       openconnect-sso = inputs.openconnect-sso.packages.${system}.openconnect-sso;
       todo-shell = inputs.todo-shell.defaultPackage.${system};
+      hytale-launcher = inputs.hytale-launcher.packages.${pkgs.system}.default;
     };
 
     pkgs = import nixpkgs {
