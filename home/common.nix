@@ -5,7 +5,6 @@
     zapzap
     p3x-onenote
     spotify
-    vscode
     bitwarden-desktop
     gimp
     remnote

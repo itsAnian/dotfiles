@@ -12,6 +12,7 @@
     ./tmp.nix
     ./programs/gtk.nix
     ./programs/dhbw.nix
+    ./programs/vscode.nix
   ];
 
   home.username = "anian";
