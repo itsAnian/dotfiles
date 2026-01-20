@@ -9,6 +9,33 @@
 
   programs.noctalia-shell = {
     enable = true;
+    package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+      calendarSupport = true;
+    };
+    systemd.enable = true;
+    plugins = {
+      sources = [
+        {
+          enabled = true;
+          name = "Official Source";
+          url = "https://github.com/noctalia-dev/noctalia-plugins";
+        }
+      ];
+      states = {
+        privacy-indicator = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+      };
+      version = 1;
+    };
+    # this may also be a string or a path to a JSON file.
+
+    pluginSettings = {
+      privacy-indicator = {};
+      # this may also be a string or a path to a JSON file.
+    };
+
     settings = {
       settingsVersion = 31;
       appLauncher = {
@@ -80,6 +107,9 @@
           ];
           right = [
             {
+              id = "privacy-indicator";
+            }
+            {
               displayMode = "alwaysShow";
               id = "Volume";
             }
@@ -140,7 +170,7 @@
         generateTemplatesForPredefined = true;
         manualSunrise = "06:30";
         manualSunset = "18:30";
-        matugenSchemeType = "scheme-fruit-salad";
+        matugenSchemeType = "Monochrome";
         predefinedScheme = "Monochrome";
         schedulingMode = "off";
         useWallpaperColors = false;

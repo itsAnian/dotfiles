@@ -36,6 +36,7 @@
   # Enable hyprland
   programs.hyprland.enable = true;
   programs.niri.enable = true;
+
   services.greetd = {
     enable = true;
     settings = {
@@ -86,15 +87,12 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput = {
     enable = true;
-
-    /*
     touchpad = {
-      disableWhileTyping = false;
-      tapping = true;
-      naturalScrolling = true;
-      scrollMethod = "twofinger";
+      disableWhileTyping = true;
+      # tapping = true;
+      # naturalScrolling = true;
+      # scrollMethod = "twofinger";
     };
-    */
   };
 
   services.fprintd.enable = true;
