@@ -1,1 +1,1 @@
-require("teamtype").setup()
+require("teamtype")

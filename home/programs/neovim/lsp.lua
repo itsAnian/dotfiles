@@ -15,11 +15,8 @@ local function on_attach(client, bufnr)
     client.server_capabilities.semanticTokensProvider = nil
 end
 
--- LSP configurations
-local lspconfig = require("lspconfig")
-
 -- C / C++
-lspconfig.clangd.setup({
+vim.lsp.config("clangd",{
     cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose", "--fallback-style=webkit" },
     init_options = {
         fallbackFlags = { "-std=c99" },
@@ -28,7 +25,7 @@ lspconfig.clangd.setup({
 })
 
 -- Lua
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls",{
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -42,7 +39,7 @@ lspconfig.lua_ls.setup({
 })
 
 -- Nix
-lspconfig.nil_ls.setup({
+vim.lsp.config("nil_ls",{
     autostart = true,
     on_attach = on_attach,
     settings = {
@@ -53,7 +50,7 @@ lspconfig.nil_ls.setup({
 })
 
 -- Rust
-lspconfig.rust_analyzer.setup({
+vim.lsp.config("rust_analyzer",{
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -73,7 +70,7 @@ lspconfig.rust_analyzer.setup({
 })
 
 -- Python
-lspconfig.pylsp.setup({
+vim.lsp.config("pylsp",{
     settings = {
         pylsp = {
             plugins = {
@@ -85,7 +82,7 @@ lspconfig.pylsp.setup({
 })
 
 -- Bash
-lspconfig.bashls.setup({
+vim.lsp.config("bashls",{
     capabilities = capabilities,
     on_attach = on_attach,
 })
