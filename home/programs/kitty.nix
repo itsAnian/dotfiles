@@ -12,6 +12,7 @@
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
+      enable_audio_bell = "no";
 
       font_size =
         if host == "nixos-laptop"

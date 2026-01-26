@@ -14,6 +14,9 @@
     xwayland-satellite
     wl-mirror
     jq
+    grim
+    slurp
+    wl-clipboard
   ];
 
   programs.niri = {
@@ -88,6 +91,7 @@
         "Mod+R".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
         "Mod+B".action.spawn = "brave";
         "Mod+Shift+B".action.spawn = ["brave" "--incognito"];
+        "Mod+S".action.spawn = ["sh" "-c" "slurp | grim -g - - | wl-copy"];
 
         "Mod+left".action.focus-window-down-or-column-left = {};
         "Mod+down".action.focus-window-down = {};
