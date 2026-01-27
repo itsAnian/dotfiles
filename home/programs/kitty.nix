@@ -2,7 +2,34 @@
   pkgs,
   host,
   ...
-}: {
+}: let
+  gh-opener = pkgs.writeShellApplication {
+    name = "gh-opener-script";
+    runtimeInputs = [pkgs.git pkgs.xdg-utils pkgs.libnotify];
+
+    text = ''
+      url=$(git remote get-url origin 2>/dev/null || true)
+
+      if [[ -z "$url" ]]; then
+        notify-send "Git Error" "Not in a git repo (or no 'origin' remote)"
+        exit 1
+      fi
+
+      if [[ "$url" == *github.com* || "$url" == *gitlab* ]]; then
+        if [[ "$url" == git@* ]]; then
+          url="''${url#git@}"
+          url="''${url/:/\/}"
+          url="https://''${url}"
+        fi
+
+        url="''${url%.git}"
+        xdg-open "$url"
+      else
+        notify-send "Git Error" "Remote is not GitHub or GitLab: $url"
+      fi
+    '';
+  };
+in {
   programs.kitty = {
     enable = true;
 
@@ -49,6 +76,7 @@
 
     extraConfig = ''
       map ctrl+l clear_terminal scroll active
+      map ctrl+shift+g launch --type=background --cwd=current ${gh-opener}/bin/gh-opener-script
     '';
   };
 
