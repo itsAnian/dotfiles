@@ -22,7 +22,7 @@
     gowall
     ripgrep
     fastfetch
-    libreoffice
+    onlyoffice-desktopeditors
     vlc
     nemo
     onefetch
