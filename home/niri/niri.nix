@@ -28,10 +28,8 @@
 
     settings = {
       spawn-at-startup = [
-        {
-          command = [
-          ];
-        }
+        # {command = ["${pkgs.wl-clipboard}/bin/wl-paste" "--type" "text" "--watch" "${pkgs.cliphist}/bin/cliphist" "store"];}
+        # {command = ["${pkgs.wl-clipboard}/bin/wl-paste" "--type" "image" "--watch" "${pkgs.cliphist}/bin/cliphist" "store"];}
       ];
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;

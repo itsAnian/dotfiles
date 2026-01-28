@@ -7,6 +7,10 @@
     inputs.noctalia.homeModules.default
   ];
 
+  # home.packages = with pkgs; [
+  #   cliphist
+  # ];
+
   programs.noctalia-shell = {
     enable = true;
     package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
@@ -26,18 +30,116 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        tailscale = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        # clipper = {
+        #   enabled = true;
+        #   sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        # };
       };
       version = 1;
     };
-    # this may also be a string or a path to a JSON file.
 
     pluginSettings = {
-      privacy-indicator = {};
-      # this may also be a string or a path to a JSON file.
+      privacy-indicator = {
+        hideInactive = true;
+        removeMargins = false;
+        iconSpacing = 4;
+      };
+      tailscale = {
+        refreshInterval = 5000;
+        compactMode = true;
+        showIpAddress = false;
+        showPeerCount = false;
+        hideDisconnected = false;
+        terminalCommand = "kitty";
+        pingCount = 5;
+        defaultPeerAction = "ssh";
+      };
+      # clipper = {
+      #   enableTodoIntegration = false;
+      #
+      #   cardColors = {
+      #     Text = {
+      #       bg = "mOutline";
+      #       separator = "mSurface";
+      #       fg = "mOnSurface";
+      #     };
+      #     Image = {
+      #       bg = "mTertiary";
+      #       separator = "mSurface";
+      #       fg = "mOnTertiary";
+      #     };
+      #     Link = {
+      #       bg = "mPrimary";
+      #       separator = "mSurface";
+      #       fg = "mOnPrimary";
+      #     };
+      #     Code = {
+      #       bg = "mSecondary";
+      #       separator = "mSurface";
+      #       fg = "mOnSecondary";
+      #     };
+      #     Color = {
+      #       bg = "mSecondary";
+      #       separator = "mSurface";
+      #       fg = "mOnSecondary";
+      #     };
+      #     Emoji = {
+      #       bg = "mHover";
+      #       separator = "mSurface";
+      #       fg = "mOnHover";
+      #     };
+      #     File = {
+      #       bg = "mError";
+      #       separator = "mSurface";
+      #       fg = "mOnError";
+      #     };
+      #   };
+      #
+      #   customColors = {
+      #     Text = {
+      #       bg = "#555555";
+      #       separator = "#000000";
+      #       fg = "#e9e4f0";
+      #     };
+      #     Image = {
+      #       bg = "#e0b7c9";
+      #       separator = "#000000";
+      #       fg = "#20161f";
+      #     };
+      #     Link = {
+      #       bg = "#c7a1d8";
+      #       separator = "#000000";
+      #       fg = "#1a151f";
+      #     };
+      #     Code = {
+      #       bg = "#a984c4";
+      #       separator = "#000000";
+      #       fg = "#f3edf7";
+      #     };
+      #     Color = {
+      #       bg = "#a984c4";
+      #       separator = "#000000";
+      #       fg = "#f3edf7";
+      #     };
+      #     Emoji = {
+      #       bg = "#e0b7c9";
+      #       separator = "#000000";
+      #       fg = "#20161f";
+      #     };
+      #     File = {
+      #       bg = "#e9899d";
+      #       separator = "#000000";
+      #       fg = "#1e1418";
+      #     };
+      #   };
+      # };
     };
 
     settings = {
-      settingsVersion = 31;
       appLauncher = {
         customLaunchPrefix = "";
         customLaunchPrefixEnabled = false;
@@ -107,7 +209,7 @@
           ];
           right = [
             {
-              id = "privacy-indicator";
+              id = "plugin:privacy-indicator";
             }
             {
               displayMode = "alwaysShow";
@@ -118,12 +220,27 @@
               id = "Brightness";
             }
             {
+              displayMode = "onclick";
+              id = "Bluetooth";
+            }
+            {
+              displayMode = "onclick";
+              id = "Network";
+            }
+            {
+              displayMode = "onclick";
+              id = "plugin:tailscale";
+            }
+            {
               displayMode = "alwaysShow";
               id = "Battery";
               showNoctaliaPerformance = true;
               showPowerProfiles = true;
               warningThreshold = 20;
             }
+            # {
+            #   id = "plugin:clipper";
+            # }
             {
               customFont = "";
               formatHorizontal = "HH:mm ddd, dd MMM";
@@ -200,6 +317,10 @@
           {
             enabled = true;
             id = "media-sysmon-card";
+          }
+          {
+            displayMode = "onclick";
+            id = "plugin:tailscale";
           }
         ];
         position = "close_to_bar_button";
