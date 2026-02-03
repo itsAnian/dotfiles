@@ -12,11 +12,15 @@
 
   home.packages = with pkgs; [
     xwayland-satellite
+    wdisplays
     wl-mirror
     jq
     grim
     slurp
     wl-clipboard
+    brightnessctl
+    wireplumber
+    playerctl
   ];
 
   programs.niri = {
@@ -28,8 +32,6 @@
 
     settings = {
       spawn-at-startup = [
-        # {command = ["${pkgs.wl-clipboard}/bin/wl-paste" "--type" "text" "--watch" "${pkgs.cliphist}/bin/cliphist" "store"];}
-        # {command = ["${pkgs.wl-clipboard}/bin/wl-paste" "--type" "image" "--watch" "${pkgs.cliphist}/bin/cliphist" "store"];}
       ];
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;
@@ -90,6 +92,14 @@
         "Mod+B".action.spawn = "brave";
         "Mod+Shift+B".action.spawn = ["brave" "--incognito"];
         "Mod+S".action.spawn = ["sh" "-c" "slurp | grim -g - - | wl-copy"];
+
+        "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+" "--limit" "1.0"];
+        "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"];
+        "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+        "XF86AudioMicMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"];
+        "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "set" "+5%"];
+        "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "set" "5%-"];
+        "Mod+P".action.spawn = "wdisplays";
 
         "Mod+left".action.focus-window-down-or-column-left = {};
         "Mod+down".action.focus-window-down = {};
