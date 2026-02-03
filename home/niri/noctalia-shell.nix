@@ -202,12 +202,15 @@
               useDistroLogo = true;
             }
             {
+              id = "SystemMonitor";
+            }
+            {
+              id = "Workspace";
               characterCount = 2;
-              colorizeIcons = false;
+              colorizeIcons = true;
               enableScrollWheel = true;
               followFocusedScreen = true;
               hideUnoccupied = true;
-              id = "Workspace";
               labelMode = "none";
               showApplications = true;
               showLabelsOnlyWhenOccupied = true;
@@ -323,10 +326,6 @@
           {
             enabled = true;
             id = "media-sysmon-card";
-          }
-          {
-            displayMode = "onclick";
-            id = "plugin:tailscale";
           }
         ];
         position = "close_to_bar_button";
@@ -493,26 +492,31 @@
         showHeader = true;
       };
       systemMonitor = {
-        cpuCriticalThreshold = 90;
-        cpuPollingInterval = 3000;
         cpuWarningThreshold = 80;
-        criticalColor = "";
-        diskCriticalThreshold = 90;
-        diskPollingInterval = 3000;
-        diskWarningThreshold = 80;
-        enableNvidiaGpu = false;
-        gpuCriticalThreshold = 90;
-        gpuPollingInterval = 3000;
-        gpuWarningThreshold = 80;
-        memCriticalThreshold = 90;
-        memPollingInterval = 3000;
-        memWarningThreshold = 80;
-        networkPollingInterval = 3000;
-        tempCriticalThreshold = 90;
-        tempPollingInterval = 3000;
+        cpuCriticalThreshold = 90;
         tempWarningThreshold = 80;
-        useCustomColors = false;
-        warningColor = "";
+        tempCriticalThreshold = 90;
+        gpuWarningThreshold = 80;
+        gpuCriticalThreshold = 90;
+        memWarningThreshold = 80;
+        memCriticalThreshold = 90;
+        swapWarningThreshold = 80;
+        swapCriticalThreshold = 90;
+        diskWarningThreshold = 80;
+        diskCriticalThreshold = 90;
+        diskAvailWarningThreshold = 20;
+        diskAvailCriticalThreshold = 10;
+        cpuPollingInterval = 1000;
+        gpuPollingInterval = 3000;
+        enableDgpuMonitoring = false;
+        memPollingInterval = 1000;
+        diskPollingInterval = 30000;
+        networkPollingInterval = 1000;
+        loadAvgPollingInterval = 3000;
+        useCustomColors = true;
+        warningColor = "yellow";
+        criticalColor = "red";
+        externalMonitor = "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor";
       };
       templates = {
         alacritty = false;
