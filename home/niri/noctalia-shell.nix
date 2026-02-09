@@ -358,6 +358,8 @@
         animationDisabled = false;
         animationSpeed = 1;
         avatarImage = "";
+        autoStartAuth = false;
+        allowPasswordWithFprintd = false;
         boxRadiusRatio = 1;
         compactLockScreen = false;
         dimmerOpacity = 0.2;
