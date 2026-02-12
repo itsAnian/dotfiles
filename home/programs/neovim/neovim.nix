@@ -17,6 +17,7 @@
   vimtex = builtins.readFile ./vimtex.lua;
   windsurf = builtins.readFile ./windsurf-nvim.lua;
   teamtype-lua = builtins.readFile ./teamtype.lua;
+  gitsigns = builtins.readFile ./gitsigns.lua;
 in {
   home.packages = with pkgs; [
     # lsps
@@ -72,6 +73,7 @@ in {
       vim-wakatime
       conform-nvim
       teamtype
+      gitsigns-nvim
     ];
 
     extraLuaConfig = ''
@@ -94,6 +96,7 @@ in {
       ${vimtex}
       ${windsurf}
       ${teamtype-lua}
+      ${gitsigns}
     '';
   };
 
