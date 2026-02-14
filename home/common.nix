@@ -4,7 +4,6 @@
     discord
     zapzap
     p3x-onenote
-    spotify
     bitwarden-desktop
     gimp
     remnote
@@ -47,6 +46,7 @@
     ./programs/cursor.nix
     ./programs/termstat.nix
     ./programs/nh.nix
+    ./programs/spicetify.nix
   ];
 
   home.shellAliases = {

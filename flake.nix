@@ -27,7 +27,7 @@
     nixpkgs-openconnect-sso.url = "github:nixos/nixpkgs/46397778ef1f73414b03ed553a3368f0e7e33c2f";
 
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:LuckShiba/niri-flake/includes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -43,6 +43,10 @@
     hytale-launcher = {
       url = "github:JPyke3/hytale-launcher-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
     };
 
     nixpkgs.url = "nixpkgs/nixos-25.11";
@@ -63,6 +67,7 @@
       openconnect-sso = inputs.openconnect-sso.packages.${system}.openconnect-sso;
       todo-shell = inputs.todo-shell.defaultPackage.${system};
       hytale-launcher = inputs.hytale-launcher.packages.${pkgs.system}.default;
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
     };
 
     pkgs = import nixpkgs {

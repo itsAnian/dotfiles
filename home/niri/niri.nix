@@ -31,6 +31,7 @@
     # stylix?
 
     settings = {
+      includes = ["noctalia.kdl"];
       spawn-at-startup = [
       ];
       prefer-no-csd = true;
@@ -54,9 +55,9 @@
         center-focused-column = "never";
         focus-ring.enable = true;
         focus-ring.width = 3;
-        focus-ring.active = {color = "#ffffff";};
-        focus-ring.inactive = {color = "#000000";};
-        focus-ring.urgent = {color = "#ffffff";};
+        # focus-ring.active = {color = "#ffffff";};
+        # focus-ring.inactive = {color = "#000000";};
+        # focus-ring.urgent = {color = "#ffffff";};
         gaps = 10;
       };
       # animations = {

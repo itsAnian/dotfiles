@@ -50,6 +50,8 @@ in {
       background_opacity = "0.7";
       background_blur = 100;
 
+      include = "themes/noctalia.conf";
+
       tab_bar_edge = "top";
       tab_bar_style = "powerline";
       tab_bar_align = "left";
@@ -59,11 +61,11 @@ in {
       tab_title_template = "{index}:{title}";
       tab_powerline_style = "slanted";
       active_tab_title_template = "none";
-      active_tab_foreground = "#d3c6aa";
-      active_tab_background = "#5c6a72";
+      # active_tab_foreground = "#d3c6aa";
+      # active_tab_background = "#5c6a72";
       active_tab_font_style = "bold";
-      inactive_tab_foreground = "#a7c080";
-      inactive_tab_background = "#2d353b";
+      # inactive_tab_foreground = "#a7c080";
+      # inactive_tab_background = "#2d353b";
       inactive_tab_font_style = "normal";
     };
 
