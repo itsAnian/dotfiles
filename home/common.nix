@@ -25,6 +25,7 @@
     vlc
     nemo
     onefetch
+    screen
   ];
 
   imports = [
