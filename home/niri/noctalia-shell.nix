@@ -338,7 +338,7 @@
               usePrimaryColor = false;
             }
             {
-              hideWhenZero = true;
+              hideWhenZero = false;
               hideWhenZeroUnread = false;
               id = "NotificationHistory";
               showUnreadBadge = true;
