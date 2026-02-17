@@ -9,6 +9,8 @@
 
   home.packages = with pkgs; [
     cliphist
+    gnome-calendar
+    # kdePackages.kdeconnect-kde
   ];
   services.cliphist = {
     enable = true;
@@ -44,6 +46,14 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        weekly-calendar = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        # kde-connect = {
+        #   enabled = true;
+        #   sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        # };
       };
       version = 1;
     };
@@ -54,6 +64,10 @@
         removeMargins = false;
         iconSpacing = 4;
       };
+      weekly-calendar = {
+      };
+      # kde-connect = {
+      # };
       tailscale = {
         refreshInterval = 5000;
         compactMode = true;
@@ -202,11 +216,15 @@
         widgets = {
           center = [
             {
-              colorName = "primary";
-              hideWhenIdle = true;
-              id = "AudioVisualizer";
-              width = 500;
+              # colorName = "primary";
+              # hideWhenIdle = true;
+              # id = "AudioVisualizer";
+              # width = 500;
+              id = "plugin:weekly-calendar";
             }
+            # {
+            #   id = "plugin:kde-connect";
+            # }
           ];
           left = [
             {
@@ -298,7 +316,7 @@
             }
             {
               deviceNativePath = "__default__";
-              displayMode = "alwaysShow";
+              displayMode = "icon-always";
               hideIfIdle = false;
               hideIfNotDetected = true;
               id = "Battery";

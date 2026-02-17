@@ -128,6 +128,9 @@
 
   programs.zsh.enable = true;
 
+  # Calendar
+  services.gnome.evolution-data-server.enable = true;
+
   #wireguard
   networking.firewall.checkReversePath = "loose";
 
