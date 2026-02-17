@@ -65,6 +65,12 @@
         iconSpacing = 4;
       };
       weekly-calendar = {
+        panelMode = "attached";
+        weekStart = "1";
+        timeFormat = "24h";
+        lineColorType = "mOutline";
+        hourLineOpacity = 0.5;
+        dayLineOpacity = 1.0;
       };
       # kde-connect = {
       # };
