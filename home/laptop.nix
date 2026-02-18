@@ -1,8 +1,20 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
   home.packages = with pkgs; [
     nwg-displays
     vlc
     wl-clipboard
+
+    # Stickerprinter Space
+    (pkgs.inkscape-with-extensions.override {
+      inkscapeExtensions = with pkgs-unstable.inkscape-extensions; [
+        silhouette
+        inkstitch
+      ];
+    })
   ];
 
   imports = [

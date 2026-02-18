@@ -111,6 +111,7 @@
   */
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.groups.udev = {};
 
   users = {
     defaultUserShell = pkgs.zsh;
@@ -118,7 +119,7 @@
     users.anian = {
       isNormalUser = true;
       description = "anian";
-      extraGroups = ["networkmanager" "wheel" "docker" "dialout" "tty"];
+      extraGroups = ["networkmanager" "wheel" "docker" "dialout" "tty" "udev"];
       shell = pkgs.zsh;
       packages = with pkgs; [
         displaylink
