@@ -90,8 +90,8 @@
       binds = {
         "Mod+Q".action.spawn = "kitty";
         "Mod+R".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
-        "Mod+B".action.spawn = "brave";
-        "Mod+Shift+B".action.spawn = ["brave" "--incognito"];
+        "Mod+B".action.spawn = ["brave" "--password-store=basic"];
+        "Mod+Shift+B".action.spawn = ["brave" "--incognito" "--password-store=basic"];
         "Mod+S".action.spawn = ["sh" "-c" "slurp | grim -g - - | wl-copy"];
 
         "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+" "--limit" "1.0"];
