@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    dunst
-    libnotify
+    # dunst
+    # libnotify
     networkmanagerapplet
     hyprshot
     brightnessctl
