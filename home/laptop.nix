@@ -25,6 +25,7 @@
     ./programs/gtk.nix
     ./programs/dhbw.nix
     ./programs/vscode.nix
+    ./services/udiskie.nix
   ];
 
   home.username = "anian";
