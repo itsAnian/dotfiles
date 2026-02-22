@@ -10,8 +10,9 @@
   home.packages = with pkgs; [
     cliphist
     gnome-calendar
-    # kdePackages.kdeconnect-kde
+    kdePackages.qttools
   ];
+
   services.cliphist = {
     enable = true;
     allowImages = true;
@@ -50,10 +51,10 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
-        # kde-connect = {
-        #   enabled = true;
-        #   sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-        # };
+        kde-connect = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
       };
       version = 1;
     };
@@ -72,8 +73,8 @@
         hourLineOpacity = 0.5;
         dayLineOpacity = 1.0;
       };
-      # kde-connect = {
-      # };
+      kde-connect = {
+      };
       tailscale = {
         refreshInterval = 5000;
         compactMode = true;
@@ -228,9 +229,6 @@
               # width = 500;
               id = "plugin:weekly-calendar";
             }
-            # {
-            #   id = "plugin:kde-connect";
-            # }
           ];
           left = [
             {
@@ -333,6 +331,9 @@
             {
               defaultSettings = {position = "Bottom";};
               id = "plugin:clipper";
+            }
+            {
+              id = "plugin:kde-connect";
             }
             {
               customFont = "";
