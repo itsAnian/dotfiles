@@ -15,5 +15,14 @@
         };
       }
     ];
+    completionInit = ''
+      autoload -Uz compinit
+      compinit -C
+
+      # Compile the completion dump to increase startup speed
+      if [[ ! -f ~/.zcompdump.zwc || ~/.zcompdump -nt ~/.zcompdump.zwc ]]; then
+        zcompile ~/.zcompdump
+      fi
+    '';
   };
 }
