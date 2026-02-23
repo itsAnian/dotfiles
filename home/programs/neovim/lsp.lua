@@ -15,20 +15,17 @@ local function on_attach(client, bufnr)
     client.server_capabilities.semanticTokensProvider = nil
 end
 
--- LSP configurations
-local lspconfig = require("lspconfig")
-
 -- C / C++
-lspconfig.clangd.setup({
+vim.lsp.config('clangd', {
     cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose", "--fallback-style=webkit" },
     init_options = {
         fallbackFlags = { "-std=c99" },
     },
-    root_dir = require("lspconfig.util").root_pattern("CMakeLists.txt", ".git"),
+    root_markers = { "CMakeLists.txt", ".git" }, -- Native root resolution
 })
 
 -- Lua
-lspconfig.lua_ls.setup({
+vim.lsp.config('lua_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -42,8 +39,7 @@ lspconfig.lua_ls.setup({
 })
 
 -- Nix
-lspconfig.nil_ls.setup({
-    autostart = true,
+vim.lsp.config('nil_ls', {
     on_attach = on_attach,
     settings = {
         ['nil'] = {
@@ -53,7 +49,7 @@ lspconfig.nil_ls.setup({
 })
 
 -- Rust
-lspconfig.rust_analyzer.setup({
+vim.lsp.config('rust_analyzer', {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -73,7 +69,7 @@ lspconfig.rust_analyzer.setup({
 })
 
 -- Python
-lspconfig.pylsp.setup({
+vim.lsp.config('pylsp', {
     settings = {
         pylsp = {
             plugins = {
@@ -85,7 +81,13 @@ lspconfig.pylsp.setup({
 })
 
 -- Bash
-lspconfig.bashls.setup({
+vim.lsp.config('bashls', {
     capabilities = capabilities,
     on_attach = on_attach,
 })
+
+-- Finally, enable all the configured servers
+local servers = { "clangd", "lua_ls", "nil_ls", "rust_analyzer", "pylsp", "bashls" }
+for _, server in ipairs(servers) do
+    vim.lsp.enable(server)
+end
