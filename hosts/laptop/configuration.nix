@@ -72,6 +72,11 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # USB for inkscape silhouette
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0b4d", ATTR{idProduct}=="1137", MODE="0666"
+  '';
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -104,15 +109,13 @@
   security.pam.services.greetd.fprintAuth = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.groups.udev = {};
-
   users = {
     defaultUserShell = pkgs.zsh;
 
     users.anian = {
       isNormalUser = true;
       description = "anian";
-      extraGroups = ["networkmanager" "wheel" "docker" "dialout" "tty" "udev"];
+      extraGroups = ["networkmanager" "wheel" "docker" "dialout" "tty"];
       shell = pkgs.zsh;
       packages = with pkgs; [
         displaylink

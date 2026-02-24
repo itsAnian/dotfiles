@@ -7,14 +7,6 @@
     nwg-displays
     vlc
     wl-clipboard
-
-    # Stickerprinter Space
-    (pkgs.inkscape-with-extensions.override {
-      inkscapeExtensions = with pkgs-unstable.inkscape-extensions; [
-        silhouette
-        inkstitch
-      ];
-    })
   ];
 
   imports = [
@@ -25,6 +17,7 @@
     ./programs/gtk.nix
     ./programs/dhbw.nix
     ./programs/vscode.nix
+    ./programs/inkscape.nix
     ./services/udiskie.nix
   ];
 

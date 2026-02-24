@@ -33,10 +33,8 @@ in {
     shfmt
 
     # python cause python is special
-    (python313.withPackages (ps: [
-      ps.python-lsp-server
-      ps.autopep8
-    ]))
+    python313Packages.python-lsp-server
+    python313Packages.autopep8
 
     #for teamtype plugin
     teamtype
