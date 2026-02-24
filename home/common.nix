@@ -56,6 +56,7 @@
     nd = "nix develop -c $SHELL";
     ll = "ls -la --group-directories-first";
     pls = "sudo";
+    zz = "z -";
     ".." = "cd ../";
   };
 }
