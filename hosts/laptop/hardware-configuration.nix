@@ -4,6 +4,7 @@
 {
   config,
   lib,
+  pkgs,
   modulesPath,
   ...
 }: {
@@ -11,18 +12,17 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci"];
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "uas" "sd_mod" "sdhci_pci"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
-  # Avoid touchpad click to tap (clickpad) bug. For more detail see:
-  # https://wiki.archlinux.org/title/Touchpad_Synaptics#Touchpad_does_not_work_after_resuming_from_hibernate/suspend
-  boot.kernelParams = ["psmouse.synaptics_intertouch=0"];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/3c0ad4ef-0b0c-4432-bf81-1b575da68b29";
+    device = "/dev/mapper/luks-666babaa-de49-4bd1-af4d-566699bc374b";
     fsType = "ext4";
   };
+
+  boot.initrd.luks.devices."luks-666babaa-de49-4bd1-af4d-566699bc374b".device = "/dev/disk/by-uuid/666babaa-de49-4bd1-af4d-566699bc374b";
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/6468-DFE7";
@@ -30,14 +30,9 @@
     options = ["fmask=0077" "dmask=0077"];
   };
 
-  swapDevices = [];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
+  swapDevices = [
+    {device = "/dev/disk/by-uuid/85df17fa-058f-4385-9b3a-6a5a1fd6047d";}
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
