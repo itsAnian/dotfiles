@@ -100,19 +100,8 @@
   };
 
   services.fprintd.enable = true;
-
-  #maybe was needed - if fingerprint login does not work uncomment
-  /*
-    security.pam.services.hyprlock = {
-    text = ''
-      auth       sufficient   pam_fprintd.so
-      auth       include      system-login
-      account    include      system-login
-      password   include      system-login
-      session    include      system-login
-    '';
-  };
-  */
+  security.pam.services.sudo.fprintAuth = true;
+  security.pam.services.greetd.fprintAuth = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.groups.udev = {};
