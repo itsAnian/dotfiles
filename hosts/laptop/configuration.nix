@@ -108,6 +108,11 @@
   security.pam.services.sudo.fprintAuth = true;
   security.pam.services.greetd.fprintAuth = true;
 
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
+  security.pam.services.login.enableGnomeKeyring = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.zsh;
