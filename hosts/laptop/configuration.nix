@@ -132,6 +132,7 @@
 
   # Calendar
   services.gnome.evolution-data-server.enable = true;
+  programs.dconf.enable = true;
 
   #wireguard
   networking.firewall.checkReversePath = "loose";
