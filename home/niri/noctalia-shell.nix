@@ -247,15 +247,15 @@
               showCpuFreq = false;
               showCpuTemp = true;
               showCpuUsage = true;
-              showDiskAvailable = false;
-              showDiskUsage = false;
-              showDiskUsageAsPercent = false;
+              showDiskAvailable = true;
+              showDiskUsage = true;
+              showDiskUsageAsPercent = true;
               showGpuTemp = false;
               showLoadAverage = false;
-              showMemoryAsPercent = false;
+              showMemoryAsPercent = true;
               showMemoryUsage = true;
-              showNetworkStats = false;
-              showSwapUsage = false;
+              showNetworkStats = true;
+              showSwapUsage = true;
               useMonospaceFont = true;
               usePrimaryColor = false;
             }
