@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     prismlauncher
     rivalcfg
+    gpu-screen-recorder-gtk
   ];
 
   imports = [
@@ -9,8 +10,8 @@
     ./tmp.nix
     ./programs/dhbw.nix
     ./programs/3d-print.nix
-    ./programs/hytale.nix
-    ./gnome/gnome.nix
+    # ./programs/hytale.nix
+    # ./gnome/gnome.nix
   ];
 
   home.username = "anian";

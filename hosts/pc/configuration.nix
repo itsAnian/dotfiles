@@ -13,7 +13,8 @@
     ./nvidia.nix
     ./gaming.nix
     ./controller.nix
-    ./gnome.nix
+    # ./gnome.nix
+    ./plasma.nix
   ];
 
   networking.hostName = "nixos-pc"; # Define your hostname.
