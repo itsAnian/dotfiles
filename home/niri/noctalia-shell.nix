@@ -666,7 +666,7 @@
         fontDefault = "";
         fontDefaultScale = 1.25;
         fontFixed = "";
-        fontFixedScale = 1;
+        fontFixedScale = 1.25;
         networkPanelView = "wifi";
         panelBackgroundOpacity = 0.85;
         panelsAttachedToBar = true;
