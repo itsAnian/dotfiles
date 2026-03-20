@@ -10,6 +10,7 @@
     ../../modules/docker.nix
     ../../modules/tailscale.nix
     ../../modules/ssh.nix
+    ../../modules/dh-certs.nix
   ];
 
   programs.kdeconnect.enable = true;
