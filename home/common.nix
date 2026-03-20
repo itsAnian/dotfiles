@@ -17,7 +17,7 @@
     fd
     nemo
     thunderbird
-    unzip
+    zip
     gowall
     ripgrep
     fastfetch
