@@ -24,6 +24,19 @@ vim.lsp.config('clangd', {
     root_markers = { "CMakeLists.txt", ".git" }, -- Native root resolution
 })
 
+-- Typst (Tinymist LSP + Typstyle)
+vim.lsp.config('tinymist', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        -- This tells Tinymist to use Typstyle specifically for formatting
+        formatterMode = "typstyle",
+        exportPdf = "never", -- Optional: Auto-generate PDF on save
+    },
+    -- Standard root markers for Typst projects
+    root_markers = { "bolt.toml", ".git" },
+})
+
 -- Lua
 vim.lsp.config('lua_ls', {
     capabilities = capabilities,
@@ -87,7 +100,7 @@ vim.lsp.config('bashls', {
 })
 
 -- Finally, enable all the configured servers
-local servers = { "clangd", "lua_ls", "nil_ls", "rust_analyzer", "pylsp", "bashls" }
+local servers = { "clangd", "lua_ls", "nil_ls", "rust_analyzer", "pylsp", "bashls", "tinymist" }
 for _, server in ipairs(servers) do
     vim.lsp.enable(server)
 end

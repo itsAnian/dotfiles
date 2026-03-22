@@ -25,12 +25,14 @@ in {
     nil
     nodejs
     nodePackages.bash-language-server
+    tinymist
 
     # formatter
     alejandra
     jq
     yamlfmt
     shfmt
+    typstyle
 
     # python cause python is special
     python313Packages.python-lsp-server
