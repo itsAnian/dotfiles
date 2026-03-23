@@ -11,6 +11,7 @@
     cliphist
     gnome-calendar
     kdePackages.qttools
+    gpu-screen-recorder
   ];
 
   services.cliphist = {
@@ -55,6 +56,18 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        ip-monitor = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        translator = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
+        screen-recorder = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
       };
       version = 1;
     };
@@ -74,6 +87,21 @@
         dayLineOpacity = 1.0;
       };
       kde-connect = {
+      };
+      ip-monitor = {
+        iconColor = "primary";
+        successIcon = "hierarchy-2";
+        errorIcon = "alert-circle";
+        loadingIcon = "loader";
+        refreshInterval = 300;
+      };
+      translator = {
+        backend = "google";
+        deeplApiKey = "";
+        realTimeTranslation = true;
+        showPreview = true;
+      };
+      screen-recorder = {
       };
       tailscale = {
         refreshInterval = 5000;
@@ -223,11 +251,13 @@
         widgets = {
           center = [
             {
-              # colorName = "primary";
-              # hideWhenIdle = true;
-              # id = "AudioVisualizer";
-              # width = 500;
               id = "plugin:weekly-calendar";
+            }
+            {
+              id = "plugin:ip-monitor";
+            }
+            {
+              id = "plugin:screen-recorder";
             }
           ];
           left = [
