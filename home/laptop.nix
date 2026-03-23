@@ -33,6 +33,6 @@
   home.stateVersion = "25.11";
 
   home.shellAliases = {
-    nrs = "nh os switch ~/dotfiles --hostname nixos-laptop";
+    nrs = "nh os switch ~/dotfiles";
   };
 }

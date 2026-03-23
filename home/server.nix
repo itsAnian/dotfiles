@@ -23,7 +23,7 @@
   home.stateVersion = "25.11";
 
   home.shellAliases = {
-    nrs = "nh os switch ~/dotfiles --hostname nixos-server";
+    nrs = "nh os switch ~/dotfiles";
   };
 
   programs.bash.enable = true;

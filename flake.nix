@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "NixOS dotfiles of itsAnian";
 
   inputs = {
     home-manager = {
@@ -66,8 +66,8 @@
       edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
       openconnect-sso = inputs.openconnect-sso.packages.${system}.openconnect-sso;
       todo-shell = inputs.todo-shell.defaultPackage.${system};
-      hytale-launcher = inputs.hytale-launcher.packages.${pkgs.system}.default;
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+      hytale-launcher = inputs.hytale-launcher.packages.${system}.default;
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
     };
 
     pkgs = import nixpkgs {
@@ -82,59 +82,57 @@
     };
 
     lib = nixpkgs.lib;
+
+    mkHost = {
+      hostname,
+      username,
+      useGrub,
+    }:
+      lib.nixosSystem {
+        inherit system;
+
+        specialArgs = {
+          inherit inputs pkgs-unstable;
+        };
+
+        modules =
+          [
+            {nixpkgs.pkgs = pkgs;}
+
+            ./hosts/${hostname}/configuration.nix
+            ./hosts/${hostname}/hardware-configuration.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.${username} = import ./home/${hostname}.nix;
+              home-manager.extraSpecialArgs = {
+                inherit inputs pkgs-unstable;
+                host = hostname;
+              };
+            }
+          ]
+          ++ lib.optional useGrub grub2-themes.nixosModules.default;
+      };
   in {
     nixosConfigurations = {
-      nixos-laptop = lib.nixosSystem {
-        modules = [
-          grub2-themes.nixosModules.default
-          ./hosts/laptop/configuration.nix
-          ./hosts/laptop/hardware-configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            # home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.anian = import ./home/laptop.nix;
-            home-manager.extraSpecialArgs = {
-              inherit inputs pkgs pkgs-unstable;
-              host = "nixos-laptop";
-            };
-          }
-        ];
+      nixos-laptop = mkHost {
+        hostname = "laptop";
+        username = "anian";
+        useGrub = true;
       };
 
-      nixos-pc = lib.nixosSystem {
-        modules = [
-          grub2-themes.nixosModules.default
-          ./hosts/pc/configuration.nix
-          ./hosts/pc/hardware-configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            # home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.anian = import ./home/pc.nix;
-            home-manager.extraSpecialArgs = {
-              inherit inputs pkgs pkgs-unstable;
-              host = "nixos-pc";
-            };
-          }
-        ];
+      nixos-pc = mkHost {
+        hostname = "pc";
+        username = "anian";
+        useGrub = true;
       };
 
-      nixos-server = lib.nixosSystem {
-        modules = [
-          ./hosts/server/configuration.nix
-          ./hosts/server/hardware-configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            # home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.server = import ./home/server.nix;
-            home-manager.extraSpecialArgs = {
-              inherit inputs pkgs pkgs-unstable;
-              host = "nixos-server";
-            };
-          }
-        ];
+      nixos-server = mkHost {
+        hostname = "server";
+        username = "server";
+        useGrub = false;
       };
     };
   };

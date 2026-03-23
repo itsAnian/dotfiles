@@ -42,7 +42,7 @@ in {
       enable_audio_bell = "no";
 
       font_size =
-        if host == "nixos-laptop"
+        if host == "laptop"
         then 12
         else 10;
       cursor_trail = 0;

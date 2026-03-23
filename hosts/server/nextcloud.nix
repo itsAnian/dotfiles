@@ -1,12 +1,14 @@
-{ config, pkgs, ... }:
-
 {
-  services.nextcloud.package = pkgs.nextcloud31;
+  config,
+  pkgs,
+  ...
+}: {
+  services.nextcloud.package = pkgs.nextcloud32;
 
   services.nextcloud = {
     enable = true;
-    
-    hostName = "nixos-server"; 
+
+    hostName = "nixos-server";
 
     config = {
       adminuser = "admin";
@@ -26,9 +28,9 @@
     extraApps = with config.services.nextcloud.package.packages.apps; {
       inherit calendar contacts news;
     };
-    
+
     datadir = "/var/lib/nextcloud";
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 ]; 
+  networking.firewall.allowedTCPPorts = [80];
 }
