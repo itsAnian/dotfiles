@@ -116,20 +116,20 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.bash;
 
     users.anian = {
       isNormalUser = true;
       description = "anian";
       extraGroups = ["networkmanager" "wheel" "docker" "dialout" "tty"];
-      shell = pkgs.zsh;
+      shell = pkgs.bash;
       packages = with pkgs; [
         displaylink
       ];
     };
   };
 
-  programs.zsh.enable = true;
+  programs.bash.enable = true;
 
   # Calendar
   services.gnome.evolution-data-server.enable = true;

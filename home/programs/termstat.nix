@@ -1,7 +1,7 @@
 {inputs, ...}: {
   programs.termstat = {
-    enable = true;
-    enableZshIntegration = true;
+    enable = false;
+    enableBashIntegration = true;
     systemd = {
       enable = true;
       onCalendar = "*:0/15";

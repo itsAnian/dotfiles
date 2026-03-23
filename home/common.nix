@@ -36,7 +36,7 @@
     ./programs/presenterm.nix
     ./programs/starship.nix
     ./programs/zoxide.nix
-    ./programs/zsh.nix
+    ./programs/bash.nix
     ./programs/neovim/neovim.nix
     ./programs/bat.nix
     ./programs/tree.nix

@@ -5,7 +5,7 @@
 
   programs.television = {
     enable = true;
-    enableZshIntegration = true;
+    enableBashIntegration = true;
     settings = {
       ui = {
         theme = "monokai";
