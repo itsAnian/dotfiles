@@ -77,7 +77,7 @@ in {
     };
 
     extraConfig = ''
-      map ctrl+l clear_terminal scroll active
+      map ctrl+l combine : clear_terminal scroll active : send_text normal \x0c
       map ctrl+shift+g launch --type=background --cwd=current ${gh-opener}/bin/gh-opener-script
     '';
   };
