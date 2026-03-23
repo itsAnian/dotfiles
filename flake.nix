@@ -48,6 +48,10 @@
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
     };
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixpkgs.url = "nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -83,6 +87,15 @@
 
     lib = nixpkgs.lib;
 
+    pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+      src = ./.;
+      hooks = {
+        deadnix.enable = true;
+        # deadnix.settings.edit = true;
+        # alejandra.enable = true;
+      };
+    };
+
     mkHost = {
       hostname,
       username,
@@ -116,6 +129,13 @@
           ++ lib.optional useGrub grub2-themes.nixosModules.default;
       };
   in {
+    checks.${system}.pre-commit-check = pre-commit-check;
+
+    devShells.${system}.default = pkgs.mkShell {
+      inherit (pre-commit-check) shellHook;
+      buildInputs = pre-commit-check.enabledPackages;
+    };
+
     nixosConfigurations = {
       nixos-laptop = mkHost {
         hostname = "laptop";
