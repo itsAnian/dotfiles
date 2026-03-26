@@ -5,21 +5,16 @@
 }: {
   imports = [
     inputs.niri.homeModules.niri
-    ./swaylock.nix
-    # ./swayidle.nix
+    ./swayidle.nix
     ./noctalia-shell.nix
   ];
 
   home.packages = with pkgs; [
     xwayland-satellite
     wdisplays
-    wl-mirror
-    jq
     grim
     slurp
     wl-clipboard
-    brightnessctl
-    wireplumber
     playerctl
   ];
 
@@ -92,15 +87,21 @@
         "Mod+R".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
         "Mod+B".action.spawn = ["brave" "--password-store=basic"];
         "Mod+Shift+B".action.spawn = ["brave" "--incognito" "--password-store=basic"];
-        "Mod+S".action.spawn = ["sh" "-c" "slurp | grim -g - - | wl-copy"];
+        "Mod+S".action.spawn = [
+          "${pkgs.bash}/bin/sh"
+          "-c"
+          "${pkgs.slurp}/bin/slurp | ${pkgs.grim}/bin/grim -g - - | ${pkgs.wl-clipboard}/bin/wl-copy"
+        ];
 
-        "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+" "--limit" "1.0"];
-        "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"];
-        "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
-        "XF86AudioMicMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"];
-        "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "set" "+5%"];
-        "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "set" "5%-"];
-        "Mod+P".action.spawn = "wdisplays";
+        "XF86AudioRaiseVolume".action.spawn = ["${pkgs.wireplumber}/bin/wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+" "--limit" "1.0"];
+        "XF86AudioLowerVolume".action.spawn = ["${pkgs.wireplumber}/bin/wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"];
+        "XF86AudioMute".action.spawn = ["${pkgs.wireplumber}/bin/wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+        "XF86AudioMicMute".action.spawn = ["${pkgs.wireplumber}/bin/wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"];
+
+        "XF86MonBrightnessUp".action.spawn = ["${pkgs.brightnessctl}/bin/brightnessctl" "set" "+5%"];
+        "XF86MonBrightnessDown".action.spawn = ["${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%-"];
+
+        "Mod+P".action.spawn = "${pkgs.wdisplays}/bin/wdisplays";
 
         "Mod+left".action.focus-window-down-or-column-left = {};
         "Mod+down".action.focus-window-down = {};
