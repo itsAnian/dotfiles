@@ -8,7 +8,6 @@
   ];
 
   home.packages = with pkgs; [
-    cliphist
     gnome-calendar
     kdePackages.qttools
     gpu-screen-recorder

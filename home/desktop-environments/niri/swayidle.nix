@@ -1,45 +1,33 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   services.swayidle = let
-    lock = "${pkgs.swaylock}/bin/swaylock --daemonize";
-    display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
+    lock = "${config.programs.noctalia-shell.package}/bin/noctalia-shell ipc call lockScreen lock";
   in {
     enable = true;
+    systemdTarget = "graphical-session.target";
+
     timeouts = [
       {
-        timeout = 1; # in seconds
-        command = "${pkgs.libnotify}/bin/notify-send 'Locking in 5 seconds' -t 5000";
+        timeout = 180;
+        command = "${pkgs.libnotify}/bin/notify-send 'Locking in 30 seconds' -t 30";
       }
       {
-        timeout = 2;
+        timeout = 210;
         command = lock;
       }
-      {
-        timeout = 3;
-        command = display "off";
-        resumeCommand = display "on";
-      }
-      {
-        timeout = 4;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
-      }
     ];
+
     events = [
       {
         event = "before-sleep";
-        # adding duplicated entries for the same event may not work
-        command = (display "off") + "; " + lock;
-      }
-      {
-        event = "after-resume";
-        command = display "on";
+        command = lock;
       }
       {
         event = "lock";
-        command = (display "off") + "; " + lock;
-      }
-      {
-        event = "unlock";
-        command = display "on";
+        command = lock;
       }
     ];
   };
