@@ -11,7 +11,7 @@
     ./programs/dhbw.nix
     ./programs/3d-print.nix
     # ./programs/hytale.nix
-    # ./gnome/gnome.nix
+    # ./desktop-environments/gnome/gnome.nix
   ];
 
   home.username = "anian";

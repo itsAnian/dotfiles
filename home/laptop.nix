@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     nwg-displays
     vlc
@@ -9,8 +6,8 @@
   ];
 
   imports = [
-    ./hyprland/hyprland.nix
-    ./niri/niri.nix
+    ./desktop-environments/hyprland/hyprland.nix
+    ./desktop-environments/niri/niri.nix
     ./common.nix
     ./tmp.nix
     ./programs/gtk.nix
