@@ -7,7 +7,8 @@ vim.keymap.set("n", "<leader>q", ":qa<CR>", { desc = "Quit" })
 
 vim.keymap.set("n", "<leader>tc", "<cmd>ColorizerToggle<CR>", { desc = "Toggle Colorizer" })
 
-vim.keymap.set("n", "<leader>f", function() Snacks.picker.files() end, { noremap = true, silent = true }, { desc = "Snacks picker" })
+vim.keymap.set("n", "<leader>f", function() Snacks.picker.files() end, { noremap = true, silent = true },
+    { desc = "Snacks picker" })
 
 vim.keymap.set("n", "<leader>tm", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
 
@@ -24,3 +25,13 @@ vim.keymap.set("n", "<leader>fp", "<cmd>Telescope builtin<CR>", { desc = "Telesc
 vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<CR>", { desc = "Start compilation" })
 vim.keymap.set("n", "<leader>lv", "<cmd>VimtexView<CR>", { desc = "View PDF" })
 vim.keymap.set("n", "<leader>lc", "<cmd>VimtexClean<CR>", { desc = "Clean aux files" })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "typst",
+    callback = function()
+        vim.keymap.set("n", "<leader>tt", "<cmd>TypstPreviewToggle<cr>", {
+            buffer = true,
+            desc = "Toggle Typst Preview"
+        })
+    end,
+})

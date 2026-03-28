@@ -18,6 +18,7 @@
   windsurf = builtins.readFile ./windsurf-nvim.lua;
   teamtype-lua = builtins.readFile ./teamtype.lua;
   gitsigns = builtins.readFile ./gitsigns.lua;
+  typst-preview = builtins.readFile ./typst-preview.lua;
 in {
   home.packages = with pkgs; [
     # lsps
@@ -41,6 +42,7 @@ in {
     #for teamtype plugin
     teamtype
   ];
+  programs.zathura.enable = true;
 
   programs.neovim = {
     enable = true;
@@ -74,6 +76,7 @@ in {
       conform-nvim
       teamtype
       gitsigns-nvim
+      typst-preview-nvim
     ];
 
     extraLuaConfig = ''
@@ -97,6 +100,7 @@ in {
       ${windsurf}
       ${teamtype-lua}
       ${gitsigns}
+      ${typst-preview}
     '';
   };
 
