@@ -21,7 +21,7 @@
     gs = "git status";
     ga = "git add";
     gc = "git commit";
-    gl = "git log --oneline";
+    gl = "git log --graph --oneline --all --decorate";
     gd = "git diff";
     gp = "git push";
     gpfusch = "git push --force-with-lease";
