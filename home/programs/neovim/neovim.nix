@@ -27,6 +27,7 @@ in {
     nodejs
     nodePackages.bash-language-server
     tinymist
+    rust-analyzer
 
     # formatter
     alejandra
