@@ -28,6 +28,7 @@ in {
     nodePackages.bash-language-server
     tinymist
     rust-analyzer
+    clang-tools
 
     # formatter
     alejandra
