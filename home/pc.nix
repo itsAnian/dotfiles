@@ -10,6 +10,7 @@
     ./tmp.nix
     ./programs/dhbw.nix
     ./programs/3d-print.nix
+    ./programs/freecad.nix
     # ./programs/hytale.nix
     # ./desktop-environments/gnome/gnome.nix
   ];
