@@ -25,7 +25,7 @@ in {
     lua-language-server
     nil
     nodejs
-    nodePackages.bash-language-server
+    # nodePackages.bash-language-server
     tinymist
     rust-analyzer
     clang-tools

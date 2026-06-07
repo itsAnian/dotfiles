@@ -4,7 +4,7 @@
     discord
     zapzap
     p3x-onenote
-    bitwarden-desktop
+    # bitwarden-desktop
     gimp
     remnote
     todo-shell
