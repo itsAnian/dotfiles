@@ -4,7 +4,7 @@
   ...
 }: {
   services.swayidle = let
-    lock = "${config.programs.noctalia-shell.package}/bin/noctalia-shell ipc call lockScreen lock";
+    lock = "${config.programs.noctalia.package}/bin/noctalia-shell ipc call lockScreen lock";
   in {
     enable = true;
     systemdTarget = "graphical-session.target";

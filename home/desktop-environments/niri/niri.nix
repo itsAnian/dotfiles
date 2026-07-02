@@ -84,7 +84,7 @@
 
       binds = {
         "Mod+Q".action.spawn = "kitty";
-        "Mod+R".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
+        "Mod+R".action.spawn = ["noctalia" "ipc" "call" "launcher" "toggle"];
         "Mod+B".action.spawn = ["brave" "--password-store=basic"];
         "Mod+Shift+B".action.spawn = ["brave" "--incognito" "--password-store=basic"];
         "Mod+S".action.spawn = [
@@ -119,7 +119,7 @@
         "Mod+Shift+F".action.fullscreen-window = {};
 
         "Mod+M".action.quit = {};
-        "Mod+L".action.spawn = ["noctalia-shell" "ipc" "call" "lockScreen" "lock"];
+        "Mod+L".action.spawn = ["noctalia" "ipc" "call" "lockScreen" "lock"];
         "Mod+O".action.toggle-overview = {};
 
         "Mod+Shift+P".action.spawn = [
