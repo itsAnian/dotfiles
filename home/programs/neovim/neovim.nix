@@ -81,7 +81,7 @@ in {
       typst-preview-nvim
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       vim.cmd.colorscheme("monokai-pro")
       ${opt}
       ${lualine}

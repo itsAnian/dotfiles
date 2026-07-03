@@ -1,4 +1,7 @@
-require("nvim-treesitter.configs").setup({
-    highlight = { enable = true, additional_vim_regex_highlighting = false },
-    ensure_installed = {},
+require("nvim-treesitter").setup()
+
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function()
+        pcall(vim.treesitter.start)
+    end,
 })
