@@ -85,8 +85,8 @@
       binds = {
         "Mod+Q".action.spawn = "kitty";
         "Mod+R".action.spawn = ["noctalia-shell" "ipc" "call" "launcher" "toggle"];
-        "Mod+B".action.spawn = ["brave" "--password-store=basic"];
-        "Mod+Shift+B".action.spawn = ["brave" "--incognito" "--password-store=basic"];
+        "Mod+B".action.spawn = ["brave"];
+        "Mod+Shift+B".action.spawn = ["brave" "--incognito"];
         "Mod+S".action.spawn = [
           "${pkgs.bash}/bin/sh"
           "-c"

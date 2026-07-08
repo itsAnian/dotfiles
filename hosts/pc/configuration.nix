@@ -4,7 +4,7 @@
 {pkgs, ...}: {
   imports = [
     ../../modules/nix-ld.nix
-    ../../modules/grub.nix
+    ../../modules/boot.nix
     ../../modules/local.nix
     ../../modules/settings.nix
     ../../modules/docker.nix
