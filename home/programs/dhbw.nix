@@ -7,6 +7,7 @@
     edu-sync-cli
     pkgs-unstable.obsidian
     openconnect-sso
+    ghc # Haskell compiler
   ];
 
   home.shellAliases = {

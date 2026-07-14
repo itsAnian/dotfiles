@@ -99,8 +99,18 @@ vim.lsp.config('bashls', {
     on_attach = on_attach,
 })
 
--- Finally, enable all the configured servers
-local servers = { "clangd", "lua_ls", "nil_ls", "rust_analyzer", "pylsp", "bashls", "tinymist" }
+-- Haskell
+vim.lsp.config('hls', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        haskell = {
+            formattingProvider = "ormolu", -- or "fourmolu" depending on your preference
+        }
+    }
+})
+
+local servers = { "clangd", "lua_ls", "nil_ls", "rust_analyzer", "pylsp", "bashls", "tinymist", "hls" } -- <-- ADD "hls" HERE
 for _, server in ipairs(servers) do
     vim.lsp.enable(server)
 end

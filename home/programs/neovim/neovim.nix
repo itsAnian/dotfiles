@@ -25,6 +25,7 @@ in {
     lua-language-server
     nil
     nodejs
+    haskell-language-server
     # nodePackages.bash-language-server
     tinymist
     rust-analyzer
