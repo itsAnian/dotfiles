@@ -8,6 +8,7 @@
     pkgs-unstable.obsidian
     openconnect-sso
     ghc # Haskell compiler
+    zotero
   ];
 
   home.shellAliases = {
