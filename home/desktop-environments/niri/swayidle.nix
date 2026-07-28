@@ -11,11 +11,11 @@
 
     timeouts = [
       {
-        timeout = 180;
+        timeout = 300;
         command = "${pkgs.libnotify}/bin/notify-send 'Locking in 30 seconds' -t 30";
       }
       {
-        timeout = 210;
+        timeout = 330;
         command = lock;
       }
     ];
