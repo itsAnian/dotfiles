@@ -26,6 +26,7 @@
     nemo
     onefetch
     screen
+    claude-code
   ];
 
   imports = [
