@@ -29,6 +29,6 @@
   home.stateVersion = "26.05";
 
   home.shellAliases = {
-    nrs = "nh os switch ~/dotfiles";
+    nrs = "nh os switch ~/dotfiles --impure";
   };
 }

@@ -10,6 +10,7 @@
     ../../modules/docker.nix
     ../../modules/ssh.nix
     ../../modules/tailscale.nix
+    ../../modules/syncthing.nix
     ../../modules/dh-certs.nix
     ./nvidia.nix
     ./gaming.nix

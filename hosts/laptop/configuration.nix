@@ -9,6 +9,7 @@
     ../../modules/settings.nix
     ../../modules/docker.nix
     ../../modules/tailscale.nix
+    ../../modules/syncthing.nix
     ../../modules/ssh.nix
     ../../modules/dh-certs.nix
     ../pc/gaming.nix

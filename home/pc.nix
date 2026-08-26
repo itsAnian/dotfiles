@@ -25,7 +25,7 @@
   programs.home-manager.enable = true;
 
   home.shellAliases = {
-    nrs = "nh os switch ~/dotfiles";
+    nrs = "nh os switch ~/dotfiles --impure";
   };
 
   home.stateVersion = "26.05";
