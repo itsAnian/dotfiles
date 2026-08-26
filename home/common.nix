@@ -27,6 +27,8 @@
     onefetch
     screen
     claude-code
+    rapidraw
+    oculante
   ];
 
   imports = [
