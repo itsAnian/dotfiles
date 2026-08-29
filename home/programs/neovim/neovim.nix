@@ -38,6 +38,10 @@ in {
     shfmt
     typstyle
 
+    # for snacks.nvim image rendering (typst math preview -> pdf -> png)
+    imagemagick
+    ghostscript
+
     # python cause python is special
     python313Packages.python-lsp-server
     python313Packages.autopep8
