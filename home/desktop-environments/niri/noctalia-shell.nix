@@ -25,7 +25,7 @@
     package = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
       calendarSupport = true;
     };
-    systemd.enable = true;
+    systemd.enable = false;
     plugins = {
       sources = [
         {

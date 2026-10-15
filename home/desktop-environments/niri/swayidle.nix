@@ -7,7 +7,7 @@
     lock = "${config.programs.noctalia-shell.package}/bin/noctalia-shell ipc call lockScreen lock";
   in {
     enable = true;
-    systemdTarget = ["graphical-session.target"];
+    systemdTargets = ["graphical-session.target"];
 
     timeouts = [
       {

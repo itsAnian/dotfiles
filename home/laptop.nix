@@ -11,7 +11,6 @@
     ./common.nix
     ./tmp.nix
     ./programs/gtk.nix
-    ./programs/dhbw.nix
     ./programs/vscode.nix
     ./programs/inkscape.nix
     ./services/udiskie.nix

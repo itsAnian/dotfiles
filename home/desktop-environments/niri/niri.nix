@@ -28,6 +28,7 @@
     settings = {
       includes = ["noctalia.kdl"];
       spawn-at-startup = [
+        {argv = ["noctalia-shell"];}
       ];
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;

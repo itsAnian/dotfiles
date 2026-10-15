@@ -20,12 +20,6 @@
       url = "github:vinceliuice/grub2-themes";
     };
 
-    openconnect-sso = {
-      url = "github:jcszymansk/openconnect-sso";
-      inputs.nixpkgs.follows = "nixpkgs-openconnect-sso";
-    };
-    nixpkgs-openconnect-sso.url = "github:nixos/nixpkgs/46397778ef1f73414b03ed553a3368f0e7e33c2f";
-
     niri = {
       url = "github:LuckShiba/niri-flake/includes";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,7 +62,6 @@
 
     overlay = _final: _prev: {
       edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
-      openconnect-sso = inputs.openconnect-sso.packages.${system}.openconnect-sso;
       todo-shell = inputs.todo-shell.defaultPackage.${system};
       hytale-launcher = inputs.hytale-launcher.packages.${system}.default;
       spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
